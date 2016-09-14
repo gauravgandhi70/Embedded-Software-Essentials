@@ -3,22 +3,34 @@
 char reverse(char * str, int length);
 void main()
 {
-    int len,counter,b;
-    printf("enter the length of the array \t");
-    scanf("%d",&len);
-    char ret,array[len];
-	
+    int len=0,counter,b;
+    
+	char array[50],ret;		
         printf("enter the array \t");
-        scanf("%s",array);
-  
+		scanf ("%[^\n]%*c", array);
+	
+		printf(" \n Array before reversing  \n ");
+	while(*(array+len)!='\0')
+		{	
+			printf("%c",*(array+len));			
+			len++;
+		}
+		printf("\n");
+		
+			
+					
+
     ret=reverse(array,len);
     if (ret==0)
     {
-        printf("Array reverse successful \n");
-        for(counter=0;counter<len;counter++)
-    {
-        printf("%d \n",*(array+counter));
-    }
+		counter=0;
+        printf("Array reverse successful \n Array After Reversing :");
+        while(*(array+counter)!='\0')
+		{
+			printf("%c",*(array+counter));
+			counter++;
+		}
+		printf("\n");
     }
     else
     {

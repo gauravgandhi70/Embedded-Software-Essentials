@@ -16,9 +16,8 @@ char reverse(char *str, int length)
       temp=*(str+counter);
       *(str+counter)=*(str+length-counter-1);
       *(str+length-counter-1)=temp;
-      return 0;
     }
-
+	return 0;
     }
     else
     {
