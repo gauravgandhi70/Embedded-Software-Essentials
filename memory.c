@@ -34,5 +34,41 @@ int8_t my_memmove(uint8_t *src, uint8_t *dst, uint32_t length)
 
 }
 
+int8_t my_memzero(uint8_t *src, uint32_t length)
+{
+    uint16_t i=0,len=0;
+	while(*(src+i)!='\0')
+	{
+		len++;
+		i++;
+	}
+	i=0;
+    if(src)
+      {
+        while(i<length)
+         {
+           *(src+i)=0;
+           i++;
+         }
+        i=0;
+        printf(" \n New String is \t");
+	    while(i<len)
+ 	     { 
+		   printf("%c",*(src+i));
+		   i++;
+	     }
+        
+        printf("\n"); 
+
+        return 0;
+       }
+	 
+    else
+	   {
+         printf("Pointer Error");
+         return 1;
+       } 
+}
+
 
 
