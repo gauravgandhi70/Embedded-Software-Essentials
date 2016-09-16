@@ -15,6 +15,7 @@ int8_t my_memmove(uint8_t *src, uint8_t *dst, uint32_t length)
             i=0;
             
             copying_LOOP(i,length,temp,dst);
+
             printf(" \n Source is at : %p new string at destination %p \t",src,dst);
             i=0;
 
