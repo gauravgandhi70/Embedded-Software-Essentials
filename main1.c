@@ -20,12 +20,10 @@ int main(void)
     x=num;
     big_to_little(x);
     
-   int x;
-   int num;
-   printf("Enter a 32 bit number:\t");
-   scanf("%x",&num);
-   x=num;
-   little_to_big(x);
+    printf("Enter a 32 bit number:\t");
+    scanf("%x",&num);
+    x=num;
+    little_to_big(x);
 
     return 0;
 }
