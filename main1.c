@@ -8,5 +8,10 @@ int main(void)
     printf("Enter a string: ");
     gets(input);
     my_atoi(input);
+    
+	
+    char buf[10]={"ABCD"};
+    dump_memory(buf,2);
+    
     return 0;
 }
