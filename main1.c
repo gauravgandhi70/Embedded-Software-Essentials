@@ -1,20 +1,20 @@
 #include<stdio.h>
 #include<stdint.h>
 
-int main(void)
+uint32_t main(void)
 {
-    int length=0;
-    char input[10];
+    uint32_t length=0;
+    int8_t input[10];
     printf("Enter a string: ");
     gets(input);
     my_atoi(input);
     
 	
-    char buf[10]={"ABCD"};
+    int8_t buf[10]={"ABCD"};
     dump_memory(buf,2);
    
-    int x;
-    int num;
+    uint32_t  x;
+    uint32_t  num;
     printf("Enter a 32 bit number:\t");
     scanf("%x",&num);
     x=num;
