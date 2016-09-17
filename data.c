@@ -1,3 +1,4 @@
+#include<stdint.h>
 #include"data.h"
 
 int my_atoi(char *str)
