@@ -17,3 +17,15 @@ int my_atoi(char *str)
        printf(" %d",*(str+i));
    }
 }
+
+void dump_memory(uint8_t *start, uint32_t length)
+{
+   int i;
+   for(i=0;i<length;i++)
+   {
+      printf("%x \t",*(start+i));
+	
+	
+   }
+	
+}
