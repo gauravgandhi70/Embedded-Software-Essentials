@@ -12,6 +12,13 @@ int main(void)
 	
     char buf[10]={"ABCD"};
     dump_memory(buf,2);
+   
+    int x;
+    int num;
+    printf("Enter a 32 bit number:\t");
+    scanf("%x",&num);
+    x=num;
+    big_to_little(x);
     
     return 0;
 }
