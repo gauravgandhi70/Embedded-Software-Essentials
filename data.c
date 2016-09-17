@@ -44,3 +44,18 @@ uint32_t big_to_little(uint32_t data)
    }
 
 }
+
+uint32_t little_to_big(uint32_t data)
+{
+   int z = 1;
+   char *y = (char*)&z;
+   printf("The value in  lower memory is:%c\n",*y+48);   
+  
+   if((*y+48)=='1')
+   {
+   
+      data = ( data >> 24 ) | (( data << 8) & 0x00ff0000 )| ((data >> 8) & 0x0000ff00) | ( data << 24)  ; 
+      printf("value = %x", data); 
+   }
+
+}
