@@ -70,5 +70,34 @@ int8_t my_memzero(uint8_t *src, uint32_t length)
        } 
 }
 
+int8_t my_reverse(char *src, int length)
+{
+    uint16_t i=0,counter;
+    
+    if(src)
+     {
+    
+      int8_t temp;
+      for (counter=0;counter<(length/2);counter++)
+       {
+         temp=*(src+counter);
+         *(src+counter)=*(src+length-counter-1);
+         *(src+length-counter-1)=temp;
+       }
+       printf("\n Reveresed string is \t");
+       while(i<length)
+         {
+           printf("%c",*(src+i));
+           i++;
+         }
+	  return 0;
+       }
+    else
+       {
+         return 1;
+       }
+     
+
+}
 
 
