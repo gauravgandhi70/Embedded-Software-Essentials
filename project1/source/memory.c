@@ -125,7 +125,7 @@ int8_t my_reverse(uint8_t *src, uint32_t length)                                
     
     if(src)
     {
-        int8_t temp;
+        int8_t temp=0;
         for (counter=0;counter<(length/2);counter++)
         {
            temp=*(src+counter);                                                             //Performs the reverse operation  using a temporary variable
