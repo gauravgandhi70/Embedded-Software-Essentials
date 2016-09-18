@@ -13,10 +13,9 @@ void main()
     printf("Enter the number of bytes that you want to reverse \t");
     scanf("%d",&length);
     
-    my_reverse(source,length);
-    int8_t my_memmove(source, destination, length);
-    int8_t my_memzero(source, length);
-    int8_t my_reverse(source, length);
+    my_memmove(source, destination, length);
+    my_memzero(source, length);
+    my_reverse(source, length);
 }
 
 
