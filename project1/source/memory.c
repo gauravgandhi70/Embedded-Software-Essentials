@@ -4,7 +4,7 @@
 
 int8_t my_memmove(uint8_t *src, uint8_t *dst, uint32_t length)
 {   
-    uint32_t i=0,len=0;
+    uint32_t i=0;
     uint8_t temp[50];
 
     if(src)

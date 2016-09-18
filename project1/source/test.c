@@ -1,8 +1,7 @@
 #include<stdio.h>
 #include<stdint.h>
 #include"memory.h"
-int8_t my_reverse(char *src, int length);
-void main()
+int main()
 {
     uint32_t length;
 
@@ -14,6 +13,8 @@ void main()
     printf("Enter the number of bytes that you want to reverse \t");
     scanf("%d",&length);
     my_reverse(source,length);
+
+	return 1;
 }
 
 

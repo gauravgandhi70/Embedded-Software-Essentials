@@ -9,34 +9,47 @@ else
 cc := gcc
 endif
 
+
+# Compiler options
+
+CFLAGS = -Wall
+CFLAGS += -g
+CFLAGS += -O0
+
+# Settinf standard of compiler to c99
+STD= -std=c99
+
+# Compiler flag to generate dependancy flag
+#DPFLAG
+
+
+#including souce.mk file 
 include sources.mk
 
 #   PHONY Protection
-.PHONY= clean all preprocessor asm-file compile-all
+.PHONY= clean all preprocessor asm-file compile-all build upload build-lib
 
 #     Pre-Processing  
 
 preprocess: $(i_files)
-
-
-%.i:%.c
+%.i:%.c memory.h
 	@mkdir -p -- "$(predir)"
-	$(cc) -E -o $(predir)/$@ $<
+	$(cc) $(STD) $(CFLAGS) -E -o $(predir)/$@ $<
 
  
 asm-file: $(s_files)
-
-%.s: %.i
+%.s: %.i memory.h
 	@mkdir -p -- "$(asmdir)"
-	$(cc) -S -o $(asmdir)/$@ $(predir)/$<
+	$(cc) $(STD) $(CFLAGS) -S -o $(asmdir)/$@ $(predir)/$<
 
 
 compile-all: $(obj_files)
 %.o: %.s memory.h
 	@mkdir -p -- "$(objdir)"
-	$(cc) -c -o $(objdir)/$@ $(asmdir)/$<
+	$(cc) $(STD) $(CFLAGS) -c -o $(objdir)/$@ $(asmdir)/$<
 
-	
+#build: compile-all
+#	$(cc) $(obj_files) -o build	
 
 
 clean:
