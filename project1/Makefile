@@ -50,7 +50,7 @@ asm-file: $(s_files)
 
 
 compile-all: $(o_files)
-%.o: %.s memory.h
+%.o: %.s $(hd)
 	@mkdir -p -- "$(objdir)"
 	$(cc) $(STD) $(CFLAGS) $(DEPFLAG) -c -o $(objdir)/$@ $(asmdir)/$<
 

@@ -4,20 +4,28 @@
 
 
 int8_t my_memmove(uint8_t *src, uint8_t *dst, uint32_t length)                               //Function definition to move data from one location to other location
-
-int8_t my_memmove(uint8_t *src, uint8_t *dst, uint32_t length)
-
 {   
-    uint32_t i=0,len=0;
+    uint32_t i=0;
     uint8_t temp[50];
 
     if(src)
     {
  
 
-        copying_LOOP(i,length,src,temp);                                                     //Copies data from source  to temp array
+           
+        while(i<length)                                                                     //Copies data from source  to temp array
+        {
+             *(temp+i)=*(src+i);
+             i++;
+        }
         i=0;
-        copying_LOOP(i,length,temp,dst);                                                     //Copies data from temp array to destination
+       
+        while(i<length)                                                                       //Copies data from temp to destination array
+        {                                              
+             *(dst+i)=*(temp+i);
+             i++;
+        }
+           
 
         printf(" \n Source is at : %p new string at destination %p \t",src,dst);             //Prints the address to which source and destination pointer refer
         i=0;
@@ -61,11 +69,9 @@ int8_t my_memmove(uint8_t *src, uint8_t *dst, uint32_t length)
 
         printf("Pointer ERROR");                                                             //Displays an error if move failed
         return 1;
-   }
-
-        printf("Pointer ERROR");
-        return 1;
     }
+
+    
 
 
 }
@@ -110,41 +116,7 @@ int8_t my_memzero(uint8_t *src, uint32_t length)                                
         return 1;
     } 
 
-   uint16_t i=0,len=0;
-   while(*(src+i)!='\0')
-   {
-       len++;
-       i++;
-   }
-	
-   i=0;
-   if(src)
-   {
-       while(i<length)
-       {
-           *(src+i)=0;
-           i++;
-       }
-        
-       i=0;
-       printf(" \n New String is \t");
-       while(i<len)
-       { 
-           printf("%c",*(src+i));
-           i++;
-       }
-        
-       printf("\n"); 
-
-       return 0;
-   }
-	 
-   else
-   {
-       printf("Pointer Error");
-       return 1;
-   } 
-
+   
 }
 
 int8_t my_reverse(char *src, int length)                                                     //Function definition for reverse function

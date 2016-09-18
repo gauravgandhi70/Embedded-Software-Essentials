@@ -12,6 +12,7 @@ src=test.c memory.c memory.h
 i_files= test.i memory.i
 s_files= test.s memory.s
 o_files= test.o memory.o
+hd= memory.h data.h
 
 
 #         Directories     
