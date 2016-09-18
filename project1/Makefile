@@ -1,24 +1,18 @@
 #     *-Makefile-*    #
 
+# Compiler selection depending on platform
+ifeq ($(platform),bbb)
+cc := arm-linux-gnueabihf-gcc
+else ifeq ($(platform),frdm)
+cc := arm-none-eabi-gcc
+else
+cc := gcc
+endif
 
-# Compilers
-cc=gcc
+include sources.mk
 
-# Files
-src=test.c memory.c memory.h
-i_files= test.i memory.i
-s_files= test.s memory.s
-
-
-#         Directories     
-objdir=
-predir=processed_files
-assmdir=assembled_files
-
-vpath %.c source
-vpath %.h source
-vpath %.i processed_files
-
+#   PHONY Protection
+.PHONY= clean all preprocessor 
 
 #     Pre-Processing  
 
@@ -31,10 +25,7 @@ preprocess: $(i_files)
 
 
 
-
-
-
 clean:
 	rm -r $(predir)
-	rm -r $(assmdir)
+
 
