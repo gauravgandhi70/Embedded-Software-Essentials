@@ -1,11 +1,11 @@
 #include<stdint.h>
 #include"data.h"
 
-int my_atoi(char *str)
+int32_t my_atoi(int8_t *str)
 {
    printf("string:%s\n",str);
-   int i=0;
-   int length=0;
+   int32_t i=0;
+   int32_t length=0;
    while(*(str+i)!='\0')
    {
        length++;
@@ -21,7 +21,7 @@ int my_atoi(char *str)
 
 void dump_memory(uint8_t *start, uint32_t length)
 {
-   int i;
+   int32_t i;
    for(i=0;i<length;i++)
    {
       printf("%x \t",*(start+i));
@@ -33,8 +33,8 @@ void dump_memory(uint8_t *start, uint32_t length)
 
 uint32_t big_to_little(uint32_t data)
 {
-   int z = 1;
-   char *y = (char*)&z;
+   int32_t z = 1;
+   int8_t *y = (int8_t*)&z;
    printf("The value in  lower memory is:%c\n",*y+48);   
   
    if((*y+48)=='0')
@@ -47,8 +47,8 @@ uint32_t big_to_little(uint32_t data)
 
 uint32_t little_to_big(uint32_t data)
 {
-   int z = 1;
-   char *y = (char*)&z;
+   int32_t z = 1;
+   int8_t *y = (int8_t*)&z;
    printf("The value in  lower memory is:%c\n",*y+48);   
   
    if((*y+48)=='1')
