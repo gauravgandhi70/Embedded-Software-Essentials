@@ -5,7 +5,7 @@ vpath %.i processed
 vpath %.s assembled
 vpath %.o object
 obj_path= object/test.o object/memory.o
-
+src_path= source/test.c source/memory.c
 
 # Files
 src=test.c memory.c memory.h
