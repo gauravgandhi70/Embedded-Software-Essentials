@@ -29,73 +29,96 @@ my_memmove:
 	movq	%rax, -8(%rbp)
 	xorl	%eax, %eax
 	.loc 1 7 0
+	movl	$0, -72(%rbp)
 	movl	$0, -68(%rbp)
 	.loc 1 10 0
 	cmpq	$0, -88(%rbp)
 	je	.L2
-	.loc 1 13 0
-	leaq	-64(%rbp), %rcx
-	movq	-88(%rbp), %rdx
-	movl	-100(%rbp), %esi
-	movl	-68(%rbp), %eax
-	movl	%eax, %edi
-	movl	$0, %eax
-	call	copying_LOOP
-	.loc 1 15 0
-	movl	$0, -68(%rbp)
-	.loc 1 17 0
-	movq	-96(%rbp), %rcx
+	.loc 1 14 0
+	jmp	.L3
+.L4:
+	.loc 1 16 0
+	movl	-72(%rbp), %eax
 	leaq	-64(%rbp), %rdx
-	movl	-100(%rbp), %esi
-	movl	-68(%rbp), %eax
-	movl	%eax, %edi
-	movl	$0, %eax
-	call	copying_LOOP
-	.loc 1 19 0
+	addq	%rax, %rdx
+	movl	-72(%rbp), %ecx
+	movq	-88(%rbp), %rax
+	addq	%rcx, %rax
+	movzbl	(%rax), %eax
+	movb	%al, (%rdx)
+	.loc 1 17 0
+	addl	$1, -72(%rbp)
+.L3:
+	.loc 1 14 0
+	movl	-72(%rbp), %eax
+	cmpl	-100(%rbp), %eax
+	jb	.L4
+	.loc 1 20 0
+	movl	$0, -72(%rbp)
+	.loc 1 22 0
+	jmp	.L5
+.L6:
+	.loc 1 24 0
+	movl	-72(%rbp), %edx
+	movq	-96(%rbp), %rax
+	addq	%rax, %rdx
+	movl	-72(%rbp), %eax
+	leaq	-64(%rbp), %rcx
+	addq	%rcx, %rax
+	movzbl	(%rax), %eax
+	movb	%al, (%rdx)
+	.loc 1 25 0
+	addl	$1, -72(%rbp)
+.L5:
+	.loc 1 22 0
+	movl	-72(%rbp), %eax
+	cmpl	-100(%rbp), %eax
+	jb	.L6
+	.loc 1 27 0
 	movq	-96(%rbp), %rdx
 	movq	-88(%rbp), %rax
 	movq	%rax, %rsi
 	movl	$.LC0, %edi
 	movl	$0, %eax
 	call	printf
-	.loc 1 20 0
-	movl	$0, -68(%rbp)
-	.loc 1 22 0
-	jmp	.L3
-.L4:
-	.loc 1 24 0
-	movl	-68(%rbp), %edx
+	.loc 1 29 0
+	movl	$0, -72(%rbp)
+	.loc 1 30 0
+	jmp	.L7
+.L8:
+	.loc 1 32 0
+	movl	-72(%rbp), %edx
 	movq	-96(%rbp), %rax
 	addq	%rdx, %rax
 	movzbl	(%rax), %eax
 	movzbl	%al, %eax
 	movl	%eax, %edi
 	call	putchar
-	.loc 1 25 0
-	addl	$1, -68(%rbp)
-.L3:
-	.loc 1 22 0
-	movl	-68(%rbp), %eax
+	.loc 1 33 0
+	addl	$1, -72(%rbp)
+.L7:
+	.loc 1 30 0
+	movl	-72(%rbp), %eax
 	cmpl	-100(%rbp), %eax
-	jb	.L4
-	.loc 1 27 0
+	jb	.L8
+	.loc 1 36 0
 	movl	$0, %eax
-	jmp	.L6
+	jmp	.L10
 .L2:
-	.loc 1 31 0
+	.loc 1 41 0
 	movl	$.LC1, %edi
 	movl	$0, %eax
 	call	printf
-	.loc 1 32 0
+	.loc 1 42 0
 	movl	$1, %eax
-.L6:
-	.loc 1 35 0 discriminator 1
-	movq	-8(%rbp), %rcx
-	xorq	%fs:40, %rcx
-	je	.L7
-	.loc 1 35 0 is_stmt 0
+.L10:
+	.loc 1 45 0 discriminator 1
+	movq	-8(%rbp), %rsi
+	xorq	%fs:40, %rsi
+	je	.L11
+	.loc 1 45 0 is_stmt 0
 	call	__stack_chk_fail
-.L7:
+.L11:
 	leave
 	.cfi_def_cfa 7, 8
 	ret
@@ -112,7 +135,7 @@ my_memmove:
 	.type	my_memzero, @function
 my_memzero:
 .LFB1:
-	.loc 1 38 0 is_stmt 1
+	.loc 1 48 0 is_stmt 1
 	.cfi_startproc
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
@@ -122,60 +145,60 @@ my_memzero:
 	subq	$32, %rsp
 	movq	%rdi, -24(%rbp)
 	movl	%esi, -28(%rbp)
-	.loc 1 39 0
+	.loc 1 49 0
 	movw	$0, -4(%rbp)
 	movw	$0, -2(%rbp)
-	.loc 1 40 0
-	jmp	.L9
-.L10:
-	.loc 1 42 0
+	.loc 1 50 0
+	jmp	.L13
+.L14:
+	.loc 1 52 0
 	movzwl	-2(%rbp), %eax
 	addl	$1, %eax
 	movw	%ax, -2(%rbp)
-	.loc 1 43 0
+	.loc 1 53 0
 	movzwl	-4(%rbp), %eax
 	addl	$1, %eax
 	movw	%ax, -4(%rbp)
-.L9:
-	.loc 1 40 0
-	movzwl	-4(%rbp), %edx
-	movq	-24(%rbp), %rax
-	addq	%rdx, %rax
-	movzbl	(%rax), %eax
-	testb	%al, %al
-	jne	.L10
-	.loc 1 45 0
-	movw	$0, -4(%rbp)
-	.loc 1 46 0
-	cmpq	$0, -24(%rbp)
-	je	.L11
-	.loc 1 48 0
-	jmp	.L12
 .L13:
 	.loc 1 50 0
 	movzwl	-4(%rbp), %edx
 	movq	-24(%rbp), %rax
 	addq	%rdx, %rax
+	movzbl	(%rax), %eax
+	testb	%al, %al
+	jne	.L14
+	.loc 1 56 0
+	movw	$0, -4(%rbp)
+	.loc 1 57 0
+	cmpq	$0, -24(%rbp)
+	je	.L15
+	.loc 1 59 0
+	jmp	.L16
+.L17:
+	.loc 1 61 0
+	movzwl	-4(%rbp), %edx
+	movq	-24(%rbp), %rax
+	addq	%rdx, %rax
 	movb	$0, (%rax)
-	.loc 1 51 0
+	.loc 1 62 0
 	movzwl	-4(%rbp), %eax
 	addl	$1, %eax
 	movw	%ax, -4(%rbp)
-.L12:
-	.loc 1 48 0
+.L16:
+	.loc 1 59 0
 	movzwl	-4(%rbp), %eax
 	cmpl	-28(%rbp), %eax
-	jb	.L13
-	.loc 1 53 0
+	jb	.L17
+	.loc 1 65 0
 	movw	$0, -4(%rbp)
-	.loc 1 54 0
+	.loc 1 66 0
 	movl	$.LC2, %edi
 	movl	$0, %eax
 	call	printf
-	.loc 1 55 0
-	jmp	.L14
-.L15:
-	.loc 1 57 0
+	.loc 1 67 0
+	jmp	.L18
+.L19:
+	.loc 1 69 0
 	movzwl	-4(%rbp), %edx
 	movq	-24(%rbp), %rax
 	addq	%rdx, %rax
@@ -183,30 +206,30 @@ my_memzero:
 	movzbl	%al, %eax
 	movl	%eax, %edi
 	call	putchar
-	.loc 1 58 0
+	.loc 1 70 0
 	movzwl	-4(%rbp), %eax
 	addl	$1, %eax
 	movw	%ax, -4(%rbp)
-.L14:
-	.loc 1 55 0
+.L18:
+	.loc 1 67 0
 	movzwl	-4(%rbp), %eax
 	cmpw	-2(%rbp), %ax
-	jb	.L15
-	.loc 1 61 0
+	jb	.L19
+	.loc 1 73 0
 	movl	$10, %edi
 	call	putchar
-	.loc 1 63 0
+	.loc 1 75 0
 	movl	$0, %eax
-	jmp	.L16
-.L11:
-	.loc 1 68 0
+	jmp	.L20
+.L15:
+	.loc 1 80 0
 	movl	$.LC3, %edi
 	movl	$0, %eax
 	call	printf
-	.loc 1 69 0
+	.loc 1 81 0
 	movl	$1, %eax
-.L16:
-	.loc 1 71 0
+.L20:
+	.loc 1 83 0
 	leave
 	.cfi_def_cfa 7, 8
 	ret
@@ -221,7 +244,7 @@ my_memzero:
 	.type	my_reverse, @function
 my_reverse:
 .LFB2:
-	.loc 1 74 0
+	.loc 1 86 0
 	.cfi_startproc
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
@@ -231,23 +254,23 @@ my_reverse:
 	subq	$32, %rsp
 	movq	%rdi, -24(%rbp)
 	movl	%esi, -28(%rbp)
-	.loc 1 75 0
+	.loc 1 87 0
 	movw	$0, -4(%rbp)
-	.loc 1 77 0
+	.loc 1 89 0
 	cmpq	$0, -24(%rbp)
-	je	.L18
+	je	.L22
 .LBB2:
-	.loc 1 81 0
+	.loc 1 93 0
 	movw	$0, -2(%rbp)
-	jmp	.L19
-.L20:
-	.loc 1 83 0 discriminator 3
+	jmp	.L23
+.L24:
+	.loc 1 95 0 discriminator 3
 	movzwl	-2(%rbp), %edx
 	movq	-24(%rbp), %rax
 	addq	%rdx, %rax
 	movzbl	(%rax), %eax
 	movb	%al, -5(%rbp)
-	.loc 1 84 0 discriminator 3
+	.loc 1 96 0 discriminator 3
 	movzwl	-2(%rbp), %edx
 	movq	-24(%rbp), %rax
 	addq	%rax, %rdx
@@ -261,7 +284,7 @@ my_reverse:
 	addq	%rcx, %rax
 	movzbl	(%rax), %eax
 	movb	%al, (%rdx)
-	.loc 1 85 0 discriminator 3
+	.loc 1 97 0 discriminator 3
 	movl	-28(%rbp), %eax
 	movslq	%eax, %rdx
 	movzwl	-2(%rbp), %eax
@@ -272,12 +295,12 @@ my_reverse:
 	addq	%rax, %rdx
 	movzbl	-5(%rbp), %eax
 	movb	%al, (%rdx)
-	.loc 1 81 0 discriminator 3
+	.loc 1 93 0 discriminator 3
 	movzwl	-2(%rbp), %eax
 	addl	$1, %eax
 	movw	%ax, -2(%rbp)
-.L19:
-	.loc 1 81 0 is_stmt 0 discriminator 1
+.L23:
+	.loc 1 93 0 is_stmt 0 discriminator 1
 	movzwl	-2(%rbp), %edx
 	movl	-28(%rbp), %eax
 	movl	%eax, %ecx
@@ -285,15 +308,15 @@ my_reverse:
 	addl	%ecx, %eax
 	sarl	%eax
 	cmpl	%eax, %edx
-	jl	.L20
-	.loc 1 87 0 is_stmt 1
+	jl	.L24
+	.loc 1 99 0 is_stmt 1
 	movl	$.LC4, %edi
 	movl	$0, %eax
 	call	printf
-	.loc 1 88 0
-	jmp	.L21
-.L22:
-	.loc 1 90 0
+	.loc 1 100 0
+	jmp	.L25
+.L26:
+	.loc 1 102 0
 	movzwl	-4(%rbp), %edx
 	movq	-24(%rbp), %rax
 	addq	%rdx, %rax
@@ -301,24 +324,24 @@ my_reverse:
 	movsbl	%al, %eax
 	movl	%eax, %edi
 	call	putchar
-	.loc 1 91 0
+	.loc 1 103 0
 	movzwl	-4(%rbp), %eax
 	addl	$1, %eax
 	movw	%ax, -4(%rbp)
-.L21:
-	.loc 1 88 0
+.L25:
+	.loc 1 100 0
 	movzwl	-4(%rbp), %eax
 	cmpl	-28(%rbp), %eax
-	jl	.L22
-	.loc 1 93 0
+	jl	.L26
+	.loc 1 105 0
 	movl	$0, %eax
-	jmp	.L23
-.L18:
+	jmp	.L27
+.L22:
 .LBE2:
-	.loc 1 97 0
+	.loc 1 109 0
 	movl	$1, %eax
-.L23:
-	.loc 1 101 0
+.L27:
+	.loc 1 113 0
 	leave
 	.cfi_def_cfa 7, 8
 	ret
@@ -329,7 +352,7 @@ my_reverse:
 	.file 2 "/usr/include/stdint.h"
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.long	0x1ef
+	.long	0x1fe
 	.value	0x4
 	.long	.Ldebug_abbrev0
 	.byte	0x8
@@ -413,12 +436,12 @@ my_reverse:
 	.quad	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x110
+	.long	0x11f
 	.uleb128 0x7
 	.string	"src"
 	.byte	0x1
 	.byte	0x5
-	.long	0x110
+	.long	0x11f
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -104
@@ -426,7 +449,7 @@ my_reverse:
 	.string	"dst"
 	.byte	0x1
 	.byte	0x5
-	.long	0x110
+	.long	0x11f
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -112
@@ -445,12 +468,20 @@ my_reverse:
 	.long	0x9a
 	.uleb128 0x3
 	.byte	0x91
+	.sleb128 -88
+	.uleb128 0x9
+	.string	"len"
+	.byte	0x1
+	.byte	0x7
+	.long	0x9a
+	.uleb128 0x3
+	.byte	0x91
 	.sleb128 -84
 	.uleb128 0xa
 	.long	.LASF14
 	.byte	0x1
 	.byte	0x8
-	.long	0x116
+	.long	0x125
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -80
@@ -460,7 +491,7 @@ my_reverse:
 	.long	0x84
 	.uleb128 0xb
 	.long	0x84
-	.long	0x126
+	.long	0x135
 	.uleb128 0xc
 	.long	0x65
 	.byte	0x31
@@ -468,25 +499,25 @@ my_reverse:
 	.uleb128 0x6
 	.long	.LASF16
 	.byte	0x1
-	.byte	0x25
+	.byte	0x2f
 	.long	0x79
 	.quad	.LFB1
 	.quad	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x17e
+	.long	0x18d
 	.uleb128 0x7
 	.string	"src"
 	.byte	0x1
-	.byte	0x25
-	.long	0x110
+	.byte	0x2f
+	.long	0x11f
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
 	.uleb128 0x8
 	.long	.LASF13
 	.byte	0x1
-	.byte	0x25
+	.byte	0x2f
 	.long	0x9a
 	.uleb128 0x2
 	.byte	0x91
@@ -494,7 +525,7 @@ my_reverse:
 	.uleb128 0x9
 	.string	"i"
 	.byte	0x1
-	.byte	0x27
+	.byte	0x31
 	.long	0x8f
 	.uleb128 0x2
 	.byte	0x91
@@ -502,7 +533,7 @@ my_reverse:
 	.uleb128 0x9
 	.string	"len"
 	.byte	0x1
-	.byte	0x27
+	.byte	0x31
 	.long	0x8f
 	.uleb128 0x2
 	.byte	0x91
@@ -511,7 +542,7 @@ my_reverse:
 	.uleb128 0xd
 	.long	.LASF21
 	.byte	0x1
-	.byte	0x49
+	.byte	0x55
 	.long	0x79
 	.quad	.LFB2
 	.quad	.LFE2-.LFB2
@@ -520,7 +551,7 @@ my_reverse:
 	.uleb128 0x7
 	.string	"src"
 	.byte	0x1
-	.byte	0x49
+	.byte	0x55
 	.long	0x6c
 	.uleb128 0x2
 	.byte	0x91
@@ -528,7 +559,7 @@ my_reverse:
 	.uleb128 0x8
 	.long	.LASF13
 	.byte	0x1
-	.byte	0x49
+	.byte	0x55
 	.long	0x57
 	.uleb128 0x2
 	.byte	0x91
@@ -536,7 +567,7 @@ my_reverse:
 	.uleb128 0x9
 	.string	"i"
 	.byte	0x1
-	.byte	0x4b
+	.byte	0x57
 	.long	0x8f
 	.uleb128 0x2
 	.byte	0x91
@@ -544,7 +575,7 @@ my_reverse:
 	.uleb128 0xa
 	.long	.LASF17
 	.byte	0x1
-	.byte	0x4b
+	.byte	0x57
 	.long	0x8f
 	.uleb128 0x2
 	.byte	0x91
@@ -555,7 +586,7 @@ my_reverse:
 	.uleb128 0xa
 	.long	.LASF14
 	.byte	0x1
-	.byte	0x50
+	.byte	0x5c
 	.long	0x79
 	.uleb128 0x2
 	.byte	0x91

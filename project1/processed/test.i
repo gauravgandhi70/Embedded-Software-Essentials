@@ -1,10 +1,10 @@
-# 1 "source/memory.c"
+# 1 "source/test.c"
 # 1 "/home/gauravgandhi70/codes/Gaurav_repo/project1//"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 1 "<command-line>" 2
-# 1 "source/memory.c"
+# 1 "source/test.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 27 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -684,7 +684,7 @@ extern void perror (const char *__s);
 # 854 "/usr/include/stdio.h" 2 3 4
 # 942 "/usr/include/stdio.h" 3 4
 
-# 2 "source/memory.c" 2
+# 2 "source/test.c" 2
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h" 1 3 4
 # 9 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
@@ -752,7 +752,7 @@ typedef unsigned long int uintptr_t;
 typedef long int intmax_t;
 typedef unsigned long int uintmax_t;
 # 10 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h" 2 3 4
-# 3 "source/memory.c" 2
+# 3 "source/test.c" 2
 # 1 "/usr/include/memory.h" 1 3 4
 # 29 "/usr/include/memory.h" 3 4
 # 1 "/usr/include/string.h" 1 3 4
@@ -881,104 +881,22 @@ extern void __bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf
 # 658 "/usr/include/string.h" 3 4
 
 # 30 "/usr/include/memory.h" 2 3 4
-# 4 "source/memory.c" 2
+# 4 "source/test.c" 2
 
-# 4 "source/memory.c"
-copying_LOOP(start,endpoint,original_data,copy_dest);
-int8_t my_memmove(uint8_t *src, uint8_t *dst, uint32_t length)
+
+# 5 "source/test.c"
+void main()
 {
-    uint32_t i=0;
-    uint8_t temp[50];
+    uint32_t length;
+    uint8_t source[50],destination[50];
 
-    if(src)
-        {
+    printf("enter the array \t");
+    scanf ("%[^\n]%*c",source);
 
-            copying_LOOP(i,length,src,temp);
+    printf("Enter the number of bytes that you want to reverse \t");
+    scanf("%d",&length);
 
-            i=0;
-
-            copying_LOOP(i,length,temp,dst);
-
-            printf(" \n Source is at : %p new string at destination %p \t",src,dst);
-            i=0;
-
-            while(i<length)
-    {
-      printf("%c",*(dst+i));
-                           i++;
-    }
-            return 0;
-        }
-    else
-       {
-            printf("Pointer ERROR");
-            return 1;
-       }
-
-}
-
-int8_t my_memzero(uint8_t *src, uint32_t length)
-{
-    uint16_t i=0,len=0;
- while(*(src+i)!='\0')
- {
-  len++;
-  i++;
- }
- i=0;
-    if(src)
-      {
-        while(i<length)
-         {
-           *(src+i)=0;
-           i++;
-         }
-        i=0;
-        printf(" \n New String is \t");
-     while(i<len)
-       {
-     printf("%c",*(src+i));
-     i++;
-      }
-
-        printf("\n");
-
-        return 0;
-       }
-
-    else
-    {
-         printf("Pointer Error");
-         return 1;
-       }
-}
-
-int8_t my_reverse(char *src, int length)
-{
-    uint16_t i=0,counter;
-
-    if(src)
-     {
-
-      int8_t temp;
-      for (counter=0;counter<(length/2);counter++)
-       {
-         temp=*(src+counter);
-         *(src+counter)=*(src+length-counter-1);
-         *(src+length-counter-1)=temp;
-       }
-       printf("\n Reveresed string is \t");
-       while(i<length)
-         {
-           printf("%c",*(src+i));
-           i++;
-         }
-   return 0;
-       }
-    else
-       {
-         return 1;
-       }
-
-
+    my_memmove(source, destination, length);
+    my_memzero(source, length);
+    my_reverse(source, length);
 }

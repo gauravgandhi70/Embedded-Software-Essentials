@@ -17,15 +17,15 @@
 main:
 .LFB0:
 	.file 1 "source/test.c"
-	.loc 1 5 0
+	.loc 1 6 0
 	.cfi_startproc
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	subq	$80, %rsp
-	.loc 1 5 0
+	subq	$144, %rsp
+	.loc 1 6 0
 	movq	%fs:40, %rax
 	movq	%rax, -8(%rbp)
 	xorl	%eax, %eax
@@ -34,7 +34,7 @@ main:
 	movl	$0, %eax
 	call	printf
 	.loc 1 11 0
-	leaq	-64(%rbp), %rax
+	leaq	-128(%rbp), %rax
 	movq	%rax, %rsi
 	movl	$.LC1, %edi
 	movl	$0, %eax
@@ -44,26 +44,40 @@ main:
 	movl	$0, %eax
 	call	printf
 	.loc 1 14 0
-	leaq	-68(%rbp), %rax
+	leaq	-132(%rbp), %rax
 	movq	%rax, %rsi
 	movl	$.LC3, %edi
 	movl	$0, %eax
 	call	__isoc99_scanf
-	.loc 1 15 0
-	movl	-68(%rbp), %edx
-	leaq	-64(%rbp), %rax
+	.loc 1 16 0
+	movl	-132(%rbp), %edx
+	leaq	-64(%rbp), %rcx
+	leaq	-128(%rbp), %rax
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	my_memmove
+	.loc 1 17 0
+	movl	-132(%rbp), %edx
+	leaq	-128(%rbp), %rax
+	movl	%edx, %esi
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	my_memzero
+	.loc 1 18 0
+	movl	-132(%rbp), %edx
+	leaq	-128(%rbp), %rax
 	movl	%edx, %esi
 	movq	%rax, %rdi
 	movl	$0, %eax
 	call	my_reverse
-	.loc 1 17 0
-	movl	$1, %eax
-	.loc 1 18 0
-	movq	-8(%rbp), %rcx
-	xorq	%fs:40, %rcx
-	je	.L3
+	.loc 1 19 0
+	nop
+	movq	-8(%rbp), %rax
+	xorq	%fs:40, %rax
+	je	.L2
 	call	__stack_chk_fail
-.L3:
+.L2:
 	leave
 	.cfi_def_cfa 7, 8
 	ret
@@ -74,15 +88,15 @@ main:
 	.file 2 "/usr/include/stdint.h"
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.long	0xee
+	.long	0x10c
 	.value	0x4
 	.long	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.long	.LASF14
-	.byte	0xc
-	.long	.LASF15
 	.long	.LASF16
+	.byte	0xc
+	.long	.LASF17
+	.long	.LASF18
 	.quad	.Ltext0
 	.quad	.Letext0-.Ltext0
 	.long	.Ldebug_line0
@@ -137,50 +151,65 @@ main:
 	.byte	0x33
 	.long	0x42
 	.uleb128 0x5
-	.long	.LASF17
+	.long	.LASF19
 	.byte	0x1
-	.byte	0x4
-	.long	0x57
+	.byte	0x5
 	.quad	.LFB0
 	.quad	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0xe5
+	.long	0x103
 	.uleb128 0x6
 	.long	.LASF11
 	.byte	0x1
-	.byte	0x6
+	.byte	0x7
 	.long	0x7e
 	.uleb128 0x3
 	.byte	0x91
-	.sleb128 -84
+	.sleb128 -148
 	.uleb128 0x6
 	.long	.LASF12
 	.byte	0x1
 	.byte	0x8
-	.long	0xe5
+	.long	0x103
 	.uleb128 0x3
 	.byte	0x91
-	.sleb128 -80
+	.sleb128 -144
 	.uleb128 0x6
 	.long	.LASF13
 	.byte	0x1
 	.byte	0x8
-	.long	0xe5
+	.long	0x103
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -80
 	.uleb128 0x7
-	.long	.LASF18
+	.long	.LASF14
 	.byte	0x1
-	.byte	0xf
+	.byte	0x10
+	.long	0x57
+	.long	0xe4
+	.uleb128 0x8
+	.byte	0
+	.uleb128 0x7
+	.long	.LASF15
+	.byte	0x1
+	.byte	0x11
+	.long	0x57
+	.long	0xf5
+	.uleb128 0x8
+	.byte	0
+	.uleb128 0x9
+	.long	.LASF20
+	.byte	0x1
+	.byte	0x12
 	.long	0x57
 	.uleb128 0x8
 	.byte	0
 	.byte	0
-	.uleb128 0x9
-	.long	0x73
 	.uleb128 0xa
+	.long	0x73
+	.uleb128 0xb
 	.long	0x65
 	.byte	0x31
 	.byte	0
@@ -252,8 +281,6 @@ main:
 	.uleb128 0xb
 	.uleb128 0x3b
 	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -296,6 +323,8 @@ main:
 	.uleb128 0x13
 	.uleb128 0x3c
 	.uleb128 0x19
+	.uleb128 0x1
+	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x8
@@ -304,13 +333,30 @@ main:
 	.byte	0
 	.byte	0
 	.uleb128 0x9
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x3c
+	.uleb128 0x19
+	.byte	0
+	.byte	0
+	.uleb128 0xa
 	.uleb128 0x1
 	.byte	0x1
 	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0xa
+	.uleb128 0xb
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
@@ -341,11 +387,11 @@ main:
 	.string	"destination"
 .LASF11:
 	.string	"length"
-.LASF18:
+.LASF20:
 	.string	"my_reverse"
 .LASF0:
 	.string	"long unsigned int"
-.LASF15:
+.LASF17:
 	.string	"source/test.c"
 .LASF8:
 	.string	"char"
@@ -353,23 +399,27 @@ main:
 	.string	"uint8_t"
 .LASF1:
 	.string	"unsigned char"
-.LASF17:
+.LASF19:
 	.string	"main"
 .LASF10:
 	.string	"uint32_t"
 .LASF6:
 	.string	"long int"
+.LASF15:
+	.string	"my_memzero"
 .LASF12:
 	.string	"source"
+.LASF14:
+	.string	"my_memmove"
 .LASF2:
 	.string	"short unsigned int"
 .LASF4:
 	.string	"signed char"
 .LASF5:
 	.string	"short int"
-.LASF14:
-	.string	"GNU C99 5.4.0 20160609 -mtune=generic -march=x86-64 -g -O0 -std=c99 -fstack-protector-strong"
 .LASF16:
+	.string	"GNU C99 5.4.0 20160609 -mtune=generic -march=x86-64 -g -O0 -std=c99 -fstack-protector-strong"
+.LASF18:
 	.string	"/home/gauravgandhi70/codes/Gaurav_repo/project1"
 .LASF7:
 	.string	"sizetype"
