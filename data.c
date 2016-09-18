@@ -24,7 +24,7 @@ void dump_memory(uint8_t *start, uint32_t length)         //Function definition 
    int32_t i;
    for(i=0;i<length;i++)                                  
    {
-      printf("%x\t",*(start+i));                          //Prints the hex value of number of bytes given in the length
+      printf("\n Hex otuput: %x\t",*(start+i));                          //Prints the hex value of number of bytes given in the length
 	
 	
    }
