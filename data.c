@@ -62,5 +62,5 @@ uint32_t little_to_big(uint32_t data)                    //Function definition f
    }
  
    else
-       printf("The data is already stored as big endina\n");
+       printf("The data is already stored as big endian\n");
 }
