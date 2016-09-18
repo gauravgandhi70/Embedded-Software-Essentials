@@ -24,6 +24,9 @@ uint32_t main(void)
     scanf("%x",&num);                       //Obtains 32 bit input from the user
     x=num;
     little_to_big(x);                       //Function call to convert from little endian to big endian
+   
+    char str[100];                          //Declaration of ascii string
+    itoa(-1,str,2);                         //Function call to convert integer to ascii string
 
     return 0;        
 }
