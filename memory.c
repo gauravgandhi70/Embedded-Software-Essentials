@@ -72,16 +72,6 @@ int8_t my_memzero(uint8_t *src, uint32_t length)
    } 
 }
 
-
-
-
-
-
-
-
-
-
-
 int8_t my_reverse(char *src, int length)
 {
     uint16_t i=0,counter;
