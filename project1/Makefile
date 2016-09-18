@@ -19,8 +19,11 @@ CFLAGS += -O0
 # Settinf standard of compiler to c99
 STD= -std=c99
 
+
 # Compiler flag to generate dependancy flag
-#DPFLAG
+
+#Dependancy Flag
+#DEPFLAG= -M ./*.dep
 
 
 #including souce.mk file 
@@ -46,10 +49,10 @@ asm-file: $(s_files)
 compile-all: $(obj_files)
 %.o: %.s memory.h
 	@mkdir -p -- "$(objdir)"
-	$(cc) $(STD) $(CFLAGS) -c -o $(objdir)/$@ $(asmdir)/$<
+	$(cc) $(STD) $(CFLAGS) $(DEPFLAG) -c -o $(objdir)/$@ $(asmdir)/$<
 
-#build: compile-all
-#	$(cc) $(obj_files) -o build	
+build: $(obj_files)
+	$(cc) ./object_files/*.o -o build	
 
 
 clean:
