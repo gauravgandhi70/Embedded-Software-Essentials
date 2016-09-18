@@ -12,7 +12,7 @@ endif
 include sources.mk
 
 #   PHONY Protection
-.PHONY= clean all preprocessor 
+.PHONY= clean all preprocessor asm-file compile-all
 
 #     Pre-Processing  
 
@@ -26,16 +26,21 @@ preprocess: $(i_files)
  
 asm-file: $(s_files)
 
-%.s: %.c
+%.s: %.i
 	@mkdir -p -- "$(asmdir)"
-	$(cc) -S -o $(asmdir)/$@ $<
+	$(cc) -S -o $(asmdir)/$@ $(predir)/$<
 
-%.o: %.c
+
+compile-all: $(obj_files)
+%.o: %.s memory.h
 	@mkdir -p -- "$(objdir)"
-	$(cc) -c -o $(objdir)/$@ $<
+	$(cc) -c -o $(objdir)/$@ $(asmdir)/$<
+
+	
 
 
 clean:
-	rm -r $(predir)
-	rm -r $(asmdir)
+	rm -rf $(predir)
+	rm -rf $(asmdir)
+	rm -rf $(objdir)
 
