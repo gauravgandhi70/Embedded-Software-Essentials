@@ -5,6 +5,7 @@ ifeq ($(platform),bbb)
 cc := arm-linux-gnueabihf-gcc
 else ifeq ($(platform),frdm)
 cc := arm-none-eabi-gcc
+MCFLAG= -mcpu= cortex-m0
 else
 cc := gcc
 endif
@@ -50,13 +51,13 @@ asm-file: $(s_files)
 compile-all: $(o_files)
 %.o: %.s $(hd)
 	@mkdir -p -- "$(objdir)"
-	$(cc) $(STD) $(CFLAGS) $(DEPFLAG)  -c -o $(objdir)/$@ $(asmdir)/$<
+	$(cc) $(STD) $(CFLAGS) -c -o $(objdir)/$@ $(asmdir)/$<
 
 	
 
 
 build: $(o_files) build-lib map_dep
-	$(cc) $(objdir)/*.o -o project	
+	$(cc) $(STD) $(CFLAGS) $(objdir)/*.o -o project	
 	size -d project
 	objdump -a $(obj_path)
 
