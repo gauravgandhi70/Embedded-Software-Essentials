@@ -9,7 +9,7 @@ else
 cc := gcc
 endif
 
-GNU_UTIL= size
+
 # Compiler options
 
 CFLAGS = -Wall
@@ -30,7 +30,7 @@ BBB_PATH= project root@192.168.7.2:/root
 include sources.mk
 
 #   PHONY Protection
-.PHONY= clean all preprocessor asm-file compile-all build upload build-lib gnu_ut
+.PHONY= clean all preprocessor asm-file compile-all build upload build-lib map_dep
 
 all: preprocess asm-file compile-all build build-lib
 #     Pre-Processing  
@@ -55,17 +55,17 @@ compile-all: $(o_files)
 	
 
 
-build: $(o_files) build-lib depend makefile
+build: $(o_files) build-lib map_dep
 	$(cc) $(objdir)/*.o -o project	
 	size -d project
 	objdump -a $(obj_path)
 
-depend:	
-	$(cc) $(CFLAGS) -M ./source/*.c > project.dep
+	
+	
 
-makefile:
+map_dep:	
 	$(cc) -Wl,-Map=abc.map $(objdir)/*.o --output abc.map
-
+	$(cc) $(CFLAGS) -M ./source/*.c > project.dep
 
 	
 
