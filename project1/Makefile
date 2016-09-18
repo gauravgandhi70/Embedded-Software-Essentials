@@ -19,13 +19,23 @@ include sources.mk
 preprocess: $(i_files)
 
 
-%.i:$(src)
+%.i:%.c
 	@mkdir -p -- "$(predir)"
-	$(cc) -E -o ./$(predir)/$@ $<
+	$(cc) -E -o $(predir)/$@ $<
 
+ 
+asm-file: $(s_files)
+
+%.s: %.c
+	@mkdir -p -- "$(asmdir)"
+	$(cc) -S -o $(asmdir)/$@ $<
+
+%.o: %.c
+	@mkdir -p -- "$(objdir)"
+	$(cc) -c -o $(objdir)/$@ $<
 
 
 clean:
 	rm -r $(predir)
-
+	rm -r $(asmdir)
 
