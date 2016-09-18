@@ -3,12 +3,10 @@
 # Compiler selection depending on platform
 ifeq ($(platform),bbb)
 cc := arm-linux-gnueabihf-gcc
-archive_req := elf32-little
 else ifeq ($(platform),frdm)
 cc := arm-none-eabi-gcc
 else
 cc := gcc
-archive_req := elf64-x86-64
 endif
 
 GNU_UTIL= size
@@ -17,17 +15,15 @@ GNU_UTIL= size
 CFLAGS = -Wall
 CFLAGS += -g
 CFLAGS += -O0
+CFLAGS += -I $(include)
 
 # Settinf standard of compiler to c99
 STD= -std=c99
 
-#Beaglebone scp path
+#Beaglebone scp path : IP address: 192.168.7.2 , Root directory
 BBB_PATH= project root@192.168.7.2:/root
 
 # Compiler flag to generate dependancy flag
-
-#Dependancy Flag
-#DEPFLAG= -M ./*.dep
 
 
 #including souce.mk file 
@@ -59,17 +55,28 @@ compile-all: $(o_files)
 	
 
 
-build: $(o_files)
-	$(cc) $(obj_path) -o project	
+build: $(o_files) build-lib depend makefile
+	$(cc) $(objdir)/*.o -o project	
 	size -d project
 	objdump -a $(obj_path)
+
+depend:	
+	$(cc) $(CFLAGS) -M ./source/*.c > project.dep
+
+makefile:
+	$(cc) -Wl,-Map=abc.map $(objdir)/*.o --output abc.map
+
+
+	
+
+	
 		
 build-lib:  build libproject1.a
 
-libproject1.a: $(src) $(o_files)
-	ar cr libproject1.a $(src_path) $(obj_path) 
+libproject1.a: data.c memory.c
+	ar cr $@ source/*.c 
 	
-upload: build
+upload: clean build
 	@scp $(BBB_PATH)
 	
 
@@ -78,5 +85,7 @@ clean:
 	rm -rf $(asmdir)
 	rm -rf $(objdir)
 	rm  -f project
-	rm -rf libproject1.a
+	rm -f libproject1.a
+	rm -f *.dep
+	rm -f *.map
 
