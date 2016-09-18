@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<stdint.h>
+#include"project_1.h"
+#include"memory.h"
 
 int main()
 {
