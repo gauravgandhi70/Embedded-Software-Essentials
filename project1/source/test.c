@@ -3,7 +3,7 @@
 #include"memory.h"
 #include"data.h"
 
-void main()
+uint32_t main()
 {
     uint32_t length;                                                             
     uint8_t source[50],destination[50];
