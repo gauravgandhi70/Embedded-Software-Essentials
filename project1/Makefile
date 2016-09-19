@@ -65,7 +65,7 @@ compile-all: $(o_files)
 build: $(o_files) build-lib map_dep
 	$(cc) $(STD) $(MCFLAG) $(CFLAGS) $(objdir)/*.o -o project	
 	size -d project
-	objdump -a $(obj_path)
+	objdump -a ./$(objdir)/*.o
 
 	
 # Generates dependancy and map files	
