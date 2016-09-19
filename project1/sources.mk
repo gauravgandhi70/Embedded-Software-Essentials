@@ -9,11 +9,11 @@ include= headers
 
 
 # Files
-src=test.c memory.c memory.h
-i_files= test.i memory.i
-s_files= test.s memory.s
-o_files= test.o memory.o
-hd= memory.h data.h
+src=memory.c project_1.c main.c 
+i_files= memory.i project_1.i main.i 
+s_files= memory.s project_1.s main.s
+o_files= memory.o project_1.o main.o 
+
 
 
 #         Directories     
