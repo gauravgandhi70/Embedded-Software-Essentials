@@ -1,8 +1,14 @@
 #include<stdint.h>
+#include<stdio.h>
 #include"data.h"
 
-
+int32_t my_atoi(int8_t *str) ;                             //Function definition for ascii string to integer function
+void dump_memory(uint8_t *start, uint32_t length) ;
 void reverse(int8_t *str, int32_t length);                //Function declaration for reverse
+uint32_t big_to_little(uint32_t data);            
+uint32_t little_to_big(uint32_t data);
+int8_t * itoa(int32_t num, int8_t *str, int32_t base);
+
 
 int32_t my_atoi(int8_t *str)                              //Function definition for ascii string to integer function
 {
@@ -20,6 +26,7 @@ int32_t my_atoi(int8_t *str)                              //Function definition 
    {
        printf("%d",*(str+i));                             //Displays the integer value of the input string
    }
+   return 0;
 }
 
 void dump_memory(uint8_t *start, uint32_t length)         //Function definition for printing hex output of the data bytes in the memory given pointer to a memory location & length of bytes to print
@@ -45,10 +52,10 @@ uint32_t big_to_little(uint32_t data)                    //Function definition f
        data = ( data >> 24 ) | (( data << 8) & 0x00ff0000 )| ((data >> 8) & 0x0000ff00) | ( data << 24)  ; //Bitwise shifting for the conversion
        printf("Little endian data is  = %x\n", data);    //Displays the converted little endian data
    }
-   
+
    else
        printf("The data is already stored as little endian\n");
-
+   return 0;
 }
 
 uint32_t little_to_big(uint32_t data)                    //Function definition for converting data from little endian to big endian
@@ -66,9 +73,10 @@ uint32_t little_to_big(uint32_t data)                    //Function definition f
  
    else
        printf("The data is already stored as big endian\n");
+   return 0;
 }
 
-int8_t* itoa(int32_t num, int8_t* str, int32_t base)      //Function definition for converting data from integer to ascii string
+int8_t * itoa(int32_t num, int8_t *str, int32_t base)      //Function definition for converting data from integer to ascii string
 {
     int32_t i = 0;
     int32_t neg=0;
