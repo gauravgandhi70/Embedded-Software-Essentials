@@ -11,7 +11,7 @@ include= headers
 src=memory.c project_1.c main.c 
 i_files= memory.i project_1.i main.i 
 s_files= memory.s project_1.s main.s
-o_files= memory.o project_1.o main.o 
+o_files= memory.o project_1.o main.o
 
 src=main.c memory.c data.c project_1.c
 i_files= main.i memory.i data.i project_1.i

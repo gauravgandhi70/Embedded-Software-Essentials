@@ -34,7 +34,7 @@ include sources.mk
 .PHONY= clean all preprocessor asm-file compile-all build upload build-lib map_dep
 
 # This will build all the targets given in the prerequisites
-all: preprocess asm-file compile-all build build-lib
+all: preprocess asm-file compile-all build build-lib map_dep
 #     Pre-Processing  
 
 
@@ -51,11 +51,11 @@ asm-file: $(s_files)
 %.s: %.i
 	@mkdir -p -- "$(asmdir)"
 	$(cc) $(STD) $(CFLAGS) -S -o $(asmdir)/$@ $(predir)/$<
-
+	
 # Generates output files from .s files; if .s files are not present they are generated
 
 compile-all: $(o_files)
-%.o: %.s $(hd)
+%.o: %.s
 	@mkdir -p -- "$(objdir)"
 	$(cc) $(STD) $(CFLAGS) -c -o $(objdir)/$@ $(asmdir)/$<
 
@@ -66,12 +66,11 @@ build: $(o_files) build-lib map_dep
 	$(cc) $(STD) $(MCFLAG) $(CFLAGS) $(objdir)/*.o -o project	
 	size -d project
 	objdump -a ./$(objdir)/*.o
-
 	
 # Generates dependancy and map files	
 
-map_dep:	
-	$(cc) -Wl,-Map=abc.map $(objdir)/*.o --output abc.map
+map_dep:
+	$(cc) -Wl,-Map=project.map $(objdir)/*.o --output project.map
 	$(cc) $(CFLAGS) -M ./source/*.c > project.dep
 
 	
@@ -98,4 +97,5 @@ clean:
 	rm -f libproject1.a
 	rm -f *.dep
 	rm -f *.map
+	rm -f *.o
 
