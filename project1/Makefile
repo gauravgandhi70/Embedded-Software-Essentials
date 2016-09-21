@@ -5,7 +5,7 @@ ifeq ($(platform),bbb)
 cc := arm-linux-gnueabihf-gcc
 else ifeq ($(platform),frdm)
 cc := arm-none-eabi-gcc
-MCFLAG= -mcpu= cortex-m0
+MCFLAG= -mcpu= cortex-m0plus -mthumb --specs=nosys.specs
 else
 cc := gcc
 endif
@@ -31,7 +31,7 @@ BBB_PATH= project root@192.168.7.2:/root
 include sources.mk
 
 #   PHONY Protection
-.PHONY= clean all preprocessor asm-file compile-all build upload build-lib map_dep
+.PHONY= clean all preprocessor asm-file compile-all build upload build-lib map_dep 
 
 # This will build all the targets given in the prerequisites
 all: preprocess asm-file compile-all build build-lib map_dep
@@ -62,7 +62,7 @@ compile-all: $(o_files)
 	
 # Generated Executable file by linking object files, Also uses GNU utilities size and objdump
 
-build: $(o_files) build-lib map_dep
+build: $(o_files)
 	$(cc) $(STD) $(MCFLAG) $(CFLAGS) $(objdir)/*.o -o project	
 	size -d project
 	objdump -a ./$(objdir)/*.o
@@ -77,7 +77,7 @@ map_dep:
 
 # Builds static library into the archive libproject1.a	
 		
-build-lib:  build libproject1.a
+build-lib: libproject1.a
 libproject1.a: data.c memory.c
 	ar cr $@ source/*.c 
 
