@@ -5,7 +5,7 @@ ifeq ($(platform),bbb)
 cc := arm-linux-gnueabihf-gcc
 else ifeq ($(platform),frdm)
 cc := arm-none-eabi-gcc
-MCFLAG= -mcpu= cortex-m0plus -mthumb --specs=nosys.specs
+MCFLAG= -mcpu=cortex-m0plus -march=armv6-m --specs=nosys.specs -mthumb
 else
 cc := gcc
 endif
@@ -70,8 +70,8 @@ build: $(o_files)
 # Generates dependancy and map files	
 
 map_dep:
-	$(cc) -Wl,-Map=project.map $(objdir)/*.o --output project.map
-	$(cc) $(CFLAGS) -M ./source/*.c > project.dep
+	$(cc) $(MCFLAG) -Wl,-Map=project.map $(objdir)/*.o --output project.map
+	$(cc) $(CFLAGS) $(MCFLAG) -M ./source/*.c > project.dep
 
 	
 
