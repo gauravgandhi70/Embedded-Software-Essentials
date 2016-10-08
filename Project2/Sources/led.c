@@ -60,22 +60,22 @@ void LED_Control(uint8_t Character)
              value-=100;
         }
 
-      else if(Character=='a' && LEDColour<8)
+      else if(Character=='a')
             {
           	 LEDColour++;
-          	 /*if(LEDColour>=8)
+          	 if(LEDColour>=8)
           	 {
           		 LEDColour=0;
-          	 }*/
+          	 }
 
             }
       else if(Character=='d' && LEDColour>0)
              {
               LEDColour--;
-               /*if(LEDColour<<8)
+               if(LEDColour<=8)
                 {
-                 LEDColour=8;
-                }*/
+                 LEDColour=7;
+                }
               }
       LEDFunction(LEDColour, value);
 
