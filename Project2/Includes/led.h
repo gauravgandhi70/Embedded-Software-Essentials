@@ -18,9 +18,9 @@ typedef enum
 	CYAN,
 	WHITE
 }LEDColour_t;
-LED_Init();
+void LED_Init();
 void LED_Control(uint8_t Character);
-LEDFunction(LEDColour_t LEDColour, uint16_t Brightness);
+void LEDFunction(LEDColour_t LEDColour, uint16_t Brightness);
 
 
 #endif /* INCLUDES_LED_H_ */

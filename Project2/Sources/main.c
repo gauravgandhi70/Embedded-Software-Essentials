@@ -62,16 +62,18 @@ int main(void)
 				rx_str[i] = con;
 				i++;
 			}
-		    else if(mode==0xd)
-			{
-			    mode=0;
-			    i=0;
-				LOG(rx_str);
-			}
+
 		    else if((con=='a'|| con=='s' || con=='w' || con=='d'))
 		    {
 		    				 LED_Control(con);
 		    }
+		    if(mode==0xd)
+		    {
+		        mode=0;
+   				LOG(rx_str);
+   				my_memzero(rx_str, i);
+ 				 i=0;
+   			}
 	    }
 
 	}

@@ -9,6 +9,7 @@
 #include"circbuf.h"
 #include"data.h"
 
+
 void uart_init(uint32_t baud)
 {
 	uint16_t sbr;
@@ -41,13 +42,11 @@ void uart_init(uint32_t baud)
 	tx_buf.head=tx_buf.data;
 			 	tx_buf.tail=tx_buf.data;
 			 	tx_buf.buff=tx_buf.data;
-			 	tx_buf.length=MAX_LEN;
 			 	tx_buf.new_len= 0;
     rx_buf.buff = initialize(&rx_buf);
     rx_buf.head=rx_buf.data;
 			rx_buf.tail=rx_buf.data;
 			rx_buf.buff=rx_buf.data;
-			rx_buf.length=MAX_LEN;
 			rx_buf.new_len= 0;
 	//Set NVIC interrupts and set priority
 	NVIC_EnableIRQ(UART0_IRQn);
@@ -94,16 +93,5 @@ void UART0_IRQHandler()
 
 
 
-}
-
-void LOG(uint8_t *c)
-{
-	uint32_t i=0;
-	while(*(c+i) !='\0')
-	{
-	add_data(&tx_buf,*(c+i));
-	i++;
-	}
-	UART0_C2 |= UART0_C2_TIE_MASK;
 }
 
