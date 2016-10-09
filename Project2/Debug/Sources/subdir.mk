@@ -10,7 +10,8 @@ C_SRCS += \
 ../Sources/log.c \
 ../Sources/main.c \
 ../Sources/memory.c \
-../Sources/uart.c 
+../Sources/uart.c \
+../Sources/unittest.c 
 
 OBJS += \
 ./Sources/circbuf.o \
@@ -19,7 +20,8 @@ OBJS += \
 ./Sources/log.o \
 ./Sources/main.o \
 ./Sources/memory.o \
-./Sources/uart.o 
+./Sources/uart.o \
+./Sources/unittest.o 
 
 C_DEPS += \
 ./Sources/circbuf.d \
@@ -28,7 +30,8 @@ C_DEPS += \
 ./Sources/log.d \
 ./Sources/main.d \
 ./Sources/memory.d \
-./Sources/uart.d 
+./Sources/uart.d \
+./Sources/unittest.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

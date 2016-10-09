@@ -15,3 +15,5 @@ teststate_t unittest_additemandremoveitem();
 teststate_t unittest_currentitemsinadd();
 teststate_t unittest_removeitemwraparound();
 teststate_t unittest_currentitemsinremove();
+
+#endif

@@ -19,7 +19,7 @@ typedef struct
 
 }cirbuf_t;
 
-typedef enum {buf_full , buf_empty, buf_not_full, buf_not_empty, add_success, remove_success} state;
+typedef enum {buf_full , buf_empty, buf_not_full, buf_not_empty, add_success, remove_success, add_success_with_wrap_around} state;
 state buff_full(cirbuf_t *cb);
 state buff_empty(cirbuf_t *cb);
 state add_data(cirbuf_t *cb, uint8_t item);

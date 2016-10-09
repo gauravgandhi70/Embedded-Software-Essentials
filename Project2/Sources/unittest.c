@@ -121,7 +121,6 @@ void unittest_init()
 	test_buffer.head=test_buffer.data;
 			 	test_buffer.tail=test_buffer.data;
 			 	test_buffer.buff=test_buffer.data;
-			 	test_buffer.length=MAX_Length;
 			 	test_buffer.new_len= 0;
 result1=unittest_bufferfull();
 if(result1==success)
@@ -160,7 +159,7 @@ result4=unittest_currentitemsinadd();
 if(result4==success)
 	{
 	LOG("CB UNIT TEST:4/7-<currentitemsinadd> PASS\n");
-	count_pass+;
+	count_pass++;
 	}
 	else
 	{
@@ -202,10 +201,10 @@ if(result6==success)
 	}
 	if(count_fail>0)
 	{
-		LOG("CIRCBUFF UNIT TEST SUITE:FAIL\n")
+		LOG("CIRCBUFF UNIT TEST SUITE:FAIL\n");
 	}
 	else
-	LOG("CIRCBUFF UNIT TEST SUITE:PASS\n")
+	LOG("CIRCBUFF UNIT TEST SUITE:PASS\n");
 	return 0;
 		
 }

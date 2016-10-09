@@ -41,14 +41,26 @@ int main(void)
 {
 
 	uart_init(57200);
-	uint8_t tx_str[100]="This is an Integer Number: ",rx_str[100]="0";
-	/*//para=200;
-	//uint16_t para = 4096;
-	uint32_t para = 123456;
-	LOG1("This is an Integer Number: ",&para,6);
-	*/
-    LOG(tx_str);
+	uint8_t tx_str[100]="Control Characters a,s,w,d,t \n \r a/d=color change \n\r w/s=+/- Brightness \n\r t=echo mode";
+	uint8_t rx_str[100]="0";
+	LOG0(tx_str);
 
+	//uint8_t para=200;
+	//LOG1("This is an Integer Number (8-bit type): ",&para,3);
+
+	//uint16_t para = 4096;
+	//LOG1("This is an Integer Number (16-bit type): ",&para,4);
+
+	//uint32_t para = 123456;
+	//LOG1("This is an Integer Number (32-bit type): ",&para,6);
+
+	//float para = 1543.321;
+	//LOG1(tx_str,&para,8);
+
+
+
+    //LOG0(tx_str);
+	// unittest_init();
 	LED_Init();
 	uint32_t i=0;
 	while(1)
@@ -77,7 +89,7 @@ int main(void)
 		    if(mode==0xd)
 		    {
 		        mode=0;
-   				LOG(rx_str);
+   				LOG0(rx_str);
    				my_memzero(rx_str,i);
  				 i=0;
    			}

@@ -187,3 +187,29 @@ void ftoa(float n, int8_t *res, int32_t dec_place)
         //printf("neg is ftoi =%d",neg);
     }
 }
+
+
+
+
+int intToStr(int32_t x, int8_t str[], int32_t d, int32_t negative)
+{
+    int32_t i = 0;
+    while (x)
+    {
+        str[i++] = (x%10) + '0';
+        x = x/10;
+    }
+
+    // If number of digits required is more, then
+    // add 0s at the beginning
+    while (i < d)
+        str[i++] = '0';
+      if(negative==1)
+        {
+			str[i++]='-';
+		}
+
+    reverse(str, i);
+    str[i] = '\0';
+    return i;
+}
