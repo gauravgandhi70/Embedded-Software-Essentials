@@ -3,6 +3,7 @@
 #include "uart.h"
 #include"circbuf.h"
 #include"unittest.h"
+#include"log.h"
 
 
 state status;
@@ -125,87 +126,87 @@ void unittest_init()
 result1=unittest_bufferfull();
 if(result1==success)
 {
-	LOG("CB UNIT TEST:1/7-<bufferfull> PASS\n");
+	LOG0("CB UNIT TEST:1/7-<bufferfull> PASS\n\r");
 	count_pass++;
 }
 else
 {
-	LOG("CB UNIT TEST:1/7-<bufferfull> FAIL\n"); 
+	LOG0("CB UNIT TEST:1/7-<bufferfull> FAIL\n\r");
     count_fail++;
 }
 result2=unittest_bufferempty();
 if(result2==success)
 {
-	LOG("CB UNIT TEST:2/7-<bufferempty> PASS\n");
+	LOG0("CB UNIT TEST:2/7-<bufferempty> PASS\n\r");
 	count_pass++;
 	}
 	else
 	{
-	LOG("CB UNIT TEST:2/7-<bufferfull> FAIL\n");
+	LOG0("CB UNIT TEST:2/7-<bufferfull> FAIL\n\r");
 	count_fail++;
 }
 result3=unittest_additemwraparound();
 if(result3==success)
 {	
-    LOG("CB UNIT TEST:3/7-<additemwraparound> PASS\n");
+    LOG0("CB UNIT TEST:3/7-<additemwraparound> PASS\n\r");
 	count_pass++;
 	}
 	else
 	{
-	LOG("CB UNIT TEST:3/7-<bufferfull> FAIL\n");
+	LOG0("CB UNIT TEST:3/7-<bufferfull> FAIL\n\r");
 	count_fail++;
 }
 result4=unittest_currentitemsinadd();
 if(result4==success)
 	{
-	LOG("CB UNIT TEST:4/7-<currentitemsinadd> PASS\n");
+	LOG0("CB UNIT TEST:4/7-<currentitemsinadd> PASS\n\r");
 	count_pass++;
 	}
 	else
 	{
-	LOG("CB UNIT TEST:4/7-<bufferfull> FAIL\n");
+	LOG0("CB UNIT TEST:4/7-<bufferfull> FAIL\n\r");
 	count_fail++;
 }
 result5=unittest_removeitemwraparound();
 if(result5==success)
     {
-	LOG("CB UNIT TEST:5/7-<removeitemwraparound> PASS\n");
+	LOG0("CB UNIT TEST:5/7-<removeitemwraparound> PASS\n\r");
 	count_pass++;
 	}
 	else
 	{
-	LOG("CB UNIT TEST:5/7-<bufferfull> FAIL\n");
+	LOG0("CB UNIT TEST:5/7-<bufferfull> FAIL\n\r");
 	count_fail++;
     }
 result6=unittest_currentitemsinremove();
 if(result6==success)
 	{
-	LOG("CB UNIT TEST:6/7-<currentitemsinremove> PASS\n");
+	LOG0("CB UNIT TEST:6/7-<currentitemsinremove> PASS\n\r");
 	count_pass++;
     }
 	else
     {
-	LOG("CB UNIT TEST:6/7-<bufferfull> FAIL\n");
+	LOG0("CB UNIT TEST:6/7-<bufferfull> FAIL\n\r");
     count_fail++;	
 	}
 	initialize(&test_buffer);
 	if(&test_buffer)
 	{
-	LOG("CB UNIT TEST:7/7-<initialisation> PASS\n");
+	LOG0("CB UNIT TEST:7/7-<initialisation> PASS\n\r");
 	count_pass++;
 	}
 	else
 	{
-	LOG("CB UNIT TEST:7/7-<initialisation> FAIL\n");
+	LOG0("CB UNIT TEST:7/7-<initialisation> FAIL\n\r");
 	count_fail++;
 	}
 	if(count_fail>0)
 	{
-		LOG("CIRCBUFF UNIT TEST SUITE:FAIL\n");
+		LOG0("CIRCBUFF UNIT TEST SUITE:FAIL\n\r");
 	}
 	else
-	LOG("CIRCBUFF UNIT TEST SUITE:PASS\n");
-	return 0;
+	LOG0("CIRCBUFF UNIT TEST SUITE:PASS \n\r");
+
 		
 }
 

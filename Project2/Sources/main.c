@@ -43,7 +43,8 @@ int main(void)
 	uart_init(57200);
 	uint8_t tx_str[100]="Control Characters a,s,w,d,t \n \r a/d=color change \n\r w/s=+/- Brightness \n\r t=echo mode";
 	uint8_t rx_str[100]="0";
-	LOG0(tx_str);
+
+	//LOG0(tx_str);
 
 	//uint8_t para=200;
 	//LOG1("This is an Integer Number (8-bit type): ",&para,3);
@@ -57,11 +58,10 @@ int main(void)
 	//float para = 1543.321;
 	//LOG1(tx_str,&para,8);
 
+	unittest_init();
 
-
-    //LOG0(tx_str);
-	// unittest_init();
 	LED_Init();
+
 	uint32_t i=0;
 	while(1)
 	{
