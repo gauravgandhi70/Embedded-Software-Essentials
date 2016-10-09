@@ -87,27 +87,27 @@ int8_t * itoa(int32_t num, int8_t *str, int32_t base)      //Function definition
     int32_t neg=0;
 
                                                           // Handle 0 explicitely, otherwise empty string is printed for 0
-    printf("the number is:%d\n",num);
+    //printf("the number is:%d\n",num);
     if (num ==0)
     {
         *str='0';
         i++;
 		*(str+i)='\0';
-        printf("The string is:%s",str);
+        //printf("The string is:%s",str);
         return str;
     }
 
     if(num<0 && base==16)
     {
         sprintf(str,"%X",num);                                           // convert decimal to hexadecimal
-        printf("converting %d to hexadecimal notation %s\n",num,str);    //shows the hex output for signed integer
+        //printf("converting %d to hexadecimal notation %s\n",num,str);    //shows the hex output for signed integer
         return str;
     }
 
     if(num<0 && base==8)
     {
         sprintf(str,"%o",num);                                         //convert decimal to octal
-        printf("converting %d to octal notation %s\n",num,str);        //shows the octal output of signed integer
+        //printf("converting %d to octal notation %s\n",num,str);        //shows the octal output of signed integer
         return str;
     }
 
@@ -132,9 +132,10 @@ int8_t * itoa(int32_t num, int8_t *str, int32_t base)      //Function definition
         i++;
     }
 
-    *(str+i)= '\0';                                                    // Append string terminator
+                                                        // Append string terminator
     reverse(str, i);                                                   // Reverse the string
-    printf("The string is:%s",str);                                    //Print the ascii string
+    *(str+i)= '\0';
+    //printf("The string is:%s",str);                                    //Print the ascii string
 
     return str;
 }
@@ -154,3 +155,35 @@ void reverse(int8_t *str, int32_t length)                             //Function
 }
 
 
+void ftoa(float n, int8_t *res, int32_t dec_place)
+{
+  int32_t neg=0;
+    if(n<0)
+    {
+	     n=-n;
+    	neg=1;
+			}
+			// Extract integer part
+    int32_t ipart = (int32_t)n;
+
+    // Extract floating part
+    float fpart = n - (float)ipart;
+
+    // convert integer part to string
+    int32_t i = intToStr(ipart, res, 0,neg);
+    neg=0;
+
+    // check for display option dec_place
+    if (dec_place != 0)
+    {
+        *(res+i) = '.';  // add dot
+
+        // Get the value of fraction part upto given no.
+        // of points after dot. The third parameter is needed
+        // to handle cases like 233.007
+        fpart = fpart * pow(10,dec_place);
+
+        intToStr((int)fpart, res + i + 1, dec_place,neg);
+        //printf("neg is ftoi =%d",neg);
+    }
+}

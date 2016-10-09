@@ -7,21 +7,27 @@ C_SRCS += \
 ../Sources/circbuf.c \
 ../Sources/data.c \
 ../Sources/led.c \
+../Sources/log.c \
 ../Sources/main.c \
+../Sources/memory.c \
 ../Sources/uart.c 
 
 OBJS += \
 ./Sources/circbuf.o \
 ./Sources/data.o \
 ./Sources/led.o \
+./Sources/log.o \
 ./Sources/main.o \
+./Sources/memory.o \
 ./Sources/uart.o 
 
 C_DEPS += \
 ./Sources/circbuf.d \
 ./Sources/data.d \
 ./Sources/led.d \
+./Sources/log.d \
 ./Sources/main.d \
+./Sources/memory.d \
 ./Sources/uart.d 
 
 

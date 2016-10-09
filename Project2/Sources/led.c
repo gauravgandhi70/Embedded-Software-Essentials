@@ -72,9 +72,14 @@ void LED_Control(uint8_t Character)
       else if(Character=='d')
              {
               LEDColour--;
-               if(LEDColour<=8)
+               if(LEDColour==0)
                 {
-                 LEDColour=7;
+
+
+
+            		   LEDColour=7;
+
+
                 }
               }
       LEDFunction(LEDColour, value);
@@ -120,7 +125,7 @@ LEDFunction(LEDColour_t LEDColour, uint16_t Brightness)
 	{
 	TPM2_BASE_PTR->CONTROLS[1].CnV = TPM2_BASE_PTR->CONTROLS[0].CnV=TPM0_BASE_PTR->CONTROLS[1].CnV = Brightness;
 	}
-	else
+	else if(LEDColour==OFF)
 	{
 		TPM2_BASE_PTR->CONTROLS[0].CnV = 0;
 		TPM2_BASE_PTR->CONTROLS[0].CnV = 0;

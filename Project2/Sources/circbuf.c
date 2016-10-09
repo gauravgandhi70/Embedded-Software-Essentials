@@ -13,7 +13,7 @@
 #include"circbuf.h"
 uint8_t* initialize(cirbuf_t *cb)
 {
-
+	cb->data = (uint8_t *)malloc(MAX_LEN);
 	cb=malloc(sizeof(cirbuf_t));
     return cb->buff;
 }
@@ -26,7 +26,7 @@ void destroy(cirbuf_t *cb)
 
 state buff_full(cirbuf_t *cb)  // Function checks if the buffer is full or not
 {
-    if (cb->new_len == cb->length)
+    if (cb->new_len == MAX_LEN)
     {   // If the head is at the end of the buffer and tail is at the start then buffer is full
         //or if head is one position behind the tail then also buffer is full
         return buf_full;
@@ -57,13 +57,13 @@ state add_data(cirbuf_t *cb, uint8_t item)
     error_code=buff_full(cb);  // before adding new item it checks if buffer is full or not
     if(error_code==buf_not_full)
     {
-        if(cb->head==(cb->buff)+(cb->length)-1)
+        if(cb->head==(cb->buff)+(MAX_LEN)-1)
         {// if head is at the last position of the buffer then add the item there
          //and then put head at the base address of the buffer
           cb->head=cb->buff;
         *(cb->head)=item;
         (cb->new_len)++;
-        return add_success_with_wrap_around;
+        return add_success;
         }
 
         else
@@ -91,7 +91,7 @@ uint8_t read_data(cirbuf_t *cb)
     if(error_code==buf_not_empty)
     {
 
-        if(cb->tail==((cb->buff)+(cb->length))-1)
+        if(cb->tail==((cb->buff)+(MAX_LEN))-1)
         {  // if tail is at the last position of the buffer then remove the item there
          //and then put tail at the base address of the buffer
 

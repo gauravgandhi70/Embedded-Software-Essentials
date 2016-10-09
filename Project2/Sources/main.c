@@ -33,6 +33,7 @@
 #include"circbuf.h"
 #include"led.h"
 #include"data.h"
+#include"log.h"
 #define CLOCK_SETUP 1
 
 
@@ -40,8 +41,14 @@ int main(void)
 {
 
 	uart_init(57200);
-	uint8_t tx_str[100]="Enter a,s,d,w for led control and 't' for echo mode  \t",rx_str[100]="0";
-	LOG(tx_str);
+	uint8_t tx_str[100]="This is an Integer Number: ",rx_str[100]="0";
+	/*//para=200;
+	//uint16_t para = 4096;
+	uint32_t para = 123456;
+	LOG1("This is an Integer Number: ",&para,6);
+	*/
+    LOG(tx_str);
+
 	LED_Init();
 	uint32_t i=0;
 	while(1)
@@ -71,7 +78,7 @@ int main(void)
 		    {
 		        mode=0;
    				LOG(rx_str);
-   				my_memzero(rx_str, i);
+   				my_memzero(rx_str,i);
  				 i=0;
    			}
 	    }
