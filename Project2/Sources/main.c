@@ -61,7 +61,7 @@ int main(void)
 
     //LOG0(tx_str);
 
-	 unittest_init();
+	 //unittest_init();
 
 	LED_Init();  			// Initializing LED configurations
 	uint32_t i=0;
