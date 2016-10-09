@@ -3,7 +3,7 @@
 
  *
  *  Created on: 07-Oct-2016
- *      Author: Admin
+ *      Author: Gaurav Gandhi
  */
 
 
@@ -11,6 +11,8 @@
 #include<stdlib.h>
 #include<stdint.h>
 #include"circbuf.h"
+
+// This function allocates the memory to buffer dynamically
 uint8_t* initialize(cirbuf_t *cb)
 {
 	cb->data = (uint8_t *)malloc(MAX_LEN);
@@ -18,6 +20,7 @@ uint8_t* initialize(cirbuf_t *cb)
     return cb->buff;
 }
 
+// Destroy frees the memory blobk allocated to the buffer
 void destroy(cirbuf_t *cb)
 {
 	free(cb);

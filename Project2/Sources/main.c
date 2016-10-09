@@ -34,7 +34,8 @@
 #include"led.h"
 #include"data.h"
 #include"log.h"
-#define CLOCK_SETUP 1
+#include"memory.h"
+#define CLOCK_SETUP 1	// Clock setup for frequany 48MHz
 
 
 int main(void)
@@ -43,9 +44,9 @@ int main(void)
 	uart_init(57200);
 	uint8_t tx_str[100]="Control Characters a,s,w,d,t \n \r a/d=color change \n\r w/s=+/- Brightness \n\r t=echo mode";
 	uint8_t rx_str[100]="0";
+	LOG0(tx_str);
 
-	//LOG0(tx_str);
-
+	/* Different data type LOG function test cases */
 	//uint8_t para=200;
 	//LOG1("This is an Integer Number (8-bit type): ",&para,3);
 
@@ -58,19 +59,20 @@ int main(void)
 	//float para = 1543.321;
 	//LOG1(tx_str,&para,8);
 
-	unittest_init();
+    //LOG0(tx_str);
 
-	LED_Init();
+	 unittest_init();
 
+	LED_Init();  			// Initializing LED configurations
 	uint32_t i=0;
-	while(1)
+	while(1)				// Infinite loop for continuous operation
 	{
-		state ec=buff_empty(&rx_buf);
+		state ec=buff_empty(&rx_buf);					// Checking  Rx buffer for empty
 
-		if(ec==buf_not_empty )
+		if(ec==buf_not_empty )				
 		{
-			uint8_t con=read_data(&rx_buf),mode;
-			if(con=='t' || con==0xd)
+			uint8_t con=read_data(&rx_buf),mode;		// If its not empty then read data into con variable
+			if(con=='t' || con==0xd)					// If t is read then switch mode to echo mode
 			{
 				mode=con;
 
@@ -78,16 +80,16 @@ int main(void)
 
 			else if(mode=='t')
 			 {
-				rx_str[i] = con;
+				rx_str[i] = con;						// If the mode is echo then store read data into rx_str
 				i++;
 			}
 
-		    else if((con=='a'|| con=='s' || con=='w' || con=='d'))
+		    else if((con=='a'|| con=='s' || con=='w' || con=='d'))  // Otherwise if a,s,d,w is pressed go to LED control
 		    {
 		    				 LED_Control(con);
 		    }
-		    if(mode==0xd)
-		    {
+		    if(mode==0xd)									// When enter is pressed send all the data in rx_str to serial terminal
+		    {												// and removed all the data from the rx_str using my_memzero
 		        mode=0;
    				LOG0(rx_str);
    				my_memzero(rx_str,i);
