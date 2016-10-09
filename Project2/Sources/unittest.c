@@ -5,7 +5,10 @@
 #include"unittest.h"
 
 
-
+state status;
+cirbuf_t test_buffer;
+int32_t count_pass=0;
+int32_t count_fail=0;
 teststate_t unittest_bufferfull()
 {
 	int32_t count=0;
@@ -112,8 +115,7 @@ teststate_t unittest_currentitemsinremove()
 
 void unittest_init()
 { 
-    state status;
-    cirbuf_t test_buffer;
+    
 	teststate_t result1,result2,result3,result4,result5,result6;
 	test_buffer.buff= initialize(&test_buffer);
 	test_buffer.head=test_buffer.data;
@@ -123,39 +125,87 @@ void unittest_init()
 			 	test_buffer.new_len= 0;
 result1=unittest_bufferfull();
 if(result1==success)
-	 printf("CB UNIT TEST:1/7-<bufferfull> PASS\n");
+{
+	LOG("CB UNIT TEST:1/7-<bufferfull> PASS\n");
+	count_pass++;
+}
 else
-printf("CB UNIT TEST:1/7-<bufferfull> FAIL\n"); 
+{
+	LOG("CB UNIT TEST:1/7-<bufferfull> FAIL\n"); 
+    count_fail++;
+}
 result2=unittest_bufferempty();
 if(result2==success)
-	printf("CB UNIT TEST:2/7-<bufferempty> PASS\n");
+{
+	LOG("CB UNIT TEST:2/7-<bufferempty> PASS\n");
+	count_pass++;
+	}
 	else
-	printf("CB UNIT TEST:2/7-<bufferfull> FAIL\n");
+	{
+	LOG("CB UNIT TEST:2/7-<bufferfull> FAIL\n");
+	count_fail++;
+}
 result3=unittest_additemwraparound();
 if(result3==success)
-	printf("CB UNIT TEST:3/7-<additemwraparound> PASS\n");
+{	
+    LOG("CB UNIT TEST:3/7-<additemwraparound> PASS\n");
+	count_pass++;
+	}
 	else
-	printf("CB UNIT TEST:3/7-<bufferfull> FAIL\n");
+	{
+	LOG("CB UNIT TEST:3/7-<bufferfull> FAIL\n");
+	count_fail++;
+}
 result4=unittest_currentitemsinadd();
 if(result4==success)
-	printf("CB UNIT TEST:4/7-<currentitemsinadd> PASS\n");
+	{
+	LOG("CB UNIT TEST:4/7-<currentitemsinadd> PASS\n");
+	count_pass+;
+	}
 	else
-	printf("CB UNIT TEST:4/7-<bufferfull> FAIL\n");
+	{
+	LOG("CB UNIT TEST:4/7-<bufferfull> FAIL\n");
+	count_fail++;
+}
 result5=unittest_removeitemwraparound();
 if(result5==success)
-	printf("CB UNIT TEST:5/7-<removeitemwraparound> PASS\n");
+    {
+	LOG("CB UNIT TEST:5/7-<removeitemwraparound> PASS\n");
+	count_pass++;
+	}
 	else
-	printf("CB UNIT TEST:5/7-<bufferfull> FAIL\n");
+	{
+	LOG("CB UNIT TEST:5/7-<bufferfull> FAIL\n");
+	count_fail++;
+    }
 result6=unittest_currentitemsinremove();
 if(result6==success)
-	printf("CB UNIT TEST:6/7-<currentitemsinremove> PASS\n");
+	{
+	LOG("CB UNIT TEST:6/7-<currentitemsinremove> PASS\n");
+	count_pass++;
+    }
 	else
-	printf("CB UNIT TEST:6/7-<bufferfull> FAIL\n");
+    {
+	LOG("CB UNIT TEST:6/7-<bufferfull> FAIL\n");
+    count_fail++;	
+	}
 	initialize(&test_buffer);
 	if(&test_buffer)
-	printf("CB UNIT TEST:7/7-<initialisation> PASS\n");
+	{
+	LOG("CB UNIT TEST:7/7-<initialisation> PASS\n");
+	count_pass++;
+	}
 	else
-	printf("CB UNIT TEST:7/7-<initialisation> FAIL\n");
+	{
+	LOG("CB UNIT TEST:7/7-<initialisation> FAIL\n");
+	count_fail++;
+	}
+	if(count_fail>0)
+	{
+		LOG("CIRCBUFF UNIT TEST SUITE:FAIL\n")
+	}
+	else
+	LOG("CIRCBUFF UNIT TEST SUITE:PASS\n")
 	return 0;
 		
 }
