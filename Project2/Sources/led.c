@@ -69,7 +69,7 @@ void LED_Control(uint8_t Character)
           	 }
 
             }
-      else if(Character=='d' && LEDColour>0)
+      else if(Character=='d')
              {
               LEDColour--;
                if(LEDColour<=8)
