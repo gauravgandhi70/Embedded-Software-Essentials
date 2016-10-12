@@ -35,16 +35,27 @@
 #include"data.h"
 #include"log.h"
 #include"memory.h"
+#include"main.h"
+#include"profile.h"
 #define CLOCK_SETUP 1	// Clock setup for frequany 48MHz
 
 
 int main(void)
 {
 
+
 	uart_init(57200);
+	pit_init();
+	__enable_irq();
+
 	uint8_t tx_str[100]="Control Characters a,s,w,d,t \n \r a/d=color change \n\r w/s=+/- Brightness \n\r t=echo mode";
 	uint8_t rx_str[100]="0";
+
+
+	pit_enable();
 	LOG0(tx_str);
+	pit_disable();
+	get_time();
 
 	/* Different data type LOG function test cases */
 	//uint8_t para=200;
@@ -62,6 +73,7 @@ int main(void)
     //LOG0(tx_str);
 
 	 //unittest_init();
+
 
 	LED_Init();  			// Initializing LED configurations
 	uint32_t i=0;

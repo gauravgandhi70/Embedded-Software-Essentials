@@ -3,7 +3,8 @@ Sources/main.o: ../Sources/main.c ../Includes/MKL25Z4.h \
  ../Includes/core_cmFunc.h ../Includes/system_MKL25Z4.h \
  ../Includes/uart.h ../Includes/circbuf.h ../Includes/circbuf.h \
  ../Includes/led.h ../Includes/data.h ../Includes/log.h \
- ../Includes/memory.h
+ ../Includes/memory.h ../Includes/main.h ../Includes/log.h \
+ ../Includes/profile.h
 
 ../Includes/MKL25Z4.h:
 
@@ -28,3 +29,9 @@ Sources/main.o: ../Sources/main.c ../Includes/MKL25Z4.h \
 ../Includes/log.h:
 
 ../Includes/memory.h:
+
+../Includes/main.h:
+
+../Includes/log.h:
+
+../Includes/profile.h:

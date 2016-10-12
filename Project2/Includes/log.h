@@ -8,7 +8,10 @@
 #ifndef INCLUDES_LOG_H_
 #define INCLUDES_LOG_H_
 
-void LOG0(uint8_t *c);
+void uart_log(uint8_t *c);
+
+void bbb_log(uint8_t *c);
+
 //void LOG1(uint8_t *c, float *para,int32_t length);
 
 #endif /* INCLUDES_LOG_H_ */

@@ -13,7 +13,7 @@
 void uart_init(uint32_t baud)
 {
 	uint16_t baud_divisor;
-	uint8_t temp;
+
 
 	//Set gate clock  for PORTA
 	SIM_SCGC5 |= SIM_SCGC5_PORTA_MASK;
@@ -58,13 +58,13 @@ void uart_init(uint32_t baud)
 	NVIC_EnableIRQ(UART0_IRQn);
 	UART_C2_REG(UART0_BASE_PTR) |= UART_C2_RIE_MASK; //Setup receiver interrupt
 	//UART_C2_REG(UART0_BASE_PTR) |= UART_C2_TIE_MASK;
-	__enable_irq();
+	//__enable_irq();
 
     UART_C2_REG(UART0_BASE_PTR) |= (UART_C2_TE_MASK | UART_C2_RE_MASK ); //Switch on transmitter and receiver
   }
 
 
-uint8_t da=0;
+volatile uint8_t da=0;
 
 void UART0_IRQHandler()
 {	state error_code = buff_empty(&tx_buf);

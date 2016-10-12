@@ -8,9 +8,11 @@
 #include "uart.h"
 #include"circbuf.h"
 #include"data.h"
+#include"main.h"
+#include<stdio.h>
 
 //LOG0 function is for displaying the uint8_t data type elements to the serial terminal
-void LOG0(uint8_t *c)
+void uart_log(uint8_t *c)
 {	
 	uint32_t i=0;
 	while(*(c+i) !='\0')
@@ -55,3 +57,15 @@ void LOG1(uint8_t *c, uint32_t *para,int32_t length)
 
 }
 
+
+void bbb_log(uint8_t *c)
+{
+	uint32_t i=0;
+
+	while(*(c+i) !='\0')
+	{
+	printf("%c",*(c+i));	// Reads the string till \0 and adds that data to the transmit buffer
+	i++;
+	}
+	UART0_C2 |= UART0_C2_TIE_MASK; //Enable the tx interrupt when there is data in tx buffer
+}
