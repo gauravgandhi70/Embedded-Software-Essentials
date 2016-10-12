@@ -12,6 +12,6 @@ void uart_log(uint8_t *c);
 
 void bbb_log(uint8_t *c);
 
-//void LOG1(uint8_t *c, float *para,int32_t length);
+void uart_log1(uint8_t *c, uint32_t *para);
 
 #endif /* INCLUDES_LOG_H_ */

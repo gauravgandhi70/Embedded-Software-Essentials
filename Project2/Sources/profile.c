@@ -40,11 +40,14 @@ void pit_disable(void)
 
 void get_time(void)
 {
-	uint8_t time[16],clk_cycle[16];
-	itoa((counter*1000*RESOLUTION/41.6), clk_cycle, 10);
-	itoa(counter*RESOLUTION, time, 10);
-	LOG0(time);LOG0(" microseconds \t");
-	LOG0(clk_cycle);LOG0(" Clock Cycles \t");
+	uint32_t clk_cycle,exe_time;
+	exe_time= counter*RESOLUTION;
+	clk_cycle= (counter*1000*RESOLUTION/41.6);
+	//uint8_t time[16],clk_cycle[16];
+	//itoa((counter*1000*RESOLUTION/41.6), clk_cycle, 10);
+	//itoa(, time, 10);
+	LOG1(" ",&exe_time);LOG0(" microseconds \t");
+	LOG1(" ",&clk_cycle);LOG0(" Clock Cycles \t");
 }
 
 

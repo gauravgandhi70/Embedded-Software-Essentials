@@ -14,6 +14,7 @@
 #include"memory.h"
 #include"main.h"
 #include"profile.h"
+#include<stdlib.h>
 
 
 void timetest()
@@ -178,7 +179,7 @@ void timetest()
 	LOG0("LOG1 Function : \t");
 						pit_enable();
 						uint32_t para = 123456;
-						LOG1("ABC ",&para,6);
+						LOG1("ABC ",&para);
 						pit_disable();
 						LOG0(": \t");
 						get_time();

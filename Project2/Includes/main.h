@@ -15,11 +15,11 @@
 #ifdef BOARD==1
 
 #define LOG0(c) uart_log((uint8_t*) c)
+#define LOG1(x,y) uart_log1((uint8_t*) x, (uint32_t*) y)
 
 #elif	BOARD==2
 
 #define LOG0(c) bbb_log((uint8_t*) c)
-
 
 #else
 

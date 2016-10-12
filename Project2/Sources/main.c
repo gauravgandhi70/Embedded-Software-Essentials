@@ -37,6 +37,7 @@
 #include"memory.h"
 #include"main.h"
 #include"profile.h"
+#include<malloc.h>
 #define CLOCK_SETUP 1	// Clock setup for frequany 48MHz
 
 
@@ -47,9 +48,12 @@ int main(void)
 	uart_init(57200);
 	pit_init();
 	__enable_irq();
-	uint8_t tx_str[100]="\n Control Characters a,s,w,d,t \n \r a/d=color change \n\r w/s=+/- Brightness \n\r t=echo mode";
+
+
+	uint8_t tx_str[100]="\n\r Control Characters a,s,w,d,t \n \r a/d=color change \n\r w/s=+/- Brightness \n\r t=echo mode \n\r";
 	uint8_t rx_str[100]="0";
 	LOG0(tx_str);
+
 
 	//Timetest function is time profiler
 	//timetest();
@@ -64,14 +68,27 @@ int main(void)
 	//LOG1("This is an Integer Number (16-bit type): ",&para,4);
 
 	//uint32_t para = 123456;
-	//LOG1("This is an Integer Number (32-bit type): ",&para,6);
+	//LOG1("This is an Integer Number (32-bit type): ",&para);
 
 	//float para = 1543.321;
 	//LOG1(tx_str,&para,8);
 
 
-
+	// Unittest function tests all the circular buffer related function
+	// This function can be disabled by defining UNIT_TEST
 	 unittest_init();
+
+	 // Use of mallinfo function
+	 /*struct mallinfo inf;
+	 inf=mallinfo();
+	LOG0("\n\r Use of Mallinfo Structure ");
+	LOG1("\n\r Total Space Allocated ",&(inf.arena));
+	LOG1("\n\r number of non-inuse chunks",&(inf.ordblks));
+	LOG1("\n\r Total space in mmapped regions : ",&(inf.hblkhd));
+	LOG1("\n\r top-most, releasable (via malloc_trim) space : ",&(inf.keepcost));
+	LOG1("\n\r Total allocated space : ",&(inf.uordblks));
+	LOG1("\n\r total non-inuse space : ",&(inf.fordblks));*/
+
 
 
 	LED_Init();  			// Initializing LED configurations
