@@ -32,11 +32,11 @@ void LOG1(uint8_t *c, uint32_t *para,int32_t length)
 		uint32_t i = 0,j=0;
 	itoa((uint32_t)(*para),ret_para,10);  //converting to ascii characters
 	//ftoa(*para,ret_para,3);
-	LOG0("STRINGS BEFORE CONCATENATION \n \r");
+	/*LOG0("STRINGS BEFORE CONCATENATION \n \r");
 	LOG0(ret_para);
 	LOG0("\n \r");
 	LOG0(c);
-	LOG0("\n \r");
+	LOG0("\n \r");*/
 
 	while (*(c+i) != '\0')
 	{
@@ -49,8 +49,8 @@ void LOG1(uint8_t *c, uint32_t *para,int32_t length)
 		i++;j++;length--;
 	}
 
-	LOG0("STRING AFTER CONCTENATION");
-	LOG0("\n \r");
+	/*LOG0("STRING AFTER CONCTENATION");
+	LOG0("\n \r");*/
 	LOG0(str);
 
 		UART0_C2 |= UART0_C2_TIE_MASK; // Enable the tx interrupt

@@ -47,15 +47,14 @@ int main(void)
 	uart_init(57200);
 	pit_init();
 	__enable_irq();
-
-	uint8_t tx_str[100]="Control Characters a,s,w,d,t \n \r a/d=color change \n\r w/s=+/- Brightness \n\r t=echo mode";
+	uint8_t tx_str[100]="\n Control Characters a,s,w,d,t \n \r a/d=color change \n\r w/s=+/- Brightness \n\r t=echo mode";
 	uint8_t rx_str[100]="0";
-
-
-	pit_enable();
 	LOG0(tx_str);
-	pit_disable();
-	get_time();
+
+	//Timetest function is time profiler
+	//timetest();
+
+
 
 	/* Different data type LOG function test cases */
 	//uint8_t para=200;
@@ -70,9 +69,9 @@ int main(void)
 	//float para = 1543.321;
 	//LOG1(tx_str,&para,8);
 
-    //LOG0(tx_str);
 
-	 //unittest_init();
+
+	 unittest_init();
 
 
 	LED_Init();  			// Initializing LED configurations

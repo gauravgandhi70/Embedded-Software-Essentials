@@ -26,10 +26,10 @@ int32_t my_atoi(int8_t *str)                              //Function definition 
        i++;
    }
 
-   printf("length is: %d\n",length);                      //Displaying the length of the string
+   //printf("length is: %d\n",length);                      //Displaying the length of the string
    for(i=0;i<length;i++)                                  //Converts the ascii character of each character in the string to its corresponding integer value
    {
-       printf("%d",*(str+i));                             //Displays the integer value of the input string
+       //printf("%d",*(str+i));                             //Displays the integer value of the input string
    }
    return 0;
 }

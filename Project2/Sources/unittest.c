@@ -1,9 +1,11 @@
+#include "MKL25Z4.h"
 #include<stdio.h>
 #include<stdint.h>
 #include "uart.h"
 #include"circbuf.h"
 #include"unittest.h"
-#include"log.h"
+#include"main.h"
+
 
 
 state status;
@@ -114,7 +116,7 @@ teststate_t unittest_currentitemsinremove()
 
 
 
-void unittest_init()
+void unittest()
 { 
     
 	teststate_t result1,result2,result3,result4,result5,result6;

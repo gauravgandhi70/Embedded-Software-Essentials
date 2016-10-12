@@ -11,7 +11,7 @@
 int8_t my_memmove(uint8_t *src, uint8_t *dst, uint32_t length)                               //Function definition to move data from one location to other location
 {
     uint32_t i=0;
-    uint8_t temp[50];
+    uint8_t temp[5000];
 
     if(src)
     {

@@ -10,6 +10,7 @@ C_SRCS += \
 ../Sources/log.c \
 ../Sources/main.c \
 ../Sources/memory.c \
+../Sources/prof_test.c \
 ../Sources/profile.c \
 ../Sources/uart.c \
 ../Sources/unittest.c 
@@ -21,6 +22,7 @@ OBJS += \
 ./Sources/log.o \
 ./Sources/main.o \
 ./Sources/memory.o \
+./Sources/prof_test.o \
 ./Sources/profile.o \
 ./Sources/uart.o \
 ./Sources/unittest.o 
@@ -32,6 +34,7 @@ C_DEPS += \
 ./Sources/log.d \
 ./Sources/main.d \
 ./Sources/memory.d \
+./Sources/prof_test.d \
 ./Sources/profile.d \
 ./Sources/uart.d \
 ./Sources/unittest.d 

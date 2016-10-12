@@ -7,6 +7,7 @@
 
 #ifndef INCLUDES_MAIN_H_
 #define INCLUDES_MAIN_H_
+//#define UNIT_TESTS
 // FOR FRDM ARCH=1
 // FOR BBB ARCH= 2
 #define BOARD (1)
@@ -23,6 +24,17 @@
 #else
 
 #define LOG0(c)
+#endif
+
+#ifdef UNIT_TESTS
+
+#include"unittest.h"
+#define unittest_init()	  unittest()
+
+#else
+
+#define unittest_init()
+
 #endif
 
 #endif /* INCLUDES_MAIN_H_ */
