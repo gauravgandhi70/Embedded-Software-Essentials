@@ -1,8 +1,11 @@
 /*
  * main.h
+ *This function is created for providing compile time
+ *switches for selecting logging functionality depending upon platform
+ *Also enabling and disabling unittest
  *
  *  Created on: 11-Oct-2016
- *      Author: Admin
+ *      Author: Gaurav Gandhi
  */
 
 #ifndef INCLUDES_MAIN_H_

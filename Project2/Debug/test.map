@@ -477,11 +477,11 @@ Discarded input sections
  .text          0x00000000        0x0 ./Sources/prof_test.o
  .data          0x00000000        0x0 ./Sources/prof_test.o
  .bss           0x00000000        0x0 ./Sources/prof_test.o
- .rodata        0x00000000     0x155c ./Sources/prof_test.o
+ .rodata        0x00000000      0x238 ./Sources/prof_test.o
  .text.timetest
-                0x00000000      0x468 ./Sources/prof_test.o
- .debug_info    0x00000000      0x1f9 ./Sources/prof_test.o
- .debug_abbrev  0x00000000       0xe9 ./Sources/prof_test.o
+                0x00000000      0x3f8 ./Sources/prof_test.o
+ .debug_info    0x00000000      0x1f4 ./Sources/prof_test.o
+ .debug_abbrev  0x00000000       0xe0 ./Sources/prof_test.o
  .debug_aranges
                 0x00000000       0x20 ./Sources/prof_test.o
  .debug_ranges  0x00000000       0x10 ./Sources/prof_test.o
@@ -607,13 +607,6 @@ Discarded input sections
  .group         0x00000000        0x8 ./Sources/unittest.o
  .group         0x00000000        0x8 ./Sources/unittest.o
  .group         0x00000000        0x8 ./Sources/unittest.o
- .group         0x00000000        0x8 ./Sources/unittest.o
- .group         0x00000000        0x8 ./Sources/unittest.o
- .group         0x00000000        0x8 ./Sources/unittest.o
- .group         0x00000000        0x8 ./Sources/unittest.o
- .group         0x00000000        0x8 ./Sources/unittest.o
- .group         0x00000000        0x8 ./Sources/unittest.o
- .group         0x00000000        0x8 ./Sources/unittest.o
  .text          0x00000000        0x0 ./Sources/unittest.o
  .data          0x00000000        0x0 ./Sources/unittest.o
  .bss           0x00000000        0x0 ./Sources/unittest.o
@@ -635,33 +628,25 @@ Discarded input sections
                 0x00000000       0x60 ./Sources/unittest.o
  .text.unittest_currentitemsinremove
                 0x00000000       0x3c ./Sources/unittest.o
- .rodata        0x00000000      0x268 ./Sources/unittest.o
+ .rodata        0x00000000      0x27c ./Sources/unittest.o
  .text.unittest
-                0x00000000      0x204 ./Sources/unittest.o
+                0x00000000      0x208 ./Sources/unittest.o
  .debug_info    0x00000000      0x3f5 ./Sources/unittest.o
  .debug_abbrev  0x00000000       0xef ./Sources/unittest.o
  .debug_aranges
                 0x00000000       0x58 ./Sources/unittest.o
  .debug_ranges  0x00000000       0x48 ./Sources/unittest.o
- .debug_macro   0x00000000      0x183 ./Sources/unittest.o
+ .debug_macro   0x00000000      0x136 ./Sources/unittest.o
  .debug_macro   0x00000000      0x802 ./Sources/unittest.o
- .debug_macro   0x00000000       0x16 ./Sources/unittest.o
- .debug_macro   0x00000000       0x16 ./Sources/unittest.o
- .debug_macro   0x00000000       0x44 ./Sources/unittest.o
- .debug_macro   0x00000000      0x209 ./Sources/unittest.o
- .debug_macro   0x00000000       0x3a ./Sources/unittest.o
- .debug_macro   0x00000000       0x3a ./Sources/unittest.o
- .debug_macro   0x00000000       0x26 ./Sources/unittest.o
- .debug_macro   0x00000000      0x306 ./Sources/unittest.o
- .debug_macro   0x00000000       0x63 ./Sources/unittest.o
- .debug_macro   0x00000000     0x839f ./Sources/unittest.o
  .debug_macro   0x00000000       0x58 ./Sources/unittest.o
+ .debug_macro   0x00000000       0x16 ./Sources/unittest.o
  .debug_macro   0x00000000       0x35 ./Sources/unittest.o
  .debug_macro   0x00000000       0xa3 ./Sources/unittest.o
  .debug_macro   0x00000000       0x16 ./Sources/unittest.o
  .debug_macro   0x00000000       0x97 ./Sources/unittest.o
  .debug_macro   0x00000000       0x10 ./Sources/unittest.o
  .debug_macro   0x00000000       0xef ./Sources/unittest.o
+ .debug_macro   0x00000000       0x4a ./Sources/unittest.o
  .debug_macro   0x00000000       0x52 ./Sources/unittest.o
  .debug_macro   0x00000000       0x16 ./Sources/unittest.o
  .debug_macro   0x00000000       0x43 ./Sources/unittest.o
@@ -671,12 +656,13 @@ Discarded input sections
  .debug_macro   0x00000000       0xbd ./Sources/unittest.o
  .debug_macro   0x00000000       0x16 ./Sources/unittest.o
  .debug_macro   0x00000000      0x14a ./Sources/unittest.o
+ .debug_macro   0x00000000      0x20f ./Sources/unittest.o
  .debug_macro   0x00000000       0x10 ./Sources/unittest.o
  .debug_macro   0x00000000       0x10 ./Sources/unittest.o
  .debug_macro   0x00000000       0x10 ./Sources/unittest.o
  .debug_macro   0x00000000       0x16 ./Sources/unittest.o
- .debug_line    0x00000000      0x392 ./Sources/unittest.o
- .debug_str     0x00000000    0x34055 ./Sources/unittest.o
+ .debug_line    0x00000000      0x33d ./Sources/unittest.o
+ .debug_str     0x00000000     0x507a ./Sources/unittest.o
  .comment       0x00000000       0x71 ./Sources/unittest.o
  .ARM.attributes
                 0x00000000       0x32 ./Sources/unittest.o
