@@ -1,0 +1,13 @@
+Sources/main.c
+Includes/MKL25Z4.h
+Project_Settings/Startup_Code/system_MKL25Z4.c
+Includes/system_MKL25Z4.h
+Project_Settings/Startup_Code/startup_MKL25Z4.S
+Project_Settings/Linker_Files/MKL25Z128xxx4_flash.ld
+Includes/core_cm0plus.h
+Includes/core_cm4.h
+Includes/core_cm4_simd.h
+Includes/core_cm7.h
+Includes/core_cmSimd.h
+Includes/core_cmFunc.h
+Includes/core_cmInstr.h
