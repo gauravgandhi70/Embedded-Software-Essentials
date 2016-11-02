@@ -4,18 +4,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Sources/NRF_TEST1.c \
-../Sources/SPI_TEST1.c \
+../Sources/NRF.c \
+../Sources/SPI.c \
+../Sources/led.c \
 ../Sources/main.c 
 
 OBJS += \
-./Sources/NRF_TEST1.o \
-./Sources/SPI_TEST1.o \
+./Sources/NRF.o \
+./Sources/SPI.o \
+./Sources/led.o \
 ./Sources/main.o 
 
 C_DEPS += \
-./Sources/NRF_TEST1.d \
-./Sources/SPI_TEST1.d \
+./Sources/NRF.d \
+./Sources/SPI.d \
+./Sources/led.d \
 ./Sources/main.d 
 
 

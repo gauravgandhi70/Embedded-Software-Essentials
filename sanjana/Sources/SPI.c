@@ -5,7 +5,8 @@ void SPI_init(void) {
 	// Enable clock network to SPI0
 	SIM->SCGC5 |= SIM_SCGC5_PORTC_MASK;
 	SIM->SCGC4 |= SIM_SCGC4_SPI0_MASK;
-	PTC_BASE_PTR->PDDR |= 0x01;
+	PTC_BASE_PTR->PDDR |= 0x10;
+	PTC_BASE_PTR->PDOR |= 0x10;
 	
 	// configure output crossbar
 	PORTC->PCR[4] = PORT_PCR_MUX(1);  // PCS
@@ -18,10 +19,10 @@ void SPI_init(void) {
 	
 	// Config registers, turn on SPI0 as master
 	// Enable chip select
-	SPI0->C1 = 0x52;
+	SPI0->C1 = 0x50;
 	//SPI0->C2 = 0x10;
 	//SPI0->BR = 0x00;
-	SPI0_BR = (SPI_BR_SPPR(0x02) | SPI_BR_SPR(0x08));     //Set baud rate prescale divisor to 3 & set baud rate divisor to 64 for baud rate of 15625 hz
+	SPI0_BR = (SPI_BR_SPPR(0x03) | SPI_BR_SPR(0x08));     //Set baud rate prescale divisor to 3 & set baud rate divisor to 512 for baud rate of 15625 hz
 }
 
 uint8_t SPI_status(void) {
@@ -29,7 +30,7 @@ uint8_t SPI_status(void) {
 }
 
 // Write out all characters in supplied buffer to register at address
-void SPI_write(uint8_t p) {
+uint8_t SPI_write(uint8_t p) {
 	int i;
 	// set SPI line to output (BIDROE = 1)
 	//SPI0->C2 |= 0x04;
@@ -38,6 +39,8 @@ void SPI_write(uint8_t p) {
 		// poll until empty
 		while ((SPI_status() & 0x20) != 0x20);
 		SPI0->D = p;
+		while ((SPI_status() & 0x20) != 0x20);
+		return SPI0->D;
 	//}
 }
 

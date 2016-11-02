@@ -1,10 +1,12 @@
 #include "MKL25Z4.h"
 #include "NRF.h"
 #include "SPI.h"
+#include "led.h"
 
 void nrf_config_write()
 {
 	PTC_BASE_PTR->PCOR = 1<<4;
+	//PTC->PCOR=
 	nrf_write_register(NORDIC_CONFIG_REG);
 	SPI_write(0x03);
 	PTC_BASE_PTR->PSOR =  1<<4;
@@ -16,12 +18,14 @@ void nrf_config_read()
 	char c;
 	PTC_BASE_PTR->PCOR = 1<<4;
 	nrf_read_register(NORDIC_CONFIG_REG);
-	SPI_write(0XFF);
-	c=SPI_read();
+	c=SPI_write(0XFF);
+	//c=SPI_read();
 	if (c==0x03)
-	{
+	{   LED_Init();
+	    LEDFunction(RED, 500);
+	   /* PTB_BASE_PTR->PDOR |= 1<<18;
 		PTB_BASE_PTR->PDDR |= 1<<18;
-		PTB_BASE_PTR->PSOR = 1<<18;
+		PTB_BASE_PTR->PSOR = 1<<18;*/
 	}
 	PTC_BASE_PTR->PSOR = 1<<4;
 }
@@ -36,7 +40,7 @@ void nrf_read_register(unsigned char address)
 	SPI_write(0x00|address);
 }
 
-void nrf_flush_tx_fifo()
+/*void nrf_flush_tx_fifo()
 {
 	PTC_BASE_PTR->PCOR = 1<<4;
 	SPI_write(0xE1);
@@ -69,4 +73,4 @@ void nrf_fifostatus_read()
 	SPI_write(0xff);
 	 c=SPI_read();
 	 PTC_BASE_PTR->PSOR = 1<<4;
-}
+}*/
