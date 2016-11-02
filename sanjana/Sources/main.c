@@ -1,6 +1,6 @@
 #include "MKL25Z4.h"
-#include "NRF_TEST1.h"
-#include "SPI_TEST1.h"
+#include "NRF.h"
+#include "SPI.h"
 
 int main(void)
 {

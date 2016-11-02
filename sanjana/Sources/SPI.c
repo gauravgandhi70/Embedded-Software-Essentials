@@ -1,5 +1,5 @@
 #include "MKL25Z4.h"
-#include "SPI_TEST1.h"
+#include "SPI.h"
 
 void SPI_init(void) {
 	// Enable clock network to SPI0
