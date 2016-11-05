@@ -2,6 +2,8 @@
 #include "NRF.h"
 #include "SPI.h"
 #include "led.h"
+#include "uart.h"
+#include "log.h"
 
 void nrf_config_write()
 {
@@ -59,8 +61,8 @@ void nrf_status_read()
 	char c;
 	PTC_BASE_PTR->PCOR = 1<<4;
 	nrf_read_register(NORDIC_STATUS_REG);
-	SPI_write(0xFF);
-	c=SPI_read();
+	c=SPI_write(0xFF);
+
 	PTC_BASE_PTR->PSOR = 1<<4;
 }
 
@@ -70,8 +72,8 @@ void nrf_fifostatus_read()
 	char c;
 	PTC_BASE_PTR->PCOR = 1<<4;
 	nrf_read_register(FIFO_STATUS_REG );
-	SPI_write(0xff);
-	 c=SPI_read();
+	c=SPI_write(0xff);
+	// c=SPI_read();
 	 PTC_BASE_PTR->PSOR = 1<<4;
 }
 
@@ -94,29 +96,30 @@ void nrf_read_data() //receive data from nrf buffer
 
 	nrf_fifostatus_read();
 
-	/*if (c==0x07) //poll for data 07 from the tx
+	if (c==0x07) //poll for data 07 from the tx
 	{
 		PTB_BASE_PTR->PDDR |= 1<<18;
 
-	}*/
+	}
 }
 
 void nrf_rfsetup_transmit() //setup the rf register
 {
-	PTD_BASE_PTR->PCOR = 1<<0;
+	PTC_BASE_PTR->PCOR = 1<<4;
 	nrf_write_register(NORDIC_RF_SETUP_REG);
-	SPI_write(0x0A);
-	PTD_BASE_PTR->PSOR = 1<<0;
+	SPI_write(0x02);
+	PTC_BASE_PTR->PSOR = 1<<4;
 }
 
 void nrf_rfsetup_receive() //read the rf register
 {
-	char c;
-	PTD_BASE_PTR->PCOR = 1<<0;
-	nrf_write_register(NORDIC_RF_SETUP_REG);
-	SPI_write(0xff);
-	 c=SPI_read();
-	PTD_BASE_PTR->PSOR = 1<<0;
+	uint8_t c;
+	PTC_BASE_PTR->PCOR = 1<<4;
+	nrf_read_register(NORDIC_RF_SETUP_REG);
+	c=SPI_write(0xff);
+	//LOG0(&c);
+
+	PTC_BASE_PTR->PSOR = 1<<4;
 
 }
 
@@ -124,27 +127,27 @@ void nrf_tx_addr_read() //read the tx address register
 {
 	int i;
 	char c;
-	PTD_BASE_PTR->PCOR = 1<<0;
+	PTC_BASE_PTR->PCOR = 1<<4;
 	nrf_read_register(TX_ADDR);
 	 for(i=0;i<5;i++)
 	 {
 
-		 SPI_write(0xff);
-		 c=SPI_read();
+		 c=SPI_write(0xff);
+
 	 }
-	PTD_BASE_PTR->PSOR = 1<<0;
+	PTC_BASE_PTR->PSOR = 1<<4;
 }
 
 void nrf_tx_addr_write() //write the tx address register
 {
 	int i;
-	PTD_BASE_PTR->PCOR = 1<<0;
+	PTC_BASE_PTR->PCOR = 1<<4;
 	nrf_write_register(TX_ADDR);
 	 for(i=0;i<5;i++)
 	 {
 		 SPI_write(0xBB);
 	 }
-	 PTD_BASE_PTR->PSOR = 1<<0;
+	 PTC_BASE_PTR->PSOR = 1<<4;
 }
 
 void nrf_rx_addr_read() //read the rx address register

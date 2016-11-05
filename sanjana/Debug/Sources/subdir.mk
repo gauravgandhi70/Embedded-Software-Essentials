@@ -6,20 +6,32 @@
 C_SRCS += \
 ../Sources/NRF.c \
 ../Sources/SPI.c \
+../Sources/circbuf.c \
+../Sources/data.c \
 ../Sources/led.c \
-../Sources/main.c 
+../Sources/log.c \
+../Sources/main.c \
+../Sources/uart.c 
 
 OBJS += \
 ./Sources/NRF.o \
 ./Sources/SPI.o \
+./Sources/circbuf.o \
+./Sources/data.o \
 ./Sources/led.o \
-./Sources/main.o 
+./Sources/log.o \
+./Sources/main.o \
+./Sources/uart.o 
 
 C_DEPS += \
 ./Sources/NRF.d \
 ./Sources/SPI.d \
+./Sources/circbuf.d \
+./Sources/data.d \
 ./Sources/led.d \
-./Sources/main.d 
+./Sources/log.d \
+./Sources/main.d \
+./Sources/uart.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

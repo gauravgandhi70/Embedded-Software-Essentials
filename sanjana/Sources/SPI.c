@@ -14,6 +14,7 @@ void SPI_init(void) {
 	PORTC->PCR[6] = PORT_PCR_MUX(2);  // MOSI
 	PORTC->PCR[7] = PORT_PCR_MUX(2);  // MISO
 
+	PTC_BASE_PTR->PSOR = 1<<4;
 	// configure gpio address select
 	/* here */
 
@@ -39,7 +40,7 @@ uint8_t SPI_write(uint8_t p) {
 		// poll until empty
 		while ((SPI_status() & 0x20) != 0x20); //Check if transfer buffer is empty
 		SPI0->D = p;//Send data
-		while ((SPI_status() & 0x20) != 0x20); //Check if transfer is complete, hence transfer buffer empty
+		while ((SPI_status() & 0x80) != 0x80); //Check if transfer is complete, hence transfer buffer empty
 		return SPI0->D; //return data
 	//}
 }
@@ -58,7 +59,7 @@ uint8_t SPI_write(uint8_t p) {
 		p = SPI0->D;
 		return p;*/
 	//}
-}
+//}
 
 void spi_flush() //To flush out the transmit and recieve buffers
 {
