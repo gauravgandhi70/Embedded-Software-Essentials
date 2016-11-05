@@ -1,7 +1,7 @@
 /*
  * nrf.h
  *
- * 
+ *
  */
 
 #ifndef SOURCES_NRF_H_
@@ -22,6 +22,11 @@
 #define RX_ADDR_P0_REG (0x0A)
 #define TX_ADDR (0x10)
 #define FIFO_STATUS_REG (0x17)
+#define NRF_PIPESIZE (0X11)
+#define NRF_ENRXADDR (0x02)
+#define W_TXPAYLOAD (0xA0)
+#define R_RXPAYLOAD (0x61)
+
 
 void nrf_read_data();
 void nrf_transmit_data();
@@ -39,6 +44,10 @@ void nrf_tx_addr_read();
 void nrf_tx_addr_write();
 void nrf_rx_addr_read();
 void nrf_rx_addr_write();
+void nrf_rx_pipesize_write();
+void nrf_rx_pipesize_read();
+void nrf_en_rxaddr_read();
+void nrf_en_rxaddr_write();
 
 
 
