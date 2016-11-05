@@ -105,7 +105,7 @@ void nrf_rfsetup_transmit() //setup the rf register
 {
 	PTD_BASE_PTR->PCOR = 1<<0;
 	nrf_write_register(NORDIC_RF_SETUP_REG);
-	SPI_write(0x84);
+	SPI_write(0x0A);
 	PTD_BASE_PTR->PSOR = 1<<0;
 }
 
