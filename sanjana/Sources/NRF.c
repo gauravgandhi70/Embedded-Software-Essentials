@@ -94,11 +94,11 @@ void nrf_read_data() //receive data from nrf buffer
 
 	nrf_fifostatus_read();
 
-	if (c==0x07) //poll for data 07 from the tx
+	/*if (c==0x07) //poll for data 07 from the tx
 	{
 		PTB_BASE_PTR->PDDR |= 1<<18;
 
-	}
+	}*/
 }
 
 void nrf_rfsetup_transmit() //setup the rf register
