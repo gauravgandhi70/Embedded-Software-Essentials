@@ -39,21 +39,25 @@
 #include"profile.h"
 #include"message.h"
 #include<malloc.h>
-#define sz 10
+#define sz 5000
 static int i = 0;
 
 int main(void)
 {
-	uart_init(57200);
-	//pit_init();
-	uint8_t source[sz]="ABCDEFGHI",dest[sz]="U";
-	//pit_enable();
+	uart_init(57600);
+	pit_init();
+	uint8_t source[sz]="ABCDEFGHI";//dest[sz];
+
+	//LOG0("\n\r100 Bytes memmove_dma 8-bit \n\r");
+	LOG0("\n\r5000 Bytes memzero_dma \n\r");
+
 	//memmove_dma(source,dest,sz);
-	msg_t m;
+	memzero_dma(source, sz);
+	//msg_t m;
 	uint32_t flag=1,flag1=1,i=0;
 
-	while(1)			// Infinite loop for continuous operation
-		{
+	while(1);			// Infinite loop for continuous operation
+		/*{
 			state ec=buff_empty(&rx_buf);					// Checking  Rx buffer for empty
 
 			if(ec==buf_not_empty && (flag1==1))
@@ -87,7 +91,7 @@ int main(void)
 
 			}
 
-		}
+		}*/
 
 
 
