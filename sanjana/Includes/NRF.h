@@ -20,6 +20,7 @@
 #define NORDIC_RF_SETUP_REG (0x06)
 #define NORDIC_STATUS_REG (0x07)
 #define RX_ADDR_P0_REG (0x0A)
+#define RX_ADDR_P1_REG (0x0B)
 #define TX_ADDR (0x10)
 #define FIFO_STATUS_REG (0x17)
 #define NRF_PIPESIZE (0X11)
