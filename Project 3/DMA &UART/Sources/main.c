@@ -44,24 +44,28 @@ static int i = 0;
 
 int main(void)
 {
-	uart_init(57600);
-	pit_init();
-	uint8_t source[sz]="ABCDEFGHI";//dest[sz];
+	uart_init(57600);								// Initialize UART
+	pit_init();										// Initialize the PIT timer for profiling
+
+	uint8_t source[sz]="ABCDEFGHI",dest[sz];
 
 	//LOG0("\n\r100 Bytes memmove_dma 8-bit \n\r");
-	LOG0("\n\r5000 Bytes memzero_dma \n\r");
+	//LOG0("\n\r5000 Bytes memzero_dma \n\r");
 
-	//memmove_dma(source,dest,sz);
-	memzero_dma(source, sz);
-	//msg_t m;
+	memmove_dma(source,dest,sz);					// Memmove using DMA
+	memzero_dma(source, sz);						// Memzero using DMA
+	msg_t m;										// Define variable of message structure
 	uint32_t flag=1,flag1=1,i=0;
-
-	while(1);			// Infinite loop for continuous operation
-		/*{
+/*Commands: Command ID 00:LED ON 
+					   02:LED OFF
+					   03: Change color and brightness 
+	Command Structure: Command ID, Message Length, Either color ID and Brightness, Checksum 	*/
+	while(1)			// Infinite loop for continuous operation
+		{
 			state ec=buff_empty(&rx_buf);					// Checking  Rx buffer for empty
 
-			if(ec==buf_not_empty && (flag1==1))
-			{
+			if(ec==buf_not_empty && (flag1==1))				// If buffer is not empty and lenth is not read then
+			{												// read command ID first and then read message length
 				uint8_t con=read_data(&rx_buf);
 				if(flag==1 && con>0 && con<4)
 				{
@@ -75,6 +79,7 @@ int main(void)
 				}
 
 		    }
+			// After command command ID and Length is recieved then Rea data into mesage structure
 			else if(ec==buf_not_empty && i<m.length && m.length<MAX_DATA_SIZE)
 			{
 				uint8_t con=read_data(&rx_buf);
@@ -91,7 +96,7 @@ int main(void)
 
 			}
 
-		}*/
+		}
 
 
 

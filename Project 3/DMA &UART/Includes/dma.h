@@ -2,7 +2,9 @@
  * dma.h
  *
  *  Created on: 26-Oct-2016
- *      Author: Admin
+ *      Author: Gaurav Gandhi
+ *      THis header file contains memmove and memzero function using DMA
+ *      Also enum is defined for checking status of dma; either success or config error
  */
 
 #ifndef INCLUDES_DMA_H_

@@ -2,7 +2,9 @@
  * message.h
  *
  *  Created on: 01-Nov-2016
- *      Author: Admin
+ *      Author: Gaurav Gandhi
+ *      This header file contains message structure and function prototypes of decode message
+ *      Also it defines an enum which gives status of the LED
  */
 #ifndef INCLUDES_MESSAGE_H_
 #define INCLUDES_MESSAGE_H_
