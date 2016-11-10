@@ -128,7 +128,7 @@ void nrf_tx_addr_write() //write the tx address register
 	nrf_write_register(TX_ADDR);
 	 for(i=0;i<5;i++)
 	 {
-		 SPI_write(0xBB);
+		 SPI_write(0xBB);// setting BB as the TX address
 	 }
 	 PTC_BASE_PTR->PSOR = 1<<4;
 }
@@ -164,7 +164,7 @@ void nrf_en_rxaddr_write() //write to the datapipe register
 	PTC_BASE_PTR->PCOR = 1<<4;
 	nrf_write_register(NRF_ENRXADDR);
 
-	SPI_write(0x01);
+	SPI_write(0x01);//pipe 0 is chosen
 
 	PTC_BASE_PTR->PSOR = 1<<4;
 }
@@ -188,7 +188,7 @@ void nrf_rx_pipesize_write() //set the data pipe size
 	PTC_BASE_PTR->PCOR = 1<<4;
 	nrf_write_register(NRF_PIPESIZE);
 
-	SPI_write(0x01);
+	SPI_write(0x01);// set it as one byte
 
 	PTC_BASE_PTR->PSOR = 1<<4;
 }
