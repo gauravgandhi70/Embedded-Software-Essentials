@@ -177,7 +177,7 @@ void nrf_en_rxaddr_write() //write to the datapipe register
 	PTC_BASE_PTR->PCOR = 1<<4;
 	nrf_write_register(NRF_ENRXADDR);
 
-	SPI_write(0x02);
+	SPI_write(0x02);//choose datapipe 1
 
 	PTC_BASE_PTR->PSOR = 1<<4;
 }
@@ -202,7 +202,7 @@ void nrf_rx_pipesize_write() //set the data pipe size
 	PTC_BASE_PTR->PCOR = 1<<4;
 	nrf_write_register(NRF_PIPESIZE);
 
-	SPI_write(0x01);
+	SPI_write(0x01);//choose 1 byte as the size
 
 	PTC_BASE_PTR->PSOR = 1<<4;
 }
@@ -225,7 +225,7 @@ void nrf_rf_channel_write() //write to RF channel register to set the frequency
 	PTC_BASE_PTR->PCOR = 1<<4;
 	nrf_write_register(NORDIC_RF_CH_REG);
 
-	SPI_write(0x4C);
+	SPI_write(0x4C);//set the channel
 
 	PTC_BASE_PTR->PSOR = 1<<4;
 }
@@ -245,6 +245,6 @@ void nrf_en_autoack()
 {    uint32_t i;
 	PTC_BASE_PTR->PCOR = 1<<4;
 	nrf_write_register(NORDIC_EN_AA_REG);
-    SPI_write(0x3F);
+    SPI_write(0x3F); // enable the auto acknowledgement
     PTC_BASE_PTR->PSOR = 1<<4;
 }

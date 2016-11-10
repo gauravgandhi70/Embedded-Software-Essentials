@@ -60,12 +60,12 @@ int main(void)
 		  c=nrf_rx_pipesize_read(); //Read the values to verify
 		  nrf_rx_addr_write(); //write and set the rx address
 		  nrf_rx_addr_read(); //Read the values to verify
-		  nrf_rf_channel_write();
-		  nrf_en_autoack();
+		  nrf_rf_channel_write(); //Set the RF channel
+		  nrf_en_autoack();//Enable auto acknowledgment from data pipe 1
 		 while(1)
 		{
-		      while(nrf_status_read()&0x40 != 0x40);
-		      nrf_status_write();
+		      while(nrf_status_read()&0x40 != 0x40); // check if RX_DR bit in status register is set
+		      nrf_status_write();//clear the bit
 			  nrf_read_data(); //poll for data
 	  }
 }
