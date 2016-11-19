@@ -34,13 +34,8 @@ int main(int argc, char** argv)
 
         printf("\nFIFO Status : 0x%x \n",c);
 
-        //while(1)
-                                                                                                                                                      276,3-24      94% //{
-                radio.startWrite( &f ,1 );
-                c=radio.read_register(STATUS);
-                printf(" 0x%x \n",c);
-                while((c & 0x20) != 0x20);
-                radio.write_register(STATUS,0x20);
+        while(1);
+                                                                                                                                              
 
         //}
         return 0;
