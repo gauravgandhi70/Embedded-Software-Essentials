@@ -50,7 +50,7 @@ int main(void)
 	LED_Init();
 	tsi_init();
 	LEDColour_t color=1;
-	//uint32_t d;
+
 
 	while(1)			// Infinite loop for continuous operation
 		{

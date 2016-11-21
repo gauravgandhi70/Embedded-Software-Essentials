@@ -23,21 +23,21 @@
 void tsi_init()
 {
 	SIM_SCGC5 |= SIM_SCGC5_TSI_MASK;  // Enable  	Access to the TSI module
-	SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;//
+	SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;// Enable Port B Gate CLock
 
-	PORTB_PCR16 |= PORT_PCR_MUX(0);
+	PORTB_PCR16 |= PORT_PCR_MUX(0);		// Choose Alternate function 0 as TSI channel 9
 	//PORTB_PCR17 |= PORT_PCR_MUX(0);
 
 
-	TSI0_GENCS |= TSI_GENCS_ESOR_MASK;
-	TSI0_GENCS |= TSI_GENCS_NSCN_MASK;
-	TSI0_GENCS |= TSI_GENCS_TSIEN_MASK;
-	TSI0_GENCS |= TSI_GENCS_TSIIEN_MASK;
+	TSI0_GENCS |= TSI_GENCS_ESOR_MASK;	// End of Scan interurpt in allowed
+	TSI0_GENCS |= TSI_GENCS_NSCN_MASK;	// 32 scans per electrodr
+	TSI0_GENCS |= TSI_GENCS_TSIEN_MASK;	// Enable Touch sensing input mode
+	TSI0_GENCS |= TSI_GENCS_TSIIEN_MASK; // Enable Touch sensing input interrupt
 
-	NVIC_EnableIRQ(TSI0_IRQn);
+	NVIC_EnableIRQ(TSI0_IRQn);			// Enable Global Interrupt
 	__enable_irq();
 
-	TSI0_DATA |= TSI_DATA_TSICH(9);
+	TSI0_DATA |= TSI_DATA_TSICH(9);		// Select channel number 9 for input
 
 
 	TSI0_TSHD = 0xFF00;					// THRESHOLD VALUE
