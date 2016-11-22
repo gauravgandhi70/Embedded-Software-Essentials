@@ -6,6 +6,9 @@
  */
 #include"MKL25Z4.h"
 #include"data.h"
+#include<math.h>
+#include<stdio.h>
+
 
 int32_t my_atoi(int8_t *str) ;                             //Function definition for ascii string to integer function
 void dump_memory(uint8_t *start, uint32_t length) ;
@@ -17,10 +20,10 @@ int8_t * itoa(int32_t num, int8_t *str, int32_t base);
 
 int32_t my_atoi(int8_t *str)                              //Function definition for ascii string to integer function
 {
-   printf("string:%s\n",str);                             //Prints the input string
+  // printf("string:%s\n",str);                             //Prints the input string
    int32_t i=0;
-   int32_t length=0;                                      //Initialising length of the string to zero
-   while(*(str+i)!='\0')                                  //Calculate the length of the string by incrementing length till the string reaches the null character
+   uint32_t length=0,integer=0; 										//Initialising length of the string to zero
+   while(*(str+i)!=0xd)                                  //Calculate the length of the string by incrementing length till the string reaches the null character
    {
        length++;
        i++;
@@ -29,9 +32,10 @@ int32_t my_atoi(int8_t *str)                              //Function definition 
    //printf("length is: %d\n",length);                      //Displaying the length of the string
    for(i=0;i<length;i++)                                  //Converts the ascii character of each character in the string to its corresponding integer value
    {
-       //printf("%d",*(str+i));                             //Displays the integer value of the input string
+     integer += (*(str+i)-48)*pow(10,length-(i+1));
+
    }
-   return 0;
+   return integer;
 }
 
 void dump_memory(uint8_t *start, uint32_t length)         //Function definition for printing hex output of the data bytes in the memory given pointer to a memory location & length of bytes to print

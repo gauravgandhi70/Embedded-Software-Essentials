@@ -40,6 +40,9 @@
 #include"message.h"
 #include<malloc.h>
 #include"tsi.h"
+//#include"rtc.h"
+
+
 
 
 
@@ -47,7 +50,9 @@
 int main(void)
 {
 
-	uart_init(115200);								// Initialize UART
+	uart_init(57600);								// Initialize UART
+	rtc_init();
+	time_setup();
 	LED_Init();
 	tsi_init();
 	tsi_start_scan();

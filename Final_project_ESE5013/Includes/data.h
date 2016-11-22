@@ -14,5 +14,5 @@ uint32_t big_to_little(uint32_t data);                      //Function prototype
 uint32_t little_to_big(uint32_t data);                      //Function prototype for little endian to big endian conversion
 int8_t* itoa(int32_t num, int8_t* str, int32_t base);       //Function prototype for integer to ascii string conversion
 void ftoa(float n, int8_t *res, int32_t dec_place);
-
+int intToStr(int32_t x, int8_t str[], int32_t d, int32_t negative);
 #endif /* INCLUDES_DATA_H_ */
