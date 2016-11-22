@@ -30,7 +30,7 @@ void tsi_init()
 
 
 	TSI0_GENCS |= TSI_GENCS_ESOR_MASK;	// End of Scan interurpt in allowed
-	TSI0_GENCS |= TSI_GENCS_NSCN_MASK;	// 32 scans per electrode
+	TSI0_GENCS |= TSI_GENCS_NSCN_MASK;	// 'i' scans per electrode
 	TSI0_GENCS |= TSI_GENCS_TSIEN_MASK;	// Enable Touch sensing input mode
 	TSI0_GENCS |= TSI_GENCS_TSIIEN_MASK; // Enable Touch sensing input interrupt
 	TSI0_GENCS |= TSI_GENCS_EXTCHRG(0);
@@ -66,42 +66,42 @@ void tsi_led()
 			if(d>19000 && d<23000)
 				{
 
-					LOG1("\n\rRED=",&d);
+
 					LEDFunction(RED,200);
 				}
 			else if(d>23000 && d<27000)
 				{
-					LOG1("\n\rYELLOW=",&d);
+
 					LEDFunction(YELLOW,200);
 				}
 			else if(d>27000 && d<31000)
 				{
-					LOG1("\n\rGreen=",&d);
+
 					LEDFunction(GREEN,200);
 				}
 			else if(d>31000 && d<35000)
 				{
-					LOG1("\n\rBLUE=",&d);
+
 					LEDFunction(BLUE,200);
 				}
 			else if(d>35000 && d<39000)
 				{
-					LOG1("\n\rMAGENTA=",&d);
+
 					LEDFunction(MAGENTA,200);
 				}
 			else if(d>39000 && d<43000)
 				{
-					LOG1("\n\rCYAN",&d);
+
 					LEDFunction(CYAN,200);
 				}
 			else if(d>43000 && d<47000)
 				{
-					LOG1("\n\rWHITE=",&d);
+
 					LEDFunction(WHITE,200);
 				}
 			else if(d>47000 && d<51000)
 				{
-					LOG1("\n\LED OFF=",&d);
+
 					LEDFunction(OFF,200);
 				}
 

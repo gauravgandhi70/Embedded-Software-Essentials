@@ -18,7 +18,7 @@
 #ifdef BOARD==1
 
 #define LOG0(c) uart_log((uint8_t*) c)
-#define LOG1(x,y) uart_log1((uint8_t*) x, (uint32_t*) y)
+#define LOG1(x,y,z) uart_log1((uint8_t*) x, (uint32_t) y,(uint32_t) z)
 
 #elif	BOARD==2
 

@@ -26,13 +26,14 @@ void uart_log(uint8_t *c)
 /* LOG1 function takes string pointer , parameter and length of parameter as input
 It converts the parameter to uint8_t type and then it concatenates the string and parameter and sends it to 
  serial terminal */
-void uart_log1(uint8_t *c, uint32_t *para)
+void uart_log1(uint8_t *c, uint32_t para,uint8_t data_type)
 {
 	uint8_t str[100]="0",ret_para[100]="0";
 		uint32_t i = 0,j=0;
 		int32_t len=0;
-	itoa((uint32_t)(*para),ret_para,10);  //converting to ascii characters
-	//ftoa(*para,ret_para,3);
+	if(data_type=='i'){itoa((uint32_t)(para),ret_para,10);}   //converting to ascii characters
+
+	else if(data_type=='f'){ftoa(para,ret_para,3);}
 	/*LOG0("STRINGS BEFORE CONCATENATION \n \r");
 	LOG0(ret_para);
 	LOG0("\n \r");

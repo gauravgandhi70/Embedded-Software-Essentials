@@ -51,14 +51,18 @@ int main(void)
 	LED_Init();
 	tsi_init();
 	tsi_start_scan();
+	uint16_t a=15;
+	uint32_t b=123;
+	LOG1("\n\r16 bit: ",a,'i');
 
 
 	while(1)			// Infinite loop for continuous operation
 		{
-			if(f==1)
+
+		if(f==1)
 			{
 				f==0;
-				LOG1("\n\rDATA=",&d);
+				LOG1("\n\rDATA=",&d,32);
 				tsi_led();
 			}
 		}

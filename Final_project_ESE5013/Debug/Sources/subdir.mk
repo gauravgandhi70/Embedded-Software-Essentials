@@ -12,6 +12,7 @@ C_SRCS += \
 ../Sources/main.c \
 ../Sources/memory.c \
 ../Sources/message.c \
+../Sources/rtc.c \
 ../Sources/tsi.c \
 ../Sources/uart.c 
 
@@ -24,6 +25,7 @@ OBJS += \
 ./Sources/main.o \
 ./Sources/memory.o \
 ./Sources/message.o \
+./Sources/rtc.o \
 ./Sources/tsi.o \
 ./Sources/uart.o 
 
@@ -36,6 +38,7 @@ C_DEPS += \
 ./Sources/main.d \
 ./Sources/memory.d \
 ./Sources/message.d \
+./Sources/rtc.d \
 ./Sources/tsi.d \
 ./Sources/uart.d 
 
