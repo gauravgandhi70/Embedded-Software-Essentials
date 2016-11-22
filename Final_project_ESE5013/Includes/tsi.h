@@ -12,5 +12,6 @@ volatile uint32_t d;
 void tsi_init(void);
 void TSI0_IRQHandler(void);
 void tsi_led(void);
-
+void tsi_start_scan(void);
+void tsi_stop_scan(void);
 #endif /* INCLUDES_TSI_H_ */

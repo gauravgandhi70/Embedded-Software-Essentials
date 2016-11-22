@@ -46,10 +46,11 @@
 
 int main(void)
 {
-	uart_init(57600);								// Initialize UART
+
+	uart_init(115200);								// Initialize UART
 	LED_Init();
 	tsi_init();
-	LEDColour_t color=1;
+	tsi_start_scan();
 
 
 	while(1)			// Infinite loop for continuous operation
@@ -57,9 +58,8 @@ int main(void)
 			if(f==1)
 			{
 				f==0;
+				LOG1("\n\rDATA=",&d);
 				tsi_led();
-
-
 			}
 		}
 

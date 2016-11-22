@@ -30,9 +30,11 @@ void tsi_init()
 
 
 	TSI0_GENCS |= TSI_GENCS_ESOR_MASK;	// End of Scan interurpt in allowed
-	TSI0_GENCS |= TSI_GENCS_NSCN_MASK;	// 32 scans per electrodr
+	TSI0_GENCS |= TSI_GENCS_NSCN_MASK;	// 32 scans per electrode
 	TSI0_GENCS |= TSI_GENCS_TSIEN_MASK;	// Enable Touch sensing input mode
 	TSI0_GENCS |= TSI_GENCS_TSIIEN_MASK; // Enable Touch sensing input interrupt
+	TSI0_GENCS |= TSI_GENCS_EXTCHRG(0);
+	TSI0_GENCS |= TSI_GENCS_REFCHRG(5);
 
 	NVIC_EnableIRQ(TSI0_IRQn);			// Enable Global Interrupt
 	__enable_irq();
@@ -42,55 +44,69 @@ void tsi_init()
 
 	TSI0_TSHD = 0xFF00;					// THRESHOLD VALUE
 
+
+}
+
+
+void tsi_start_scan()
+{
+	TSI0_GENCS |= (TSI_GENCS_TSIIEN_MASK);
 	TSI0_DATA |= TSI_DATA_SWTS_MASK;     // START SCAN
 }
 
+void tsi_stop_scan()
+{
+	TSI0_GENCS &= ~(TSI_GENCS_TSIIEN_MASK);
+}
+
+
 void tsi_led()
 {
-			if(d>650 && d<750)
+	uint8_t prot_flag[8];
+			if(d>19000 && d<23000)
 				{
 
 					LOG1("\n\rRED=",&d);
 					LEDFunction(RED,200);
 				}
-			else if(d>750 && d<850)
+			else if(d>23000 && d<27000)
 				{
 					LOG1("\n\rYELLOW=",&d);
 					LEDFunction(YELLOW,200);
 				}
-			else if(d>850 && d<950)
+			else if(d>27000 && d<31000)
 				{
 					LOG1("\n\rGreen=",&d);
 					LEDFunction(GREEN,200);
 				}
-			else if(d>950 && d<1050)
+			else if(d>31000 && d<35000)
 				{
 					LOG1("\n\rBLUE=",&d);
 					LEDFunction(BLUE,200);
 				}
-			else if(d>1050 && d<1150)
+			else if(d>35000 && d<39000)
 				{
 					LOG1("\n\rMAGENTA=",&d);
 					LEDFunction(MAGENTA,200);
 				}
-			else if(d>1150 && d<1250)
+			else if(d>39000 && d<43000)
 				{
 					LOG1("\n\rCYAN",&d);
 					LEDFunction(CYAN,200);
 				}
-			else if(d>1250 && d<1350)
+			else if(d>43000 && d<47000)
 				{
 					LOG1("\n\rWHITE=",&d);
 					LEDFunction(WHITE,200);
 				}
-			else if(d>1350 && d<1450)
+			else if(d>47000 && d<51000)
 				{
 					LOG1("\n\LED OFF=",&d);
 					LEDFunction(OFF,200);
 				}
 
 			TSI0_GENCS |= (TSI_GENCS_TSIIEN_MASK);
-			TSI0_DATA |= TSI_DATA_SWTS_MASK;     // START SCAN
+				TSI0_DATA |= TSI_DATA_SWTS_MASK;     // START SCAN
 }
 
 void TSI0_IRQHandler(void)
@@ -100,8 +116,5 @@ void TSI0_IRQHandler(void)
 	f=1;
 	d = (TSI0_DATA<<16);
 	d=d/65536;
-
-	//TSI0_DATA |= TSI_DATA_SWTS_MASK;     // START SCAN
-
 
 }
