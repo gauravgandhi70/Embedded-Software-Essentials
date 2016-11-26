@@ -21,10 +21,46 @@
 
 void rtc_init()
 {
-	uint32_t i=100000;
-	SIM_SCGC6 |= SIM_SCGC6_RTC_MASK;
-	RTC_CR |= RTC_CR_OSCE_MASK;
-	while(i>0){i--;}
+		uint32_t i=100000;
+
+		MCG_C1 |= MCG_C1_IRCLKEN_MASK; //Enable internal reference clock
+		MCG_C2 &= ~(MCG_C2_IRCS_MASK);  //Internal Reference Clock -->Slow
+
+		SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK;  // Enable PORT C Gate Clock
+
+		PORTC_PCR1 |= (PORT_PCR_MUX(0x1));       //PTC1 as RTC_CLKIN
+		SIM_SOPT1 |= SIM_SOPT1_OSC32KSEL(0b10);  //32 Khz clock source for RTC
+
+
+		SIM_SOPT2 |= SIM_SOPT2_CLKOUTSEL(0b100); //Clockout pin --> i KHz
+
+		PORTC_PCR3 |= (PORT_PCR_MUX(0x5)); //PTC3 as CLKOUT
+
+
+
+
+	 SIM_SCGC6 |= SIM_SCGC6_RTC_MASK; //    Enable RTC
+
+
+
+	 // Clear RTC Registers
+	 RTC_CR = RTC_CR_SWR_MASK;
+	 RTC_CR &= ~RTC_CR_SWR_MASK;
+
+	 if (RTC_SR & RTC_SR_TIF_MASK){
+	      RTC_TSR = 0x00000000;
+	 }
+
+
+	 /*RTC_IER |= RTC_IER_TSIE_MASK;
+
+	 NVIC_EnableIRQ(RTC_Seconds_IRQn);
+	 __enable_irq();
+
+
+	 RTC_SR |= RTC_SR_TCE_MASK;     // Enable Counter*/
+
+
 
 }
 
@@ -75,7 +111,7 @@ void time_setup()
 
 		RTC_TSR = datetosec();
 		RTC_IER = RTC_IER_TSIE_MASK;
-		NVIC_EnableIRQ(RTC_IRQn);
+		NVIC_EnableIRQ(RTC_Seconds_IRQn);
 		__enable_irq();
 		RTC_SR |= RTC_SR_TCE_MASK;
 }
@@ -87,16 +123,19 @@ uint32_t datetosec(void)
 	uint32_t sec,i;
 
 	sec = cur_time.min * 60;
+
 	sec += cur_time.hour * 3600;
-	sec += (cur_time.date-1)*86,164;
+
+	sec += (cur_time.date-1)*86164;
+
 	for(i=0;i<cur_time.month-1;i++)
 	{
-		sec += days[i]*86,164;
+		sec += days[i]*86164;
 	}
 
 	sec += (cur_time.year-16)*31536000;
 
-
+	LOG1("\n\rSECONDS : ",sec,'i');
 	return sec;
 
 
@@ -104,7 +143,8 @@ uint32_t datetosec(void)
 }
 
 
-void RTC_IRQHandler()
+void RTC_Seconds_IRQHandler()
 {
-	LEDFunction(GREEN,500);
+	LED_Control('a');
+	LOG1("\n\rRTC Status: ",RTC_TSR,'i');
 }

@@ -67,7 +67,7 @@ void tsi_led()
 				{
 
 
-					LEDFunction(RED,200);
+					LEDFunction(OFF,200);
 				}
 			else if(d>23000 && d<27000)
 				{
@@ -102,7 +102,7 @@ void tsi_led()
 			else if(d>47000 && d<51000)
 				{
 
-					LEDFunction(OFF,200);
+					LEDFunction(RED,200);
 				}
 
 			TSI0_GENCS |= (TSI_GENCS_TSIIEN_MASK);
@@ -116,5 +116,7 @@ void TSI0_IRQHandler(void)
 	f=1;
 	d = (TSI0_DATA<<16);
 	d=d/65536;
+	//TSI0_GENCS |= (TSI_GENCS_TSIIEN_MASK);
+	//TSI0_DATA |= TSI_DATA_SWTS_MASK;     // START SCAN
 
 }
