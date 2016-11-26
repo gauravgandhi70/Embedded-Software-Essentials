@@ -15,7 +15,6 @@ void I2C_WriteRegister(unsigned char u8SlaveAddress, unsigned char u8RegisterAdd
 
 	I2C_Stop();
 
-    Pause(50);
 }
 
 unsigned char I2C_ReadRegister(unsigned char u8SlaveAddress, unsigned char u8RegisterAddress)
@@ -41,7 +40,6 @@ unsigned char I2C_ReadRegister(unsigned char u8SlaveAddress, unsigned char u8Reg
 	I2C_Wait();
 	I2C_Stop();  
 	result = I2C0_D;
-	Pause(50);
 	return result;
 }
 
