@@ -75,6 +75,8 @@ void time_setup()
 
 		RTC_TSR = datetosec();
 		RTC_IER = RTC_IER_TSIE_MASK;
+		NVIC_EnableIRQ(RTC_IRQn);
+		__enable_irq();
 		RTC_SR |= RTC_SR_TCE_MASK;
 }
 
@@ -102,4 +104,7 @@ uint32_t datetosec(void)
 }
 
 
-
+void RTC_IRQHandler()
+{
+	LEDFunction(GREEN,500);
+}
