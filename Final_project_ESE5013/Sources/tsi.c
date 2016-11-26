@@ -109,13 +109,17 @@ void tsi_led()
 				TSI0_DATA |= TSI_DATA_SWTS_MASK;     // START SCAN
 }
 
+
+
+//tsi_dac(uint16_t data)
+
 void TSI0_IRQHandler(void)
 {
 	TSI0_GENCS |= TSI_GENCS_EOSF_MASK;
 	TSI0_GENCS &= ~(TSI_GENCS_TSIIEN_MASK);
 	f=1;
-	d = (TSI0_DATA<<16);
-	d=d/65536;
+	d = (TSI0_DATA);
+	//d=d/65536;
 	//TSI0_GENCS |= (TSI_GENCS_TSIIEN_MASK);
 	//TSI0_DATA |= TSI_DATA_SWTS_MASK;     // START SCAN
 
