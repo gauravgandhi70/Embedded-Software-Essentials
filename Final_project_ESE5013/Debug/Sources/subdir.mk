@@ -4,10 +4,12 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Sources/I2C.c \
 ../Sources/circbuf.c \
 ../Sources/dac.c \
 ../Sources/data.c \
 ../Sources/dma.c \
+../Sources/eeprom.c \
 ../Sources/led.c \
 ../Sources/log.c \
 ../Sources/main.c \
@@ -18,10 +20,12 @@ C_SRCS += \
 ../Sources/uart.c 
 
 OBJS += \
+./Sources/I2C.o \
 ./Sources/circbuf.o \
 ./Sources/dac.o \
 ./Sources/data.o \
 ./Sources/dma.o \
+./Sources/eeprom.o \
 ./Sources/led.o \
 ./Sources/log.o \
 ./Sources/main.o \
@@ -32,10 +36,12 @@ OBJS += \
 ./Sources/uart.o 
 
 C_DEPS += \
+./Sources/I2C.d \
 ./Sources/circbuf.d \
 ./Sources/dac.d \
 ./Sources/data.d \
 ./Sources/dma.d \
+./Sources/eeprom.d \
 ./Sources/led.d \
 ./Sources/log.d \
 ./Sources/main.d \

@@ -188,6 +188,51 @@ Discarded input sections
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
  .ARM.extab     0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .text          0x00000000        0x0 ./Sources/I2C.o
+ .data          0x00000000        0x0 ./Sources/I2C.o
+ .bss           0x00000000        0x0 ./Sources/I2C.o
+ .text.I2C_WriteRegister
+                0x00000000       0xe0 ./Sources/I2C.o
+ .text.I2C_ReadRegister
+                0x00000000      0x158 ./Sources/I2C.o
+ .text.I2C_ReadMultiRegisters
+                0x00000000      0x1e8 ./Sources/I2C.o
+ .debug_info    0x00000000      0x249 ./Sources/I2C.o
+ .debug_abbrev  0x00000000      0x124 ./Sources/I2C.o
+ .debug_aranges
+                0x00000000       0x30 ./Sources/I2C.o
+ .debug_ranges  0x00000000       0x20 ./Sources/I2C.o
+ .debug_macro   0x00000000       0x8c ./Sources/I2C.o
+ .debug_macro   0x00000000      0x802 ./Sources/I2C.o
+ .debug_macro   0x00000000       0x16 ./Sources/I2C.o
+ .debug_macro   0x00000000       0x16 ./Sources/I2C.o
+ .debug_macro   0x00000000       0x44 ./Sources/I2C.o
+ .debug_macro   0x00000000      0x209 ./Sources/I2C.o
+ .debug_macro   0x00000000       0x3a ./Sources/I2C.o
+ .debug_macro   0x00000000       0x3a ./Sources/I2C.o
+ .debug_macro   0x00000000       0x26 ./Sources/I2C.o
+ .debug_macro   0x00000000      0x306 ./Sources/I2C.o
+ .debug_macro   0x00000000       0x63 ./Sources/I2C.o
+ .debug_macro   0x00000000     0x839f ./Sources/I2C.o
+ .debug_macro   0x00000000       0x34 ./Sources/I2C.o
+ .debug_line    0x00000000      0x34d ./Sources/I2C.o
+ .debug_str     0x00000000    0x31fe0 ./Sources/I2C.o
+ .comment       0x00000000       0x71 ./Sources/I2C.o
+ .ARM.attributes
+                0x00000000       0x32 ./Sources/I2C.o
+ .debug_frame   0x00000000       0x70 ./Sources/I2C.o
  .group         0x00000000        0x8 ./Sources/circbuf.o
  .group         0x00000000        0x8 ./Sources/circbuf.o
  .group         0x00000000        0x8 ./Sources/circbuf.o
@@ -216,6 +261,8 @@ Discarded input sections
  .data          0x00000000        0x0 ./Sources/circbuf.o
  .bss           0x00000000        0x0 ./Sources/circbuf.o
  .text.destroy  0x00000000       0x18 ./Sources/circbuf.o
+ .debug_macro   0x00000000      0x802 ./Sources/circbuf.o
+ .debug_macro   0x00000000       0x16 ./Sources/circbuf.o
  .group         0x00000000        0x8 ./Sources/dac.o
  .group         0x00000000        0x8 ./Sources/dac.o
  .group         0x00000000        0x8 ./Sources/dac.o
@@ -246,6 +293,15 @@ Discarded input sections
  .bss           0x00000000        0x0 ./Sources/dac.o
  .debug_macro   0x00000000      0x802 ./Sources/dac.o
  .debug_macro   0x00000000       0x16 ./Sources/dac.o
+ .debug_macro   0x00000000       0x16 ./Sources/dac.o
+ .debug_macro   0x00000000       0x44 ./Sources/dac.o
+ .debug_macro   0x00000000      0x209 ./Sources/dac.o
+ .debug_macro   0x00000000       0x3a ./Sources/dac.o
+ .debug_macro   0x00000000       0x3a ./Sources/dac.o
+ .debug_macro   0x00000000       0x26 ./Sources/dac.o
+ .debug_macro   0x00000000      0x306 ./Sources/dac.o
+ .debug_macro   0x00000000       0x63 ./Sources/dac.o
+ .debug_macro   0x00000000     0x839f ./Sources/dac.o
  .debug_macro   0x00000000       0x10 ./Sources/dac.o
  .debug_macro   0x00000000       0x58 ./Sources/dac.o
  .debug_macro   0x00000000       0x35 ./Sources/dac.o
@@ -354,6 +410,71 @@ Discarded input sections
  .debug_macro   0x00000000     0x839f ./Sources/dma.o
  .debug_macro   0x00000000       0x10 ./Sources/dma.o
  .debug_macro   0x00000000       0x16 ./Sources/dma.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .text          0x00000000        0x0 ./Sources/eeprom.o
+ .data          0x00000000        0x0 ./Sources/eeprom.o
+ .bss           0x00000000        0x0 ./Sources/eeprom.o
+ .debug_info    0x00000000      0x153 ./Sources/eeprom.o
+ .debug_abbrev  0x00000000       0x84 ./Sources/eeprom.o
+ .debug_aranges
+                0x00000000       0x18 ./Sources/eeprom.o
+ .debug_macro   0x00000000      0x1aa ./Sources/eeprom.o
+ .debug_macro   0x00000000      0x802 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x16 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x16 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x44 ./Sources/eeprom.o
+ .debug_macro   0x00000000      0x209 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x3a ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x3a ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x26 ./Sources/eeprom.o
+ .debug_macro   0x00000000      0x306 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x63 ./Sources/eeprom.o
+ .debug_macro   0x00000000     0x839f ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x10 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x10 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x16 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x10 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x58 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x35 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0xa3 ./Sources/eeprom.o
+ .debug_macro   0x00000000      0x166 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x52 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x16 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x43 ./Sources/eeprom.o
+ .debug_macro   0x00000000      0x180 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x35 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x3c ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x34 ./Sources/eeprom.o
+ .debug_line    0x00000000      0x2c0 ./Sources/eeprom.o
+ .debug_str     0x00000000    0x33761 ./Sources/eeprom.o
+ .comment       0x00000000       0x71 ./Sources/eeprom.o
+ .ARM.attributes
+                0x00000000       0x32 ./Sources/eeprom.o
  .group         0x00000000        0x8 ./Sources/led.o
  .group         0x00000000        0x8 ./Sources/led.o
  .group         0x00000000        0x8 ./Sources/led.o
@@ -486,6 +607,7 @@ Discarded input sections
  .group         0x00000000        0x8 ./Sources/main.o
  .group         0x00000000        0x8 ./Sources/main.o
  .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
  .text          0x00000000        0x0 ./Sources/main.o
  .data          0x00000000        0x0 ./Sources/main.o
  .bss           0x00000000        0x0 ./Sources/main.o
@@ -514,6 +636,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x180 ./Sources/main.o
  .debug_macro   0x00000000       0x35 ./Sources/main.o
  .debug_macro   0x00000000       0x3c ./Sources/main.o
+ .debug_macro   0x00000000       0x34 ./Sources/main.o
  .group         0x00000000        0x8 ./Sources/memory.o
  .group         0x00000000        0x8 ./Sources/memory.o
  .group         0x00000000        0x8 ./Sources/memory.o
@@ -651,6 +774,7 @@ Discarded input sections
  .group         0x00000000        0x8 ./Sources/rtc.o
  .group         0x00000000        0x8 ./Sources/rtc.o
  .group         0x00000000        0x8 ./Sources/rtc.o
+ .group         0x00000000        0x8 ./Sources/rtc.o
  .text          0x00000000        0x0 ./Sources/rtc.o
  .data          0x00000000        0x0 ./Sources/rtc.o
  .bss           0x00000000        0x0 ./Sources/rtc.o
@@ -686,6 +810,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x180 ./Sources/rtc.o
  .debug_macro   0x00000000       0x35 ./Sources/rtc.o
  .debug_macro   0x00000000       0x3c ./Sources/rtc.o
+ .debug_macro   0x00000000       0x34 ./Sources/rtc.o
  COMMON         0x00000000       0x14 ./Sources/rtc.o
  .group         0x00000000        0x8 ./Sources/tsi.o
  .group         0x00000000        0x8 ./Sources/tsi.o
@@ -1239,10 +1364,12 @@ Linker script and memory map
 LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crti.o
 LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
 LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+LOAD ./Sources/I2C.o
 LOAD ./Sources/circbuf.o
 LOAD ./Sources/dac.o
 LOAD ./Sources/data.o
 LOAD ./Sources/dma.o
+LOAD ./Sources/eeprom.o
 LOAD ./Sources/led.o
 LOAD ./Sources/log.o
 LOAD ./Sources/main.o
@@ -1980,75 +2107,64 @@ OUTPUT(Final_project_ESE5013.elf elf32-littlearm)
  .debug_ranges  0x00000170       0x20 ./Sources/uart.o
  .debug_ranges  0x00000190       0x18 ./Project_Settings/Startup_Code/system_MKL25Z4.o
 
-.debug_macro    0x00000000     0xacb0
+.debug_macro    0x00000000     0x1ab9
  .debug_macro   0x00000000      0x132 ./Sources/circbuf.o
- .debug_macro   0x00000132      0x802 ./Sources/circbuf.o
- .debug_macro   0x00000934       0x58 ./Sources/circbuf.o
- .debug_macro   0x0000098c       0x16 ./Sources/circbuf.o
- .debug_macro   0x000009a2       0x35 ./Sources/circbuf.o
- .debug_macro   0x000009d7       0xa3 ./Sources/circbuf.o
- .debug_macro   0x00000a7a       0x16 ./Sources/circbuf.o
- .debug_macro   0x00000a90       0x97 ./Sources/circbuf.o
- .debug_macro   0x00000b27       0x10 ./Sources/circbuf.o
- .debug_macro   0x00000b37       0xef ./Sources/circbuf.o
- .debug_macro   0x00000c26       0x4a ./Sources/circbuf.o
- .debug_macro   0x00000c70       0x52 ./Sources/circbuf.o
- .debug_macro   0x00000cc2       0x16 ./Sources/circbuf.o
- .debug_macro   0x00000cd8       0x43 ./Sources/circbuf.o
- .debug_macro   0x00000d1b      0x180 ./Sources/circbuf.o
- .debug_macro   0x00000e9b       0x10 ./Sources/circbuf.o
- .debug_macro   0x00000eab       0x22 ./Sources/circbuf.o
- .debug_macro   0x00000ecd       0xbd ./Sources/circbuf.o
- .debug_macro   0x00000f8a       0x16 ./Sources/circbuf.o
- .debug_macro   0x00000fa0      0x14a ./Sources/circbuf.o
- .debug_macro   0x000010ea       0x16 ./Sources/circbuf.o
- .debug_macro   0x00001100       0x35 ./Sources/circbuf.o
- .debug_macro   0x00001135       0x22 ./Sources/circbuf.o
- .debug_macro   0x00001157      0x20f ./Sources/circbuf.o
- .debug_macro   0x00001366       0x10 ./Sources/circbuf.o
- .debug_macro   0x00001376      0x197 ./Sources/dac.o
- .debug_macro   0x0000150d       0x16 ./Sources/dac.o
- .debug_macro   0x00001523       0x44 ./Sources/dac.o
- .debug_macro   0x00001567      0x209 ./Sources/dac.o
- .debug_macro   0x00001770       0x3a ./Sources/dac.o
- .debug_macro   0x000017aa       0x3a ./Sources/dac.o
- .debug_macro   0x000017e4       0x26 ./Sources/dac.o
- .debug_macro   0x0000180a      0x306 ./Sources/dac.o
- .debug_macro   0x00001b10       0x63 ./Sources/dac.o
- .debug_macro   0x00001b73     0x839f ./Sources/dac.o
- .debug_macro   0x00009f12       0x10 ./Sources/dac.o
- .debug_macro   0x00009f22       0x16 ./Sources/dac.o
- .debug_macro   0x00009f38       0x10 ./Sources/dac.o
- .debug_macro   0x00009f48      0x166 ./Sources/dac.o
- .debug_macro   0x0000a0ae       0x3c ./Sources/dac.o
- .debug_macro   0x0000a0ea      0x162 ./Sources/data.o
- .debug_macro   0x0000a24c       0xde ./Sources/data.o
- .debug_macro   0x0000a32a       0x1c ./Sources/data.o
- .debug_macro   0x0000a346       0xa5 ./Sources/dma.o
- .debug_macro   0x0000a3eb      0x118 ./Sources/led.o
- .debug_macro   0x0000a503      0x184 ./Sources/log.o
- .debug_macro   0x0000a687      0x197 ./Sources/main.o
- .debug_macro   0x0000a81e      0x197 ./Sources/rtc.o
- .debug_macro   0x0000a9b5      0x18d ./Sources/tsi.o
- .debug_macro   0x0000ab42       0xa4 ./Sources/uart.o
- .debug_macro   0x0000abe6       0x7e ./Project_Settings/Startup_Code/system_MKL25Z4.o
- .debug_macro   0x0000ac64       0x4c ./Project_Settings/Startup_Code/system_MKL25Z4.o
+ .debug_macro   0x00000132       0x58 ./Sources/circbuf.o
+ .debug_macro   0x0000018a       0x35 ./Sources/circbuf.o
+ .debug_macro   0x000001bf       0xa3 ./Sources/circbuf.o
+ .debug_macro   0x00000262       0x16 ./Sources/circbuf.o
+ .debug_macro   0x00000278       0x97 ./Sources/circbuf.o
+ .debug_macro   0x0000030f       0x10 ./Sources/circbuf.o
+ .debug_macro   0x0000031f       0xef ./Sources/circbuf.o
+ .debug_macro   0x0000040e       0x4a ./Sources/circbuf.o
+ .debug_macro   0x00000458       0x52 ./Sources/circbuf.o
+ .debug_macro   0x000004aa       0x16 ./Sources/circbuf.o
+ .debug_macro   0x000004c0       0x43 ./Sources/circbuf.o
+ .debug_macro   0x00000503      0x180 ./Sources/circbuf.o
+ .debug_macro   0x00000683       0x10 ./Sources/circbuf.o
+ .debug_macro   0x00000693       0x22 ./Sources/circbuf.o
+ .debug_macro   0x000006b5       0xbd ./Sources/circbuf.o
+ .debug_macro   0x00000772       0x16 ./Sources/circbuf.o
+ .debug_macro   0x00000788      0x14a ./Sources/circbuf.o
+ .debug_macro   0x000008d2       0x16 ./Sources/circbuf.o
+ .debug_macro   0x000008e8       0x35 ./Sources/circbuf.o
+ .debug_macro   0x0000091d       0x22 ./Sources/circbuf.o
+ .debug_macro   0x0000093f      0x20f ./Sources/circbuf.o
+ .debug_macro   0x00000b4e       0x10 ./Sources/circbuf.o
+ .debug_macro   0x00000b5e      0x197 ./Sources/dac.o
+ .debug_macro   0x00000cf5       0x10 ./Sources/dac.o
+ .debug_macro   0x00000d05       0x16 ./Sources/dac.o
+ .debug_macro   0x00000d1b       0x10 ./Sources/dac.o
+ .debug_macro   0x00000d2b      0x166 ./Sources/dac.o
+ .debug_macro   0x00000e91       0x3c ./Sources/dac.o
+ .debug_macro   0x00000ecd      0x162 ./Sources/data.o
+ .debug_macro   0x0000102f       0xde ./Sources/data.o
+ .debug_macro   0x0000110d       0x1c ./Sources/data.o
+ .debug_macro   0x00001129       0xa5 ./Sources/dma.o
+ .debug_macro   0x000011ce      0x118 ./Sources/led.o
+ .debug_macro   0x000012e6      0x184 ./Sources/log.o
+ .debug_macro   0x0000146a      0x1aa ./Sources/main.o
+ .debug_macro   0x00001614      0x1aa ./Sources/rtc.o
+ .debug_macro   0x000017be      0x18d ./Sources/tsi.o
+ .debug_macro   0x0000194b       0xa4 ./Sources/uart.o
+ .debug_macro   0x000019ef       0x7e ./Project_Settings/Startup_Code/system_MKL25Z4.o
+ .debug_macro   0x00001a6d       0x4c ./Project_Settings/Startup_Code/system_MKL25Z4.o
 
-.debug_line     0x00000000     0x1fca
+.debug_line     0x00000000     0x1ff1
  .debug_line    0x00000000      0x2b1 ./Sources/circbuf.o
  .debug_line    0x000002b1      0x2bd ./Sources/dac.o
  .debug_line    0x0000056e      0x3b4 ./Sources/data.o
  .debug_line    0x00000922      0x24e ./Sources/dma.o
  .debug_line    0x00000b70      0x2a7 ./Sources/led.o
  .debug_line    0x00000e17      0x304 ./Sources/log.o
- .debug_line    0x0000111b      0x2c1 ./Sources/main.o
- .debug_line    0x000013dc      0x36f ./Sources/rtc.o
- .debug_line    0x0000174b      0x376 ./Sources/tsi.o
- .debug_line    0x00001ac1      0x24e ./Sources/uart.o
- .debug_line    0x00001d0f       0x7b ./Project_Settings/Startup_Code/startup_MKL25Z4.o
- .debug_line    0x00001d8a      0x240 ./Project_Settings/Startup_Code/system_MKL25Z4.o
+ .debug_line    0x0000111b      0x2d6 ./Sources/main.o
+ .debug_line    0x000013f1      0x381 ./Sources/rtc.o
+ .debug_line    0x00001772      0x376 ./Sources/tsi.o
+ .debug_line    0x00001ae8      0x24e ./Sources/uart.o
+ .debug_line    0x00001d36       0x7b ./Project_Settings/Startup_Code/startup_MKL25Z4.o
+ .debug_line    0x00001db1      0x240 ./Project_Settings/Startup_Code/system_MKL25Z4.o
 
-.debug_str      0x00000000    0x34a1a
+.debug_str      0x00000000    0x34bdd
  .debug_str     0x00000000     0x4d3f ./Sources/circbuf.o
                                0x4f19 (size before relaxing)
  .debug_str     0x00004d3f    0x2f055 ./Sources/dac.o
@@ -2061,15 +2177,15 @@ OUTPUT(Final_project_ESE5013.elf elf32-littlearm)
                               0x33b73 (size before relaxing)
  .debug_str     0x000347f1       0x3f ./Sources/log.o
                               0x33ec6 (size before relaxing)
- .debug_str     0x00034830       0x20 ./Sources/main.o
-                              0x335aa (size before relaxing)
- .debug_str     0x00034850       0xa2 ./Sources/rtc.o
-                              0x339ad (size before relaxing)
- .debug_str     0x000348f2       0x72 ./Sources/tsi.o
+ .debug_str     0x00034830      0x1e3 ./Sources/main.o
+                              0x3376d (size before relaxing)
+ .debug_str     0x00034a13       0xa2 ./Sources/rtc.o
+                              0x33b6d (size before relaxing)
+ .debug_str     0x00034ab5       0x72 ./Sources/tsi.o
                               0x33948 (size before relaxing)
- .debug_str     0x00034964       0x3f ./Sources/uart.o
+ .debug_str     0x00034b27       0x3f ./Sources/uart.o
                               0x3221a (size before relaxing)
- .debug_str     0x000349a3       0x77 ./Project_Settings/Startup_Code/system_MKL25Z4.o
+ .debug_str     0x00034b66       0x77 ./Project_Settings/Startup_Code/system_MKL25Z4.o
                               0x31f13 (size before relaxing)
 
 .comment        0x00000000       0x70

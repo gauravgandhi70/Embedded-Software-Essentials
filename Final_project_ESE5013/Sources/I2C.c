@@ -1,4 +1,4 @@
- 
+#include"MKL25Z4.h"
 #include "I2C.h"
 
 void I2C_WriteRegister(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress, /*unsigned*/ int8_t u8Data)

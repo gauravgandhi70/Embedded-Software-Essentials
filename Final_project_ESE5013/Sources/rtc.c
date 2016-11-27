@@ -16,6 +16,8 @@
 #include"message.h"
 #include<malloc.h>
 #include"tsi.h"
+#include"dac.h"
+#include"I2C.h"
 #include"rtc.h"
 
 

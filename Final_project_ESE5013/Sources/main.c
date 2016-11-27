@@ -41,6 +41,8 @@
 #include<malloc.h>
 #include"tsi.h"
 #include"dac.h"
+#include"I2C.h"
+#include"eeprom.h"
 //#include"rtc.h"
 
 
@@ -56,8 +58,9 @@ int main(void)
 	//time_setup();
 	LED_Init();
 	tsi_init();
-	tsi_start_scan();
 	dac_init();
+	tsi_start_scan();
+
 
 
 
