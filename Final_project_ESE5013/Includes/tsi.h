@@ -14,4 +14,5 @@ void TSI0_IRQHandler(void);
 void tsi_led(void);
 void tsi_start_scan(void);
 void tsi_stop_scan(void);
+void tsi_dac(uint16_t digital);
 #endif /* INCLUDES_TSI_H_ */
