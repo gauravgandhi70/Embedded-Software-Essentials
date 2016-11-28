@@ -12,7 +12,7 @@
 void rtc_init(void);
 void time_set(void);
 uint32_t datetosec(void);
-void RTC_IRQHAndler();
+void RTC_IRQHandler(void);
 
 typedef enum{JAN=1,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC}month_t;
 typedef struct{

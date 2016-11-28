@@ -10,9 +10,9 @@
 #define I2C_Stop()             I2C0_C1 &= ~I2C_C1_MST_MASK;\
                                I2C0_C1 &= ~I2C_C1_TX_MASK
 
-#define I2C_Wait()             while((I2C0_S & I2C_S_IICIF_MASK)==0) {} \
-                               I2C0_S |= I2C_S_IICIF_MASK;
+#define I2C_Wait()             while(!(I2C0_S & I2C_S_TCF_MASK));
 
+void i2c_init();
 void I2C_WriteRegister(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress, /*unsigned*/ int8_t u8Data);
 uint8_t I2C_ReadRegister(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress);
 void I2C_ReadMultiRegisters(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress, uint8_t n, uint8_t *r);

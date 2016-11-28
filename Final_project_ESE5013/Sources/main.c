@@ -40,6 +40,9 @@
 #include"message.h"
 #include<malloc.h>
 #include"tsi.h"
+#include"dac.h"
+#include"I2C.h"
+#include"eeprom.h"
 //#include"rtc.h"
 
 
@@ -49,16 +52,19 @@
 
 int main(void)
 {
-
+	uint32_t i=100000;
 	uart_init(57600);								// Initialize UART
-	rtc_init();
-	time_setup();
+	//rtc_init();
+	//time_setup();
 	LED_Init();
-	tsi_init();
-	tsi_start_scan();
-	uint16_t a=15;
-	uint32_t b=123;
-	LOG1("\n\r16 bit: ",a,'i');
+	i2c_init();
+	//tsi_init();
+	//dac_init();
+	//tsi_start_scan();
+	EEPROMwrite(0x0, 0x89);
+
+	uint8_t ed = EEPROMread(0);
+
 
 
 	while(1)			// Infinite loop for continuous operation
@@ -67,7 +73,6 @@ int main(void)
 		if(f==1)
 			{
 				f==0;
-				LOG1("\n\rDATA=",&d,32);
 				tsi_led();
 			}
 		}

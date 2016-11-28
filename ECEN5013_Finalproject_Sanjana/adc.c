@@ -31,7 +31,7 @@ unsigned short ADC_read12b(unsigned char channelNumber)
 	ADC0_SC1A = channelNumber & ADC_SC1_ADCH_MASK; 	//Write to SC1A to start conversion
 	while(ADC0_SC2 & ADC_SC2_ADACT_MASK);  			//Conversion in progress
 	while(!(ADC0_SC1A & ADC_SC1_COCO_MASK));			//wait till conversion is complete
-	/Until conversion complete
+	//Until conversion complete
 	return ADC0_RA;
 }
 

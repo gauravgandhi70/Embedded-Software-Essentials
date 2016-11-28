@@ -173,11 +173,11 @@ Allocating common symbols
 Common symbol       size              file
 
 cur_time            0x14              ./Sources/rtc.o
-f                   0x1               ./Sources/main.o
+f                   0x1               ./Sources/dac.o
 errno               0x4               c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-reent.o)
-rx_buf              0x14              ./Sources/log.o
-d                   0x4               ./Sources/main.o
-tx_buf              0x14              ./Sources/log.o
+rx_buf              0x14              ./Sources/dac.o
+d                   0x2               ./Sources/dac.o
+tx_buf              0x14              ./Sources/dac.o
 
 Discarded input sections
 
@@ -188,6 +188,27 @@ Discarded input sections
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
  .ARM.extab     0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .group         0x00000000        0x8 ./Sources/I2C.o
+ .text          0x00000000        0x0 ./Sources/I2C.o
+ .data          0x00000000        0x0 ./Sources/I2C.o
+ .bss           0x00000000        0x0 ./Sources/I2C.o
+ .text.I2C_WriteRegister
+                0x00000000       0xb0 ./Sources/I2C.o
+ .text.I2C_ReadRegister
+                0x00000000      0x118 ./Sources/I2C.o
+ .text.I2C_ReadMultiRegisters
+                0x00000000      0x188 ./Sources/I2C.o
  .group         0x00000000        0x8 ./Sources/circbuf.o
  .group         0x00000000        0x8 ./Sources/circbuf.o
  .group         0x00000000        0x8 ./Sources/circbuf.o
@@ -216,6 +237,58 @@ Discarded input sections
  .data          0x00000000        0x0 ./Sources/circbuf.o
  .bss           0x00000000        0x0 ./Sources/circbuf.o
  .text.destroy  0x00000000       0x18 ./Sources/circbuf.o
+ .debug_macro   0x00000000      0x802 ./Sources/circbuf.o
+ .debug_macro   0x00000000       0x16 ./Sources/circbuf.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .group         0x00000000        0x8 ./Sources/dac.o
+ .text          0x00000000        0x0 ./Sources/dac.o
+ .data          0x00000000        0x0 ./Sources/dac.o
+ .bss           0x00000000        0x0 ./Sources/dac.o
+ .text.dac_init
+                0x00000000       0x6c ./Sources/dac.o
+ .debug_macro   0x00000000      0x802 ./Sources/dac.o
+ .debug_macro   0x00000000       0x16 ./Sources/dac.o
+ .debug_macro   0x00000000       0x16 ./Sources/dac.o
+ .debug_macro   0x00000000       0x44 ./Sources/dac.o
+ .debug_macro   0x00000000      0x209 ./Sources/dac.o
+ .debug_macro   0x00000000       0x3a ./Sources/dac.o
+ .debug_macro   0x00000000       0x3a ./Sources/dac.o
+ .debug_macro   0x00000000       0x26 ./Sources/dac.o
+ .debug_macro   0x00000000      0x306 ./Sources/dac.o
+ .debug_macro   0x00000000       0x63 ./Sources/dac.o
+ .debug_macro   0x00000000     0x839f ./Sources/dac.o
+ .debug_macro   0x00000000       0x10 ./Sources/dac.o
+ .debug_macro   0x00000000       0x58 ./Sources/dac.o
+ .debug_macro   0x00000000       0x35 ./Sources/dac.o
+ .debug_macro   0x00000000       0xa3 ./Sources/dac.o
+ .debug_macro   0x00000000       0x52 ./Sources/dac.o
+ .debug_macro   0x00000000       0x16 ./Sources/dac.o
+ .debug_macro   0x00000000       0x43 ./Sources/dac.o
+ .debug_macro   0x00000000      0x180 ./Sources/dac.o
+ .debug_macro   0x00000000       0x35 ./Sources/dac.o
  .group         0x00000000        0x8 ./Sources/data.o
  .group         0x00000000        0x8 ./Sources/data.o
  .group         0x00000000        0x8 ./Sources/data.o
@@ -247,6 +320,7 @@ Discarded input sections
  .text          0x00000000        0x0 ./Sources/data.o
  .data          0x00000000        0x0 ./Sources/data.o
  .bss           0x00000000        0x0 ./Sources/data.o
+ .text.my_atoi  0x00000000       0xc8 ./Sources/data.o
  .text.dump_memory
                 0x00000000       0x3c ./Sources/data.o
  .text.big_to_little
@@ -255,9 +329,19 @@ Discarded input sections
                 0x00000000       0x80 ./Sources/data.o
  .debug_macro   0x00000000      0x802 ./Sources/data.o
  .debug_macro   0x00000000       0x16 ./Sources/data.o
+ .debug_macro   0x00000000       0x16 ./Sources/data.o
+ .debug_macro   0x00000000       0x44 ./Sources/data.o
+ .debug_macro   0x00000000      0x209 ./Sources/data.o
+ .debug_macro   0x00000000       0x3a ./Sources/data.o
+ .debug_macro   0x00000000       0x3a ./Sources/data.o
+ .debug_macro   0x00000000       0x26 ./Sources/data.o
+ .debug_macro   0x00000000      0x306 ./Sources/data.o
+ .debug_macro   0x00000000       0x63 ./Sources/data.o
+ .debug_macro   0x00000000     0x839f ./Sources/data.o
  .debug_macro   0x00000000       0x58 ./Sources/data.o
  .debug_macro   0x00000000       0x35 ./Sources/data.o
  .debug_macro   0x00000000       0xa3 ./Sources/data.o
+ .debug_macro   0x00000000      0x166 ./Sources/data.o
  .debug_macro   0x00000000       0x52 ./Sources/data.o
  .debug_macro   0x00000000       0x16 ./Sources/data.o
  .debug_macro   0x00000000       0x43 ./Sources/data.o
@@ -302,6 +386,64 @@ Discarded input sections
  .debug_macro   0x00000000      0x306 ./Sources/dma.o
  .debug_macro   0x00000000       0x63 ./Sources/dma.o
  .debug_macro   0x00000000     0x839f ./Sources/dma.o
+ .debug_macro   0x00000000       0x10 ./Sources/dma.o
+ .debug_macro   0x00000000       0x16 ./Sources/dma.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .group         0x00000000        0x8 ./Sources/eeprom.o
+ .text          0x00000000        0x0 ./Sources/eeprom.o
+ .data          0x00000000        0x0 ./Sources/eeprom.o
+ .bss           0x00000000        0x0 ./Sources/eeprom.o
+ .debug_macro   0x00000000      0x802 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x16 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x16 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x44 ./Sources/eeprom.o
+ .debug_macro   0x00000000      0x209 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x3a ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x3a ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x26 ./Sources/eeprom.o
+ .debug_macro   0x00000000      0x306 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x63 ./Sources/eeprom.o
+ .debug_macro   0x00000000     0x839f ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x10 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x10 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x16 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x10 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x58 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x35 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0xa3 ./Sources/eeprom.o
+ .debug_macro   0x00000000      0x166 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x52 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x16 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x43 ./Sources/eeprom.o
+ .debug_macro   0x00000000      0x180 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x35 ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x3c ./Sources/eeprom.o
+ .debug_macro   0x00000000       0x34 ./Sources/eeprom.o
  .group         0x00000000        0x8 ./Sources/led.o
  .group         0x00000000        0x8 ./Sources/led.o
  .group         0x00000000        0x8 ./Sources/led.o
@@ -325,11 +467,6 @@ Discarded input sections
  .text          0x00000000        0x0 ./Sources/led.o
  .data          0x00000000        0x0 ./Sources/led.o
  .bss           0x00000000        0x0 ./Sources/led.o
- .bss.LEDColour
-                0x00000000        0x1 ./Sources/led.o
- .data.value    0x00000000        0x2 ./Sources/led.o
- .text.LED_Control
-                0x00000000       0xb4 ./Sources/led.o
  .debug_macro   0x00000000      0x802 ./Sources/led.o
  .debug_macro   0x00000000       0x16 ./Sources/led.o
  .debug_macro   0x00000000       0x16 ./Sources/led.o
@@ -439,6 +576,8 @@ Discarded input sections
  .group         0x00000000        0x8 ./Sources/main.o
  .group         0x00000000        0x8 ./Sources/main.o
  .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
  .text          0x00000000        0x0 ./Sources/main.o
  .data          0x00000000        0x0 ./Sources/main.o
  .bss           0x00000000        0x0 ./Sources/main.o
@@ -456,6 +595,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./Sources/main.o
  .debug_macro   0x00000000       0x10 ./Sources/main.o
  .debug_macro   0x00000000       0x16 ./Sources/main.o
+ .debug_macro   0x00000000       0x10 ./Sources/main.o
  .debug_macro   0x00000000       0x58 ./Sources/main.o
  .debug_macro   0x00000000       0x35 ./Sources/main.o
  .debug_macro   0x00000000       0xa3 ./Sources/main.o
@@ -465,6 +605,9 @@ Discarded input sections
  .debug_macro   0x00000000       0x43 ./Sources/main.o
  .debug_macro   0x00000000      0x180 ./Sources/main.o
  .debug_macro   0x00000000       0x35 ./Sources/main.o
+ .debug_macro   0x00000000       0x3c ./Sources/main.o
+ .debug_macro   0x00000000       0x34 ./Sources/main.o
+ .debug_macro   0x00000000       0x10 ./Sources/main.o
  .group         0x00000000        0x8 ./Sources/memory.o
  .group         0x00000000        0x8 ./Sources/memory.o
  .group         0x00000000        0x8 ./Sources/memory.o
@@ -602,9 +745,19 @@ Discarded input sections
  .group         0x00000000        0x8 ./Sources/rtc.o
  .group         0x00000000        0x8 ./Sources/rtc.o
  .group         0x00000000        0x8 ./Sources/rtc.o
+ .group         0x00000000        0x8 ./Sources/rtc.o
  .text          0x00000000        0x0 ./Sources/rtc.o
  .data          0x00000000        0x0 ./Sources/rtc.o
  .bss           0x00000000        0x0 ./Sources/rtc.o
+ .text.NVIC_EnableIRQ
+                0x00000000       0x2c ./Sources/rtc.o
+ .data.days     0x00000000        0xc ./Sources/rtc.o
+ .text.rtc_init
+                0x00000000       0xd0 ./Sources/rtc.o
+ .text.time_setup
+                0x00000000      0x18c ./Sources/rtc.o
+ .text.datetosec
+                0x00000000       0xa8 ./Sources/rtc.o
  .debug_macro   0x00000000      0x802 ./Sources/rtc.o
  .debug_macro   0x00000000       0x16 ./Sources/rtc.o
  .debug_macro   0x00000000       0x16 ./Sources/rtc.o
@@ -630,6 +783,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x180 ./Sources/rtc.o
  .debug_macro   0x00000000       0x35 ./Sources/rtc.o
  .debug_macro   0x00000000       0x3c ./Sources/rtc.o
+ .debug_macro   0x00000000       0x34 ./Sources/rtc.o
+ COMMON         0x00000000       0x14 ./Sources/rtc.o
  .group         0x00000000        0x8 ./Sources/tsi.o
  .group         0x00000000        0x8 ./Sources/tsi.o
  .group         0x00000000        0x8 ./Sources/tsi.o
@@ -658,6 +813,12 @@ Discarded input sections
  .text          0x00000000        0x0 ./Sources/tsi.o
  .data          0x00000000        0x0 ./Sources/tsi.o
  .bss           0x00000000        0x0 ./Sources/tsi.o
+ .text.NVIC_EnableIRQ
+                0x00000000       0x2c ./Sources/tsi.o
+ .text.tsi_init
+                0x00000000       0xac ./Sources/tsi.o
+ .text.tsi_start_scan
+                0x00000000       0x28 ./Sources/tsi.o
  .text.tsi_stop_scan
                 0x00000000       0x18 ./Sources/tsi.o
  .debug_macro   0x00000000      0x802 ./Sources/tsi.o
@@ -786,8 +947,12 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_arm_cmpdf2.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_arm_cmpsf2.o)
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_arm_cmpsf2.o)
+ .text          0x00000000       0x40 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_fixunsdfsi.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_fixunsdfsi.o)
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_fixunsdfsi.o)
+ .ARM.attributes
+                0x00000000       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_fixunsdfsi.o)
+ .debug_frame   0x00000000       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_fixunsdfsi.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqsf2.o)
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqsf2.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(gesf2.o)
@@ -816,12 +981,20 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(muldf3.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subdf3.o)
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subdf3.o)
+ .text          0x00000000       0x68 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixdfsi.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixdfsi.o)
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixdfsi.o)
+ .ARM.attributes
+                0x00000000       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixdfsi.o)
+ .debug_frame   0x00000000       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixdfsi.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsidf.o)
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsidf.o)
+ .text          0x00000000       0x68 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsidf.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsidf.o)
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsidf.o)
+ .ARM.attributes
+                0x00000000       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsidf.o)
+ .debug_frame   0x00000000       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsidf.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(extendsfdf2.o)
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(extendsfdf2.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(truncdfsf2.o)
@@ -1170,9 +1343,12 @@ Linker script and memory map
 LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crti.o
 LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
 LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+LOAD ./Sources/I2C.o
 LOAD ./Sources/circbuf.o
+LOAD ./Sources/dac.o
 LOAD ./Sources/data.o
 LOAD ./Sources/dma.o
+LOAD ./Sources/eeprom.o
 LOAD ./Sources/led.o
 LOAD ./Sources/log.o
 LOAD ./Sources/main.o
@@ -1219,7 +1395,7 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/cr
  .FlashConfig   0x00000400       0x10 ./Project_Settings/Startup_Code/startup_MKL25Z4.o
                 0x00000410                . = ALIGN (0x4)
 
-.text           0x00000410     0x57ec
+.text           0x00000410     0x562c
                 0x00000410                . = ALIGN (0x4)
  *(.text)
  .text          0x00000410       0x60 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
@@ -1245,7 +1421,6 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/cr
                 0x00000514                TPM2_IRQHandler
                 0x00000514                RTC_IRQHandler
                 0x00000514                I2C0_IRQHandler
-                0x00000514                RTC_Seconds_IRQHandler
                 0x00000514                MCG_IRQHandler
                 0x00000514                UART2_IRQHandler
                 0x00000514                Reserved20_IRQHandler
@@ -1292,326 +1467,314 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/cr
                 0x00000730                __aeabi_fcmple
                 0x00000744                __aeabi_fcmpgt
                 0x00000758                __aeabi_fcmpge
- *fill*         0x0000076c        0x4 
- .text          0x00000770       0x40 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_fixunsdfsi.o)
-                0x00000770                __aeabi_d2uiz
-                0x00000770                __fixunsdfsi
- .text          0x000007b0       0x54 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqsf2.o)
-                0x000007b0                __eqsf2
-                0x000007b0                __nesf2
- .text          0x00000804       0x90 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(gesf2.o)
-                0x00000804                __gesf2
-                0x00000804                __gtsf2
- .text          0x00000894       0x98 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(lesf2.o)
-                0x00000894                __ltsf2
-                0x00000894                __lesf2
- .text          0x0000092c      0x2ec c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subsf3.o)
-                0x0000092c                __aeabi_fsub
- .text          0x00000c18       0x40 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixsfsi.o)
-                0x00000c18                __aeabi_f2iz
- .text          0x00000c58       0xb8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsisf.o)
-                0x00000c58                __aeabi_i2f
- .text          0x00000d10       0xa0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsisf.o)
-                0x00000d10                __aeabi_ui2f
- .text          0x00000db0      0x644 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(adddf3.o)
-                0x00000db0                __aeabi_dadd
- .text          0x000013f4      0x648 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(divdf3.o)
-                0x000013f4                __aeabi_ddiv
- .text          0x00001a3c       0x94 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqdf2.o)
-                0x00001a3c                __nedf2
-                0x00001a3c                __eqdf2
- .text          0x00001ad0       0xfc c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(gedf2.o)
-                0x00001ad0                __gedf2
-                0x00001ad0                __gtdf2
- .text          0x00001bcc       0xfc c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(ledf2.o)
-                0x00001bcc                __ledf2
-                0x00001bcc                __ltdf2
- .text          0x00001cc8      0x520 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(muldf3.o)
-                0x00001cc8                __aeabi_dmul
- .text          0x000021e8      0x668 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subdf3.o)
-                0x000021e8                __aeabi_dsub
- .text          0x00002850       0x68 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixdfsi.o)
-                0x00002850                __aeabi_d2iz
- .text          0x000028b8       0x7c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsidf.o)
-                0x000028b8                __aeabi_i2d
- .text          0x00002934       0x68 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsidf.o)
-                0x00002934                __aeabi_ui2d
- .text          0x0000299c       0xa4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(extendsfdf2.o)
-                0x0000299c                __aeabi_f2d
- .text          0x00002a40      0x118 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(truncdfsf2.o)
-                0x00002a40                __aeabi_d2f
- .text          0x00002b58       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_clzsi2.o)
-                0x00002b58                __clzsi2
+ .text          0x0000076c       0x54 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqsf2.o)
+                0x0000076c                __eqsf2
+                0x0000076c                __nesf2
+ .text          0x000007c0       0x90 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(gesf2.o)
+                0x000007c0                __gesf2
+                0x000007c0                __gtsf2
+ .text          0x00000850       0x98 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(lesf2.o)
+                0x00000850                __ltsf2
+                0x00000850                __lesf2
+ .text          0x000008e8      0x2ec c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subsf3.o)
+                0x000008e8                __aeabi_fsub
+ .text          0x00000bd4       0x40 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixsfsi.o)
+                0x00000bd4                __aeabi_f2iz
+ .text          0x00000c14       0xb8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsisf.o)
+                0x00000c14                __aeabi_i2f
+ .text          0x00000ccc       0xa0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsisf.o)
+                0x00000ccc                __aeabi_ui2f
+ .text          0x00000d6c      0x644 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(adddf3.o)
+                0x00000d6c                __aeabi_dadd
+ .text          0x000013b0      0x648 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(divdf3.o)
+                0x000013b0                __aeabi_ddiv
+ .text          0x000019f8       0x94 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqdf2.o)
+                0x000019f8                __nedf2
+                0x000019f8                __eqdf2
+ .text          0x00001a8c       0xfc c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(gedf2.o)
+                0x00001a8c                __gedf2
+                0x00001a8c                __gtdf2
+ .text          0x00001b88       0xfc c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(ledf2.o)
+                0x00001b88                __ledf2
+                0x00001b88                __ltdf2
+ .text          0x00001c84      0x520 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(muldf3.o)
+                0x00001c84                __aeabi_dmul
+ .text          0x000021a4      0x668 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subdf3.o)
+                0x000021a4                __aeabi_dsub
+ .text          0x0000280c       0x7c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsidf.o)
+                0x0000280c                __aeabi_i2d
+ .text          0x00002888       0xa4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(extendsfdf2.o)
+                0x00002888                __aeabi_f2d
+ .text          0x0000292c      0x118 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(truncdfsf2.o)
+                0x0000292c                __aeabi_d2f
+ .text          0x00002a44       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_clzsi2.o)
+                0x00002a44                __clzsi2
  *(.text*)
+ .text.i2c_init
+                0x00002a80       0x94 ./Sources/I2C.o
+                0x00002a80                i2c_init
  .text.initialize
-                0x00002b94       0x30 ./Sources/circbuf.o
-                0x00002b94                initialize
+                0x00002b14       0x30 ./Sources/circbuf.o
+                0x00002b14                initialize
  .text.buff_full
-                0x00002bc4       0x24 ./Sources/circbuf.o
-                0x00002bc4                buff_full
+                0x00002b44       0x24 ./Sources/circbuf.o
+                0x00002b44                buff_full
  .text.buff_empty
-                0x00002be8       0x20 ./Sources/circbuf.o
-                0x00002be8                buff_empty
+                0x00002b68       0x20 ./Sources/circbuf.o
+                0x00002b68                buff_empty
  .text.add_data
-                0x00002c08       0x94 ./Sources/circbuf.o
-                0x00002c08                add_data
+                0x00002b88       0x94 ./Sources/circbuf.o
+                0x00002b88                add_data
  .text.read_data
-                0x00002c9c       0xac ./Sources/circbuf.o
-                0x00002c9c                read_data
- .text.my_atoi  0x00002d48       0xc8 ./Sources/data.o
-                0x00002d48                my_atoi
- .text.itoa     0x00002e10      0x11c ./Sources/data.o
-                0x00002e10                itoa
- .text.reverse  0x00002f2c       0x5c ./Sources/data.o
-                0x00002f2c                reverse
- .text.ftoa     0x00002f88       0xe0 ./Sources/data.o
-                0x00002f88                ftoa
+                0x00002c1c       0xac ./Sources/circbuf.o
+                0x00002c1c                read_data
+ .text.itoa     0x00002cc8      0x11c ./Sources/data.o
+                0x00002cc8                itoa
+ .text.reverse  0x00002de4       0x5c ./Sources/data.o
+                0x00002de4                reverse
+ .text.ftoa     0x00002e40       0xe0 ./Sources/data.o
+                0x00002e40                ftoa
  .text.intToStr
-                0x00003068       0x94 ./Sources/data.o
-                0x00003068                intToStr
+                0x00002f20       0x94 ./Sources/data.o
+                0x00002f20                intToStr
  .text.DMA0_IRQHandler
-                0x000030fc       0x70 ./Sources/dma.o
-                0x000030fc                DMA0_IRQHandler
+                0x00002fb4       0x70 ./Sources/dma.o
+                0x00002fb4                DMA0_IRQHandler
+ .text.EEPROMwrite
+                0x00003024       0xd0 ./Sources/eeprom.o
+                0x00003024                EEPROMwrite
+ .text.EEPROMread
+                0x000030f4      0x11c ./Sources/eeprom.o
+                0x000030f4                EEPROMread
  .text.LED_Init
-                0x0000316c       0xc4 ./Sources/led.o
-                0x0000316c                LED_Init
+                0x00003210       0xc4 ./Sources/led.o
+                0x00003210                LED_Init
+ .text.LED_Control
+                0x000032d4       0xb4 ./Sources/led.o
+                0x000032d4                LED_Control
  .text.LEDFunction
-                0x00003230      0x104 ./Sources/led.o
-                0x00003230                LEDFunction
+                0x00003388      0x104 ./Sources/led.o
+                0x00003388                LEDFunction
  .text.uart_log
-                0x00003334       0x54 ./Sources/log.o
-                0x00003334                uart_log
+                0x0000348c       0x54 ./Sources/log.o
+                0x0000348c                uart_log
  .text.uart_log1
-                0x00003388      0x14c ./Sources/log.o
-                0x00003388                uart_log1
- .text.main     0x000034d4       0x6c ./Sources/main.o
-                0x000034d4                main
- .text.rtc_init
-                0x00003540       0x50 ./Sources/rtc.o
-                0x00003540                rtc_init
- .text.time_setup
-                0x00003590      0x184 ./Sources/rtc.o
-                0x00003590                time_setup
- .text.datetosec
-                0x00003714       0x8c ./Sources/rtc.o
-                0x00003714                datetosec
- .text.NVIC_EnableIRQ
-                0x000037a0       0x2c ./Sources/tsi.o
- .text.tsi_init
-                0x000037cc       0xac ./Sources/tsi.o
-                0x000037cc                tsi_init
- .text.tsi_start_scan
-                0x00003878       0x28 ./Sources/tsi.o
-                0x00003878                tsi_start_scan
- .text.tsi_led  0x000038a0      0x15c ./Sources/tsi.o
-                0x000038a0                tsi_led
+                0x000034e0      0x14c ./Sources/log.o
+                0x000034e0                uart_log1
+ .text.main     0x0000362c       0x48 ./Sources/main.o
+                0x0000362c                main
+ .text.RTC_Seconds_IRQHandler
+                0x00003674       0x28 ./Sources/rtc.o
+                0x00003674                RTC_Seconds_IRQHandler
+ .text.tsi_led  0x0000369c      0x17c ./Sources/tsi.o
+                0x0000369c                tsi_led
  .text.TSI0_IRQHandler
-                0x000039fc       0x48 ./Sources/tsi.o
-                0x000039fc                TSI0_IRQHandler
+                0x00003818       0x5c ./Sources/tsi.o
+                0x00003818                TSI0_IRQHandler
  .text.NVIC_EnableIRQ
-                0x00003a44       0x2c ./Sources/uart.o
+                0x00003874       0x2c ./Sources/uart.o
  .text.uart_init
-                0x00003a70      0x144 ./Sources/uart.o
-                0x00003a70                uart_init
+                0x000038a0      0x144 ./Sources/uart.o
+                0x000038a0                uart_init
  .text.UART0_IRQHandler
-                0x00003bb4       0xc0 ./Sources/uart.o
-                0x00003bb4                UART0_IRQHandler
+                0x000039e4       0xc0 ./Sources/uart.o
+                0x000039e4                UART0_IRQHandler
  .text.SystemInit
-                0x00003c74       0x18 ./Project_Settings/Startup_Code/system_MKL25Z4.o
-                0x00003c74                SystemInit
- *fill*         0x00003c8c        0x4 
- .text.pow      0x00003c90      0x370 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_pow.o)
-                0x00003c90                pow
+                0x00003aa4       0x18 ./Project_Settings/Startup_Code/system_MKL25Z4.o
+                0x00003aa4                SystemInit
+ *fill*         0x00003abc        0x4 
+ .text.pow      0x00003ac0      0x370 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_pow.o)
+                0x00003ac0                pow
  .text.__ieee754_pow
-                0x00004000      0xb20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
-                0x00004000                __ieee754_pow
+                0x00003e30      0xb20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
+                0x00003e30                __ieee754_pow
  .text.__ieee754_sqrt
-                0x00004b20      0x1cc c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_sqrt.o)
-                0x00004b20                __ieee754_sqrt
- .text.fabs     0x00004cec        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_fabs.o)
-                0x00004cec                fabs
- .text.finite   0x00004cf4       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_finite.o)
-                0x00004cf4                finite
+                0x00004950      0x1cc c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_sqrt.o)
+                0x00004950                __ieee754_sqrt
+ .text.fabs     0x00004b1c        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_fabs.o)
+                0x00004b1c                fabs
+ .text.finite   0x00004b24       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_finite.o)
+                0x00004b24                finite
  .text.__fpclassifyd
-                0x00004d04       0x60 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_fpclassify.o)
-                0x00004d04                __fpclassifyd
- .text.matherr  0x00004d64        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_matherr.o)
-                0x00004d64                matherr
- .text.nan      0x00004d68       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_nan.o)
-                0x00004d68                nan
- .text.rint     0x00004d78      0x154 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_rint.o)
-                0x00004d78                rint
- *fill*         0x00004ecc        0x4 
- .text.scalbn   0x00004ed0      0x110 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_scalbn.o)
-                0x00004ed0                scalbn
+                0x00004b34       0x60 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_fpclassify.o)
+                0x00004b34                __fpclassifyd
+ .text.matherr  0x00004b94        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_matherr.o)
+                0x00004b94                matherr
+ .text.nan      0x00004b98       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_nan.o)
+                0x00004b98                nan
+ .text.rint     0x00004ba8      0x154 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_rint.o)
+                0x00004ba8                rint
+ *fill*         0x00004cfc        0x4 
+ .text.scalbn   0x00004d00      0x110 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_scalbn.o)
+                0x00004d00                scalbn
  .text.copysign
-                0x00004fe0       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_copysign.o)
-                0x00004fe0                copysign
- .text.__errno  0x00004ff0        0xc c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-errno.o)
-                0x00004ff0                __errno
- .text.exit     0x00004ffc       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o)
-                0x00004ffc                exit
+                0x00004e10       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_copysign.o)
+                0x00004e10                copysign
+ .text.__errno  0x00004e20        0xc c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-errno.o)
+                0x00004e20                __errno
+ .text.exit     0x00004e2c       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o)
+                0x00004e2c                exit
  .text.__libc_init_array
-                0x00005028       0x4c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-init.o)
-                0x00005028                __libc_init_array
- .text.malloc   0x00005074       0x14 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-malloc.o)
-                0x00005074                malloc
- .text.memset   0x00005088       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memset.o)
-                0x00005088                memset
- .text._free_r  0x00005098       0x90 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-freer.o)
-                0x00005098                _free_r
+                0x00004e58       0x4c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-init.o)
+                0x00004e58                __libc_init_array
+ .text.malloc   0x00004ea4       0x14 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-malloc.o)
+                0x00004ea4                malloc
+ .text.memset   0x00004eb8       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memset.o)
+                0x00004eb8                memset
+ .text._free_r  0x00004ec8       0x90 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-freer.o)
+                0x00004ec8                _free_r
  .text._malloc_r
-                0x00005128       0xa8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-mallocr.o)
-                0x00005128                _malloc_r
- .text._sbrk_r  0x000051d0       0x24 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-sbrkr.o)
-                0x000051d0                _sbrk_r
- .text.sprintf  0x000051f4       0x44 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-sprintf.o)
-                0x000051f4                siprintf
-                0x000051f4                sprintf
+                0x00004f58       0xa8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-mallocr.o)
+                0x00004f58                _malloc_r
+ .text._sbrk_r  0x00005000       0x24 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-sbrkr.o)
+                0x00005000                _sbrk_r
+ .text.sprintf  0x00005024       0x44 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-sprintf.o)
+                0x00005024                siprintf
+                0x00005024                sprintf
  .text.__ssputs_r
-                0x00005238       0xc0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-svfprintf.o)
-                0x00005238                __ssputs_r
+                0x00005068       0xc0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-svfprintf.o)
+                0x00005068                __ssputs_r
  .text._svfprintf_r
-                0x000052f8      0x1e0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-svfprintf.o)
-                0x000052f8                _svfiprintf_r
-                0x000052f8                _svfprintf_r
+                0x00005128      0x1e0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-svfprintf.o)
+                0x00005128                _svfiprintf_r
+                0x00005128                _svfprintf_r
  .text._printf_common
-                0x000054d8       0xe8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-vfprintf_i.o)
-                0x000054d8                _printf_common
+                0x00005308       0xe8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-vfprintf_i.o)
+                0x00005308                _printf_common
  .text._printf_i
-                0x000055c0      0x22c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-vfprintf_i.o)
-                0x000055c0                _printf_i
- .text.memchr   0x000057ec       0x16 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memchr-stub.o)
-                0x000057ec                memchr
- .text.memcpy   0x00005802       0x12 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memcpy-stub.o)
-                0x00005802                memcpy
- .text.memmove  0x00005814       0x32 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memmove.o)
-                0x00005814                memmove
+                0x000053f0      0x22c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-vfprintf_i.o)
+                0x000053f0                _printf_i
+ .text.memchr   0x0000561c       0x16 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memchr-stub.o)
+                0x0000561c                memchr
+ .text.memcpy   0x00005632       0x12 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memcpy-stub.o)
+                0x00005632                memcpy
+ .text.memmove  0x00005644       0x32 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memmove.o)
+                0x00005644                memmove
  .text._realloc_r
-                0x00005846       0x4c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-reallocr.o)
-                0x00005846                _realloc_r
- .text.strlen   0x00005892        0xe c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-strlen.o)
-                0x00005892                strlen
+                0x00005676       0x4c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-reallocr.o)
+                0x00005676                _realloc_r
+ .text.strlen   0x000056c2        0xe c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-strlen.o)
+                0x000056c2                strlen
  .text._malloc_usable_size_r
-                0x000058a0       0x12 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-msizer.o)
-                0x000058a0                _malloc_usable_size_r
- *fill*         0x000058b2        0x2 
- .text._sbrk    0x000058b4       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(sbrk.o)
-                0x000058b4                _sbrk
- .text._exit    0x000058e8        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(_exit.o)
-                0x000058e8                _exit
+                0x000056d0       0x12 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-msizer.o)
+                0x000056d0                _malloc_usable_size_r
+ *fill*         0x000056e2        0x2 
+ .text._sbrk    0x000056e4       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(sbrk.o)
+                0x000056e4                _sbrk
+ .text._exit    0x00005718        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(_exit.o)
+                0x00005718                _exit
  *(.rodata)
- .rodata        0x000058ec       0xd4 ./Sources/data.o
- .rodata        0x000059c0       0x1c ./Sources/dma.o
- .rodata        0x000059dc       0x14 ./Sources/main.o
- .rodata        0x000059f0       0x8c ./Sources/rtc.o
- .rodata        0x00005a7c       0x40 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(divdf3.o)
- .rodata        0x00005abc       0x40 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(muldf3.o)
+ .rodata        0x0000571c       0xd4 ./Sources/data.o
+ .rodata        0x000057f0       0x1c ./Sources/dma.o
+ .rodata        0x0000580c       0xac ./Sources/rtc.o
+ .rodata        0x000058b8       0x40 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(divdf3.o)
+ .rodata        0x000058f8       0x40 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(muldf3.o)
  *(.rodata*)
  .rodata.str1.4
-                0x00005afc        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_pow.o)
- .rodata.dp_h   0x00005b00       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
- .rodata.dp_l   0x00005b10       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
- .rodata.bp     0x00005b20       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
+                0x00005938        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_pow.o)
+ *fill*         0x0000593c        0x4 
+ .rodata.dp_h   0x00005940       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
+ .rodata.dp_l   0x00005950       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
+ .rodata.bp     0x00005960       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
  .rodata.str1.4
-                0x00005b30        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
- *fill*         0x00005b34        0x4 
- .rodata.TWO52  0x00005b38       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_rint.o)
+                0x00005970        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
+ *fill*         0x00005974        0x4 
+ .rodata.TWO52  0x00005978       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_rint.o)
  .rodata.str1.1
-                0x00005b48        0x2 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
- *fill*         0x00005b4a        0x2 
+                0x00005988        0x2 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+ *fill*         0x0000598a        0x2 
  .rodata._global_impure_ptr
-                0x00005b4c        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
-                0x00005b4c                _global_impure_ptr
+                0x0000598c        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+                0x0000598c                _global_impure_ptr
  .rodata.str1.1
-                0x00005b50       0x11 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-svfprintf.o)
+                0x00005990       0x11 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-svfprintf.o)
  .rodata.str1.1
-                0x00005b61       0x22 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-vfprintf_i.o)
- *fill*         0x00005b83        0x1 
+                0x000059a1       0x22 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-vfprintf_i.o)
+ *fill*         0x000059c3        0x1 
  .rodata.__sf_fake_stdin
-                0x00005b84       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-findfp.o)
-                0x00005b84                __sf_fake_stdin
+                0x000059c4       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-findfp.o)
+                0x000059c4                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x00005ba4       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-findfp.o)
-                0x00005ba4                __sf_fake_stdout
+                0x000059e4       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-findfp.o)
+                0x000059e4                __sf_fake_stdout
  .rodata.__sf_fake_stderr
-                0x00005bc4       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-findfp.o)
-                0x00005bc4                __sf_fake_stderr
+                0x00005a04       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-findfp.o)
+                0x00005a04                __sf_fake_stderr
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x00005be4        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+ .eh_frame      0x00005a24        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
  *(.init)
- .init          0x00005be4        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crti.o
-                0x00005be4                _init
- .init          0x00005be8        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtn.o
+ .init          0x00005a24        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crti.o
+                0x00005a24                _init
+ .init          0x00005a28        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtn.o
  *(.fini)
- .fini          0x00005bf0        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crti.o
-                0x00005bf0                _fini
- .fini          0x00005bf4        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtn.o
-                0x00005bfc                . = ALIGN (0x4)
+ .fini          0x00005a30        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crti.o
+                0x00005a30                _fini
+ .fini          0x00005a34        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtn.o
+                0x00005a3c                . = ALIGN (0x4)
 
-.vfp11_veneer   0x00005bfc        0x0
+.vfp11_veneer   0x00005a3c        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00005bfc        0x0
+.v4_bx          0x00005a3c        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00005bfc        0x0
+.iplt           0x00005a3c        0x0
  .iplt          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x00005bfc        0x8
-                0x00005bfc                __exidx_start = .
+.ARM            0x00005a3c        0x8
+                0x00005a3c                __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x00005bfc        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
-                0x00005c04                __exidx_end = .
+ .ARM.exidx     0x00005a3c        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+                0x00005a44                __exidx_end = .
 
-.rel.dyn        0x00005c04        0x0
+.rel.dyn        0x00005a44        0x0
  .rel.iplt      0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
 
-.ctors          0x00005c04        0x0
-                0x00005c04                __CTOR_LIST__ = .
+.ctors          0x00005a44        0x0
+                0x00005a44                __CTOR_LIST__ = .
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
  *(SORT(.ctors.*))
  *(.ctors)
-                0x00005c04                __CTOR_END__ = .
+                0x00005a44                __CTOR_END__ = .
 
-.dtors          0x00005c04        0x0
-                0x00005c04                __DTOR_LIST__ = .
+.dtors          0x00005a44        0x0
+                0x00005a44                __DTOR_LIST__ = .
  *crtbegin.o(.dtors)
  *crtbegin?.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
  *(SORT(.dtors.*))
  *(.dtors)
-                0x00005c04                __DTOR_END__ = .
+                0x00005a44                __DTOR_END__ = .
 
-.preinit_array  0x00005c04        0x0
-                0x00005c04                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x00005a44        0x0
+                0x00005a44                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x00005c04                PROVIDE (__preinit_array_end, .)
+                0x00005a44                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x00005c04        0x4
-                0x00005c04                PROVIDE (__init_array_start, .)
+.init_array     0x00005a44        0x4
+                0x00005a44                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array*)
- .init_array    0x00005c04        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
-                0x00005c08                PROVIDE (__init_array_end, .)
+ .init_array    0x00005a44        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+                0x00005a48                PROVIDE (__init_array_end, .)
 
-.fini_array     0x00005c08        0x4
-                0x00005c08                PROVIDE (__fini_array_start, .)
+.fini_array     0x00005a48        0x4
+                0x00005a48                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x00005c08        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
-                0x00005c0c                PROVIDE (__fini_array_end, .)
-                0x00005c0c                __etext = .
-                0x00005c0c                __DATA_ROM = .
+ .fini_array    0x00005a48        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+                0x00005a4c                PROVIDE (__fini_array_end, .)
+                0x00005a4c                __etext = .
+                0x00005a4c                __DATA_ROM = .
 
 .mtb            0x1ffff000        0x0
                 0x1ffff000                . = ALIGN (0x8)
@@ -1620,80 +1783,80 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/cr
                 0x1ffff000                . = ALIGN (0x8)
                 0x1ffff000                _mtb_end = .
 
-.data           0x1ffff000       0x78 load address 0x00005c0c
+.data           0x1ffff000       0x6c load address 0x00005a4c
                 0x1ffff000                . = ALIGN (0x4)
                 0x1ffff000                __DATA_RAM = .
                 0x1ffff000                __data_start__ = .
  *(.data)
  *(.data*)
- .data.days     0x1ffff000        0xc ./Sources/rtc.o
-                0x1ffff000                days
+ .data.value    0x1ffff000        0x2 ./Sources/led.o
+                0x1ffff000                value
  .data.__fdlib_version
-                0x1ffff00c        0x1 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_lib_ver.o)
-                0x1ffff00c                __fdlib_version
- *fill*         0x1ffff00d        0x3 
+                0x1ffff002        0x1 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_lib_ver.o)
+                0x1ffff002                __fdlib_version
+ *fill*         0x1ffff003        0x1 
  .data.impure_data
-                0x1ffff010       0x60 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+                0x1ffff004       0x60 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
  .data._impure_ptr
-                0x1ffff070        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
-                0x1ffff070                _impure_ptr
+                0x1ffff064        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+                0x1ffff064                _impure_ptr
  *(.jcr*)
- .jcr           0x1ffff074        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
- .jcr           0x1ffff074        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtend.o
-                0x1ffff078                . = ALIGN (0x4)
-                0x1ffff078                __data_end__ = .
-                0x00005c84                __DATA_END = (__DATA_ROM + (__data_end__ - __data_start__))
+ .jcr           0x1ffff068        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+ .jcr           0x1ffff068        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtend.o
+                0x1ffff06c                . = ALIGN (0x4)
+                0x1ffff06c                __data_end__ = .
+                0x00005ab8                __DATA_END = (__DATA_ROM + (__data_end__ - __data_start__))
 
-.igot.plt       0x1ffff078        0x0 load address 0x00005c84
+.igot.plt       0x1ffff06c        0x0 load address 0x00005ab8
  .igot.plt      0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
 
-.bss            0x1ffff078       0x74 load address 0x00005c84
-                0x1ffff078                . = ALIGN (0x4)
-                0x1ffff078                __START_BSS = .
-                0x1ffff078                __bss_start__ = .
+.bss            0x1ffff06c       0x60 load address 0x00005ab8
+                0x1ffff06c                . = ALIGN (0x4)
+                0x1ffff06c                __START_BSS = .
+                0x1ffff06c                __bss_start__ = .
  *(.bss)
- .bss           0x1ffff078       0x1c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+ .bss           0x1ffff06c       0x1c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
  *(.bss*)
- .bss.da        0x1ffff094        0x1 ./Sources/uart.o
-                0x1ffff094                da
- *fill*         0x1ffff095        0x3 
+ .bss.LEDColour
+                0x1ffff088        0x1 ./Sources/led.o
+                0x1ffff088                LEDColour
+ .bss.da        0x1ffff089        0x1 ./Sources/uart.o
+                0x1ffff089                da
+ *fill*         0x1ffff08a        0x2 
  .bss.__malloc_sbrk_start
-                0x1ffff098        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-mallocr.o)
-                0x1ffff098                __malloc_sbrk_start
+                0x1ffff08c        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-mallocr.o)
+                0x1ffff08c                __malloc_sbrk_start
  .bss.__malloc_free_list
-                0x1ffff09c        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-mallocr.o)
-                0x1ffff09c                __malloc_free_list
+                0x1ffff090        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-mallocr.o)
+                0x1ffff090                __malloc_free_list
  .bss.heap_end.4246
-                0x1ffff0a0        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(sbrk.o)
+                0x1ffff094        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(sbrk.o)
  *(COMMON)
- COMMON         0x1ffff0a4       0x28 ./Sources/log.o
-                0x1ffff0a4                rx_buf
-                0x1ffff0b8                tx_buf
- COMMON         0x1ffff0cc        0x8 ./Sources/main.o
-                0x1ffff0cc                f
-                0x1ffff0d0                d
- COMMON         0x1ffff0d4       0x14 ./Sources/rtc.o
-                0x1ffff0d4                cur_time
- COMMON         0x1ffff0e8        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-reent.o)
-                0x1ffff0e8                errno
-                0x1ffff0ec                . = ALIGN (0x4)
-                0x1ffff0ec                __bss_end__ = .
-                0x1ffff0ec                __END_BSS = .
+ COMMON         0x1ffff098       0x30 ./Sources/dac.o
+                0x1ffff098                f
+                0x1ffff09c                rx_buf
+                0x1ffff0b0                d
+                0x1ffff0b4                tx_buf
+ COMMON         0x1ffff0c8        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-reent.o)
+                0x1ffff0c8                errno
+                0x1ffff0cc                . = ALIGN (0x4)
+                0x1ffff0cc                __bss_end__ = .
+                0x1ffff0cc                __END_BSS = .
 
-.heap           0x1ffff0ec      0x404 load address 0x00005cf8
-                0x1ffff0f0                . = ALIGN (0x8)
- *fill*         0x1ffff0ec        0x4 
-                0x1ffff0f0                __end__ = .
-                0x1ffff0f0                PROVIDE (end, .)
-                0x1ffff0f0                __HeapBase = .
-                0x1ffff4f0                . = (. + HEAP_SIZE)
- *fill*         0x1ffff0f0      0x400 
-                0x1ffff4f0                __HeapLimit = .
+.heap           0x1ffff0cc      0x404 load address 0x00005b18
+                0x1ffff0d0                . = ALIGN (0x8)
+ *fill*         0x1ffff0cc        0x4 
+                0x1ffff0d0                __end__ = .
+                0x1ffff0d0                PROVIDE (end, .)
+                0x1ffff0d0                __HeapBase = .
+                0x1ffff4d0                . = (. + HEAP_SIZE)
+ *fill*         0x1ffff0d0      0x400 
+                0x1ffff4d0                __HeapLimit = .
 
-.stack          0x1ffff4f0      0x400 load address 0x000060fc
-                0x1ffff4f0                . = ALIGN (0x8)
-                0x1ffff8f0                . = (. + STACK_SIZE)
- *fill*         0x1ffff4f0      0x400 
+.stack          0x1ffff4d0      0x400 load address 0x00005f1c
+                0x1ffff4d0                . = ALIGN (0x8)
+                0x1ffff8d0                . = (. + STACK_SIZE)
+ *fill*         0x1ffff4d0      0x400 
                 0x20003000                __StackTop = (ORIGIN (m_data) + 0x4000)
                 0x20002c00                __StackLimit = (__StackTop - STACK_SIZE)
                 0x20003000                PROVIDE (__stack, __StackTop)
@@ -1708,309 +1871,341 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/cr
  .ARM.attributes
                 0x0000004a       0x1b c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
  .ARM.attributes
-                0x00000065       0x32 ./Sources/circbuf.o
+                0x00000065       0x32 ./Sources/I2C.o
  .ARM.attributes
-                0x00000097       0x32 ./Sources/data.o
+                0x00000097       0x32 ./Sources/circbuf.o
  .ARM.attributes
-                0x000000c9       0x32 ./Sources/dma.o
+                0x000000c9       0x32 ./Sources/dac.o
  .ARM.attributes
-                0x000000fb       0x32 ./Sources/led.o
+                0x000000fb       0x32 ./Sources/data.o
  .ARM.attributes
-                0x0000012d       0x32 ./Sources/log.o
+                0x0000012d       0x32 ./Sources/dma.o
  .ARM.attributes
-                0x0000015f       0x32 ./Sources/main.o
+                0x0000015f       0x32 ./Sources/eeprom.o
  .ARM.attributes
-                0x00000191       0x32 ./Sources/rtc.o
+                0x00000191       0x32 ./Sources/led.o
  .ARM.attributes
-                0x000001c3       0x32 ./Sources/tsi.o
+                0x000001c3       0x32 ./Sources/log.o
  .ARM.attributes
-                0x000001f5       0x32 ./Sources/uart.o
+                0x000001f5       0x32 ./Sources/main.o
  .ARM.attributes
-                0x00000227       0x1b ./Project_Settings/Startup_Code/startup_MKL25Z4.o
+                0x00000227       0x32 ./Sources/rtc.o
  .ARM.attributes
-                0x00000242       0x32 ./Project_Settings/Startup_Code/system_MKL25Z4.o
+                0x00000259       0x32 ./Sources/tsi.o
  .ARM.attributes
-                0x00000274       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_pow.o)
+                0x0000028b       0x32 ./Sources/uart.o
  .ARM.attributes
-                0x000002a0       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
+                0x000002bd       0x1b ./Project_Settings/Startup_Code/startup_MKL25Z4.o
  .ARM.attributes
-                0x000002cc       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_sqrt.o)
+                0x000002d8       0x32 ./Project_Settings/Startup_Code/system_MKL25Z4.o
  .ARM.attributes
-                0x000002f8       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_fabs.o)
+                0x0000030a       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_pow.o)
  .ARM.attributes
-                0x00000324       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_finite.o)
+                0x00000336       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
  .ARM.attributes
-                0x00000350       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_fpclassify.o)
+                0x00000362       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_sqrt.o)
  .ARM.attributes
-                0x0000037c       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_lib_ver.o)
+                0x0000038e       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_fabs.o)
  .ARM.attributes
-                0x000003a8       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_matherr.o)
+                0x000003ba       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_finite.o)
  .ARM.attributes
-                0x000003d4       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_nan.o)
+                0x000003e6       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_fpclassify.o)
  .ARM.attributes
-                0x00000400       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_rint.o)
+                0x00000412       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_lib_ver.o)
  .ARM.attributes
-                0x0000042c       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_scalbn.o)
+                0x0000043e       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_matherr.o)
  .ARM.attributes
-                0x00000458       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_copysign.o)
+                0x0000046a       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_nan.o)
  .ARM.attributes
-                0x00000484       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivsi3.o)
+                0x00000496       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_rint.o)
  .ARM.attributes
-                0x000004a2       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_divsi3.o)
+                0x000004c2       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_scalbn.o)
  .ARM.attributes
-                0x000004c0       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x000004ee       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_copysign.o)
  .ARM.attributes
-                0x000004de       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_arm_cmpdf2.o)
+                0x0000051a       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivsi3.o)
  .ARM.attributes
-                0x000004fc       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_arm_cmpsf2.o)
+                0x00000538       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_divsi3.o)
  .ARM.attributes
-                0x0000051a       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_fixunsdfsi.o)
+                0x00000556       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x00000546       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqsf2.o)
+                0x00000574       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_arm_cmpdf2.o)
  .ARM.attributes
-                0x00000572       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(gesf2.o)
+                0x00000592       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_arm_cmpsf2.o)
  .ARM.attributes
-                0x0000059e       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(lesf2.o)
+                0x000005b0       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqsf2.o)
  .ARM.attributes
-                0x000005ca       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subsf3.o)
+                0x000005dc       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(gesf2.o)
  .ARM.attributes
-                0x000005f6       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixsfsi.o)
+                0x00000608       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(lesf2.o)
  .ARM.attributes
-                0x00000622       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsisf.o)
+                0x00000634       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subsf3.o)
  .ARM.attributes
-                0x0000064e       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsisf.o)
+                0x00000660       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixsfsi.o)
  .ARM.attributes
-                0x0000067a       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(adddf3.o)
+                0x0000068c       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsisf.o)
  .ARM.attributes
-                0x000006a6       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(divdf3.o)
+                0x000006b8       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsisf.o)
  .ARM.attributes
-                0x000006d2       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqdf2.o)
+                0x000006e4       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(adddf3.o)
  .ARM.attributes
-                0x000006fe       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(gedf2.o)
+                0x00000710       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(divdf3.o)
  .ARM.attributes
-                0x0000072a       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(ledf2.o)
+                0x0000073c       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqdf2.o)
  .ARM.attributes
-                0x00000756       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(muldf3.o)
+                0x00000768       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(gedf2.o)
  .ARM.attributes
-                0x00000782       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subdf3.o)
+                0x00000794       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(ledf2.o)
  .ARM.attributes
-                0x000007ae       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixdfsi.o)
+                0x000007c0       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(muldf3.o)
  .ARM.attributes
-                0x000007da       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsidf.o)
+                0x000007ec       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subdf3.o)
  .ARM.attributes
-                0x00000806       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsidf.o)
+                0x00000818       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsidf.o)
  .ARM.attributes
-                0x00000832       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(extendsfdf2.o)
+                0x00000844       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(extendsfdf2.o)
  .ARM.attributes
-                0x0000085e       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(truncdfsf2.o)
+                0x00000870       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(truncdfsf2.o)
  .ARM.attributes
-                0x0000088a       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_clzsi2.o)
+                0x0000089c       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_clzsi2.o)
  .ARM.attributes
-                0x000008a8       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-errno.o)
+                0x000008ba       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-errno.o)
  .ARM.attributes
-                0x000008d4       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o)
+                0x000008e6       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o)
  .ARM.attributes
-                0x00000900       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+                0x00000912       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
  .ARM.attributes
-                0x0000092c       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-init.o)
+                0x0000093e       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-init.o)
  .ARM.attributes
-                0x00000958       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-malloc.o)
+                0x0000096a       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-malloc.o)
  .ARM.attributes
-                0x00000984       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memset.o)
+                0x00000996       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memset.o)
  .ARM.attributes
-                0x000009b0       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-freer.o)
+                0x000009c2       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-freer.o)
  .ARM.attributes
-                0x000009dc       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-mallocr.o)
+                0x000009ee       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-mallocr.o)
  .ARM.attributes
-                0x00000a08       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-sbrkr.o)
+                0x00000a1a       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-sbrkr.o)
  .ARM.attributes
-                0x00000a34       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-sprintf.o)
+                0x00000a46       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-sprintf.o)
  .ARM.attributes
-                0x00000a60       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-svfprintf.o)
+                0x00000a72       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-svfprintf.o)
  .ARM.attributes
-                0x00000a8c       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-vfprintf_i.o)
+                0x00000a9e       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-vfprintf_i.o)
  .ARM.attributes
-                0x00000ab8       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-findfp.o)
+                0x00000aca       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-findfp.o)
  .ARM.attributes
-                0x00000ae4       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memchr-stub.o)
+                0x00000af6       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memchr-stub.o)
  .ARM.attributes
-                0x00000b10       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memcpy-stub.o)
+                0x00000b22       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memcpy-stub.o)
  .ARM.attributes
-                0x00000b3c       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memmove.o)
+                0x00000b4e       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memmove.o)
  .ARM.attributes
-                0x00000b68       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-reallocr.o)
+                0x00000b7a       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-reallocr.o)
  .ARM.attributes
-                0x00000b94       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-reent.o)
+                0x00000ba6       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-reent.o)
  .ARM.attributes
-                0x00000bc0       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-strlen.o)
+                0x00000bd2       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-strlen.o)
  .ARM.attributes
-                0x00000bec       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-msizer.o)
+                0x00000bfe       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-msizer.o)
  .ARM.attributes
-                0x00000c18       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(sbrk.o)
+                0x00000c2a       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(sbrk.o)
  .ARM.attributes
-                0x00000c44       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(_exit.o)
+                0x00000c56       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(_exit.o)
  .ARM.attributes
-                0x00000c70       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtend.o
+                0x00000c82       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtend.o
  .ARM.attributes
-                0x00000c9c       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtn.o
+                0x00000cae       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtn.o
                 0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region m_data overflowed with stack and heap)
 OUTPUT(Final_project_ESE5013.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x2e15
- .debug_info    0x00000000      0x25d ./Sources/circbuf.o
- .debug_info    0x0000025d      0x3ab ./Sources/data.o
- .debug_info    0x00000608      0x687 ./Sources/dma.o
- .debug_info    0x00000c8f      0x4d8 ./Sources/led.o
- .debug_info    0x00001167      0x2d7 ./Sources/log.o
- .debug_info    0x0000143e      0x1af ./Sources/main.o
- .debug_info    0x000015ed      0x596 ./Sources/rtc.o
- .debug_info    0x00001b83      0x6c9 ./Sources/tsi.o
- .debug_info    0x0000224c      0x747 ./Sources/uart.o
- .debug_info    0x00002993       0x95 ./Project_Settings/Startup_Code/startup_MKL25Z4.o
- .debug_info    0x00002a28      0x3ed ./Project_Settings/Startup_Code/system_MKL25Z4.o
+.debug_info     0x00000000     0x3de7
+ .debug_info    0x00000000      0x4d5 ./Sources/I2C.o
+ .debug_info    0x000004d5      0x25d ./Sources/circbuf.o
+ .debug_info    0x00000732      0x3fe ./Sources/dac.o
+ .debug_info    0x00000b30      0x3ab ./Sources/data.o
+ .debug_info    0x00000edb      0x687 ./Sources/dma.o
+ .debug_info    0x00001562      0x27b ./Sources/eeprom.o
+ .debug_info    0x000017dd      0x4d8 ./Sources/led.o
+ .debug_info    0x00001cb5      0x2d7 ./Sources/log.o
+ .debug_info    0x00001f8c      0x18e ./Sources/main.o
+ .debug_info    0x0000211a      0x977 ./Sources/rtc.o
+ .debug_info    0x00002a91      0x78d ./Sources/tsi.o
+ .debug_info    0x0000321e      0x747 ./Sources/uart.o
+ .debug_info    0x00003965       0x95 ./Project_Settings/Startup_Code/startup_MKL25Z4.o
+ .debug_info    0x000039fa      0x3ed ./Project_Settings/Startup_Code/system_MKL25Z4.o
 
-.debug_abbrev   0x00000000      0xd40
- .debug_abbrev  0x00000000      0x11d ./Sources/circbuf.o
- .debug_abbrev  0x0000011d       0xf2 ./Sources/data.o
- .debug_abbrev  0x0000020f      0x1b7 ./Sources/dma.o
- .debug_abbrev  0x000003c6      0x140 ./Sources/led.o
- .debug_abbrev  0x00000506      0x108 ./Sources/log.o
- .debug_abbrev  0x0000060e       0xcb ./Sources/main.o
- .debug_abbrev  0x000006d9      0x19f ./Sources/rtc.o
- .debug_abbrev  0x00000878      0x1c1 ./Sources/tsi.o
- .debug_abbrev  0x00000a39      0x1ea ./Sources/uart.o
- .debug_abbrev  0x00000c23       0x14 ./Project_Settings/Startup_Code/startup_MKL25Z4.o
- .debug_abbrev  0x00000c37      0x109 ./Project_Settings/Startup_Code/system_MKL25Z4.o
+.debug_abbrev   0x00000000     0x115d
+ .debug_abbrev  0x00000000      0x178 ./Sources/I2C.o
+ .debug_abbrev  0x00000178      0x11d ./Sources/circbuf.o
+ .debug_abbrev  0x00000295      0x116 ./Sources/dac.o
+ .debug_abbrev  0x000003ab       0xf2 ./Sources/data.o
+ .debug_abbrev  0x0000049d      0x1b7 ./Sources/dma.o
+ .debug_abbrev  0x00000654      0x123 ./Sources/eeprom.o
+ .debug_abbrev  0x00000777      0x140 ./Sources/led.o
+ .debug_abbrev  0x000008b7      0x108 ./Sources/log.o
+ .debug_abbrev  0x000009bf       0xb3 ./Sources/main.o
+ .debug_abbrev  0x00000a72      0x223 ./Sources/rtc.o
+ .debug_abbrev  0x00000c95      0x1c1 ./Sources/tsi.o
+ .debug_abbrev  0x00000e56      0x1ea ./Sources/uart.o
+ .debug_abbrev  0x00001040       0x14 ./Project_Settings/Startup_Code/startup_MKL25Z4.o
+ .debug_abbrev  0x00001054      0x109 ./Project_Settings/Startup_Code/system_MKL25Z4.o
 
-.debug_aranges  0x00000000      0x248
+.debug_aranges  0x00000000      0x2d8
  .debug_aranges
-                0x00000000       0x48 ./Sources/circbuf.o
+                0x00000000       0x38 ./Sources/I2C.o
  .debug_aranges
-                0x00000048       0x58 ./Sources/data.o
+                0x00000038       0x48 ./Sources/circbuf.o
  .debug_aranges
-                0x000000a0       0x38 ./Sources/dma.o
+                0x00000080       0x20 ./Sources/dac.o
  .debug_aranges
-                0x000000d8       0x30 ./Sources/led.o
+                0x000000a0       0x58 ./Sources/data.o
  .debug_aranges
-                0x00000108       0x30 ./Sources/log.o
+                0x000000f8       0x38 ./Sources/dma.o
  .debug_aranges
-                0x00000138       0x20 ./Sources/main.o
+                0x00000130       0x28 ./Sources/eeprom.o
  .debug_aranges
-                0x00000158       0x30 ./Sources/rtc.o
+                0x00000158       0x30 ./Sources/led.o
  .debug_aranges
-                0x00000188       0x48 ./Sources/tsi.o
+                0x00000188       0x30 ./Sources/log.o
  .debug_aranges
-                0x000001d0       0x30 ./Sources/uart.o
+                0x000001b8       0x20 ./Sources/main.o
  .debug_aranges
-                0x00000200       0x20 ./Project_Settings/Startup_Code/startup_MKL25Z4.o
+                0x000001d8       0x40 ./Sources/rtc.o
  .debug_aranges
-                0x00000220       0x28 ./Project_Settings/Startup_Code/system_MKL25Z4.o
+                0x00000218       0x48 ./Sources/tsi.o
+ .debug_aranges
+                0x00000260       0x30 ./Sources/uart.o
+ .debug_aranges
+                0x00000290       0x20 ./Project_Settings/Startup_Code/startup_MKL25Z4.o
+ .debug_aranges
+                0x000002b0       0x28 ./Project_Settings/Startup_Code/system_MKL25Z4.o
 
-.debug_ranges   0x00000000      0x188
- .debug_ranges  0x00000000       0x38 ./Sources/circbuf.o
- .debug_ranges  0x00000038       0x48 ./Sources/data.o
- .debug_ranges  0x00000080       0x28 ./Sources/dma.o
- .debug_ranges  0x000000a8       0x20 ./Sources/led.o
- .debug_ranges  0x000000c8       0x20 ./Sources/log.o
- .debug_ranges  0x000000e8       0x10 ./Sources/main.o
- .debug_ranges  0x000000f8       0x20 ./Sources/rtc.o
- .debug_ranges  0x00000118       0x38 ./Sources/tsi.o
- .debug_ranges  0x00000150       0x20 ./Sources/uart.o
- .debug_ranges  0x00000170       0x18 ./Project_Settings/Startup_Code/system_MKL25Z4.o
+.debug_ranges   0x00000000      0x1e8
+ .debug_ranges  0x00000000       0x28 ./Sources/I2C.o
+ .debug_ranges  0x00000028       0x38 ./Sources/circbuf.o
+ .debug_ranges  0x00000060       0x10 ./Sources/dac.o
+ .debug_ranges  0x00000070       0x48 ./Sources/data.o
+ .debug_ranges  0x000000b8       0x28 ./Sources/dma.o
+ .debug_ranges  0x000000e0       0x18 ./Sources/eeprom.o
+ .debug_ranges  0x000000f8       0x20 ./Sources/led.o
+ .debug_ranges  0x00000118       0x20 ./Sources/log.o
+ .debug_ranges  0x00000138       0x10 ./Sources/main.o
+ .debug_ranges  0x00000148       0x30 ./Sources/rtc.o
+ .debug_ranges  0x00000178       0x38 ./Sources/tsi.o
+ .debug_ranges  0x000001b0       0x20 ./Sources/uart.o
+ .debug_ranges  0x000001d0       0x18 ./Project_Settings/Startup_Code/system_MKL25Z4.o
 
-.debug_macro    0x00000000     0xab0f
- .debug_macro   0x00000000      0x132 ./Sources/circbuf.o
- .debug_macro   0x00000132      0x802 ./Sources/circbuf.o
- .debug_macro   0x00000934       0x58 ./Sources/circbuf.o
- .debug_macro   0x0000098c       0x16 ./Sources/circbuf.o
- .debug_macro   0x000009a2       0x35 ./Sources/circbuf.o
- .debug_macro   0x000009d7       0xa3 ./Sources/circbuf.o
- .debug_macro   0x00000a7a       0x16 ./Sources/circbuf.o
- .debug_macro   0x00000a90       0x97 ./Sources/circbuf.o
- .debug_macro   0x00000b27       0x10 ./Sources/circbuf.o
- .debug_macro   0x00000b37       0xef ./Sources/circbuf.o
- .debug_macro   0x00000c26       0x4a ./Sources/circbuf.o
- .debug_macro   0x00000c70       0x52 ./Sources/circbuf.o
- .debug_macro   0x00000cc2       0x16 ./Sources/circbuf.o
- .debug_macro   0x00000cd8       0x43 ./Sources/circbuf.o
- .debug_macro   0x00000d1b      0x180 ./Sources/circbuf.o
- .debug_macro   0x00000e9b       0x10 ./Sources/circbuf.o
- .debug_macro   0x00000eab       0x22 ./Sources/circbuf.o
- .debug_macro   0x00000ecd       0xbd ./Sources/circbuf.o
- .debug_macro   0x00000f8a       0x16 ./Sources/circbuf.o
- .debug_macro   0x00000fa0      0x14a ./Sources/circbuf.o
- .debug_macro   0x000010ea       0x16 ./Sources/circbuf.o
- .debug_macro   0x00001100       0x35 ./Sources/circbuf.o
- .debug_macro   0x00001135       0x22 ./Sources/circbuf.o
- .debug_macro   0x00001157      0x20f ./Sources/circbuf.o
- .debug_macro   0x00001366       0x10 ./Sources/circbuf.o
- .debug_macro   0x00001376      0x162 ./Sources/data.o
- .debug_macro   0x000014d8       0x16 ./Sources/data.o
- .debug_macro   0x000014ee       0x44 ./Sources/data.o
- .debug_macro   0x00001532      0x209 ./Sources/data.o
- .debug_macro   0x0000173b       0x3a ./Sources/data.o
- .debug_macro   0x00001775       0x3a ./Sources/data.o
- .debug_macro   0x000017af       0x26 ./Sources/data.o
- .debug_macro   0x000017d5      0x306 ./Sources/data.o
- .debug_macro   0x00001adb       0x63 ./Sources/data.o
- .debug_macro   0x00001b3e     0x839f ./Sources/data.o
- .debug_macro   0x00009edd      0x166 ./Sources/data.o
- .debug_macro   0x0000a043       0xde ./Sources/data.o
- .debug_macro   0x0000a121       0x1c ./Sources/data.o
- .debug_macro   0x0000a13d       0xa5 ./Sources/dma.o
- .debug_macro   0x0000a1e2       0x10 ./Sources/dma.o
- .debug_macro   0x0000a1f2       0x16 ./Sources/dma.o
- .debug_macro   0x0000a208      0x118 ./Sources/led.o
- .debug_macro   0x0000a320      0x184 ./Sources/log.o
- .debug_macro   0x0000a4a4      0x18d ./Sources/main.o
- .debug_macro   0x0000a631       0x10 ./Sources/main.o
- .debug_macro   0x0000a641       0x3c ./Sources/main.o
- .debug_macro   0x0000a67d      0x197 ./Sources/rtc.o
- .debug_macro   0x0000a814      0x18d ./Sources/tsi.o
- .debug_macro   0x0000a9a1       0xa4 ./Sources/uart.o
- .debug_macro   0x0000aa45       0x7e ./Project_Settings/Startup_Code/system_MKL25Z4.o
- .debug_macro   0x0000aac3       0x4c ./Project_Settings/Startup_Code/system_MKL25Z4.o
+.debug_macro    0x00000000     0xaf4e
+ .debug_macro   0x00000000       0x8c ./Sources/I2C.o
+ .debug_macro   0x0000008c      0x802 ./Sources/I2C.o
+ .debug_macro   0x0000088e       0x16 ./Sources/I2C.o
+ .debug_macro   0x000008a4       0x16 ./Sources/I2C.o
+ .debug_macro   0x000008ba       0x44 ./Sources/I2C.o
+ .debug_macro   0x000008fe      0x209 ./Sources/I2C.o
+ .debug_macro   0x00000b07       0x3a ./Sources/I2C.o
+ .debug_macro   0x00000b41       0x3a ./Sources/I2C.o
+ .debug_macro   0x00000b7b       0x26 ./Sources/I2C.o
+ .debug_macro   0x00000ba1      0x306 ./Sources/I2C.o
+ .debug_macro   0x00000ea7       0x63 ./Sources/I2C.o
+ .debug_macro   0x00000f0a     0x839f ./Sources/I2C.o
+ .debug_macro   0x000092a9       0x34 ./Sources/I2C.o
+ .debug_macro   0x000092dd      0x132 ./Sources/circbuf.o
+ .debug_macro   0x0000940f       0x58 ./Sources/circbuf.o
+ .debug_macro   0x00009467       0x35 ./Sources/circbuf.o
+ .debug_macro   0x0000949c       0xa3 ./Sources/circbuf.o
+ .debug_macro   0x0000953f       0x16 ./Sources/circbuf.o
+ .debug_macro   0x00009555       0x97 ./Sources/circbuf.o
+ .debug_macro   0x000095ec       0x10 ./Sources/circbuf.o
+ .debug_macro   0x000095fc       0xef ./Sources/circbuf.o
+ .debug_macro   0x000096eb       0x4a ./Sources/circbuf.o
+ .debug_macro   0x00009735       0x52 ./Sources/circbuf.o
+ .debug_macro   0x00009787       0x16 ./Sources/circbuf.o
+ .debug_macro   0x0000979d       0x43 ./Sources/circbuf.o
+ .debug_macro   0x000097e0      0x180 ./Sources/circbuf.o
+ .debug_macro   0x00009960       0x10 ./Sources/circbuf.o
+ .debug_macro   0x00009970       0x22 ./Sources/circbuf.o
+ .debug_macro   0x00009992       0xbd ./Sources/circbuf.o
+ .debug_macro   0x00009a4f       0x16 ./Sources/circbuf.o
+ .debug_macro   0x00009a65      0x14a ./Sources/circbuf.o
+ .debug_macro   0x00009baf       0x16 ./Sources/circbuf.o
+ .debug_macro   0x00009bc5       0x35 ./Sources/circbuf.o
+ .debug_macro   0x00009bfa       0x22 ./Sources/circbuf.o
+ .debug_macro   0x00009c1c      0x20f ./Sources/circbuf.o
+ .debug_macro   0x00009e2b       0x10 ./Sources/circbuf.o
+ .debug_macro   0x00009e3b      0x197 ./Sources/dac.o
+ .debug_macro   0x00009fd2       0x10 ./Sources/dac.o
+ .debug_macro   0x00009fe2       0x16 ./Sources/dac.o
+ .debug_macro   0x00009ff8       0x10 ./Sources/dac.o
+ .debug_macro   0x0000a008      0x166 ./Sources/dac.o
+ .debug_macro   0x0000a16e       0x3c ./Sources/dac.o
+ .debug_macro   0x0000a1aa      0x162 ./Sources/data.o
+ .debug_macro   0x0000a30c       0xde ./Sources/data.o
+ .debug_macro   0x0000a3ea       0x1c ./Sources/data.o
+ .debug_macro   0x0000a406       0xa5 ./Sources/dma.o
+ .debug_macro   0x0000a4ab      0x1a9 ./Sources/eeprom.o
+ .debug_macro   0x0000a654       0x10 ./Sources/eeprom.o
+ .debug_macro   0x0000a664      0x118 ./Sources/led.o
+ .debug_macro   0x0000a77c      0x184 ./Sources/log.o
+ .debug_macro   0x0000a900      0x1a9 ./Sources/main.o
+ .debug_macro   0x0000aaa9      0x1aa ./Sources/rtc.o
+ .debug_macro   0x0000ac53      0x18d ./Sources/tsi.o
+ .debug_macro   0x0000ade0       0xa4 ./Sources/uart.o
+ .debug_macro   0x0000ae84       0x7e ./Project_Settings/Startup_Code/system_MKL25Z4.o
+ .debug_macro   0x0000af02       0x4c ./Project_Settings/Startup_Code/system_MKL25Z4.o
 
-.debug_line     0x00000000     0x1ccd
- .debug_line    0x00000000      0x2b1 ./Sources/circbuf.o
- .debug_line    0x000002b1      0x3b4 ./Sources/data.o
- .debug_line    0x00000665      0x24e ./Sources/dma.o
- .debug_line    0x000008b3      0x2a7 ./Sources/led.o
- .debug_line    0x00000b5a      0x304 ./Sources/log.o
- .debug_line    0x00000e5e      0x2bc ./Sources/main.o
- .debug_line    0x0000111a      0x335 ./Sources/rtc.o
- .debug_line    0x0000144f      0x375 ./Sources/tsi.o
- .debug_line    0x000017c4      0x24e ./Sources/uart.o
- .debug_line    0x00001a12       0x7b ./Project_Settings/Startup_Code/startup_MKL25Z4.o
- .debug_line    0x00001a8d      0x240 ./Project_Settings/Startup_Code/system_MKL25Z4.o
+.debug_line     0x00000000     0x25bf
+ .debug_line    0x00000000      0x299 ./Sources/I2C.o
+ .debug_line    0x00000299      0x2b1 ./Sources/circbuf.o
+ .debug_line    0x0000054a      0x2bd ./Sources/dac.o
+ .debug_line    0x00000807      0x3b4 ./Sources/data.o
+ .debug_line    0x00000bbb      0x24e ./Sources/dma.o
+ .debug_line    0x00000e09      0x335 ./Sources/eeprom.o
+ .debug_line    0x0000113e      0x2a7 ./Sources/led.o
+ .debug_line    0x000013e5      0x304 ./Sources/log.o
+ .debug_line    0x000016e9      0x2d6 ./Sources/main.o
+ .debug_line    0x000019bf      0x381 ./Sources/rtc.o
+ .debug_line    0x00001d40      0x376 ./Sources/tsi.o
+ .debug_line    0x000020b6      0x24e ./Sources/uart.o
+ .debug_line    0x00002304       0x7b ./Project_Settings/Startup_Code/startup_MKL25Z4.o
+ .debug_line    0x0000237f      0x240 ./Project_Settings/Startup_Code/system_MKL25Z4.o
 
-.debug_str      0x00000000    0x349c5
- .debug_str     0x00000000     0x4d3f ./Sources/circbuf.o
+.debug_str      0x00000000    0x34c99
+ .debug_str     0x00000000    0x31cc0 ./Sources/I2C.o
+                              0x320cc (size before relaxing)
+ .debug_str     0x00031cc0     0x210d ./Sources/circbuf.o
                                0x4f19 (size before relaxing)
- .debug_str     0x00004d3f    0x2f48b ./Sources/data.o
+ .debug_str     0x00033dcd      0x214 ./Sources/dac.o
+                              0x3368d (size before relaxing)
+ .debug_str     0x00033fe1      0x705 ./Sources/data.o
                               0x34497 (size before relaxing)
- .debug_str     0x000341ca      0x40c ./Sources/dma.o
+ .debug_str     0x000346e6      0x289 ./Sources/dma.o
                               0x321e2 (size before relaxing)
- .debug_str     0x000345d6       0xe2 ./Sources/led.o
+ .debug_str     0x0003496f       0x56 ./Sources/eeprom.o
+                              0x33787 (size before relaxing)
+ .debug_str     0x000349c5       0xab ./Sources/led.o
                               0x33b73 (size before relaxing)
- .debug_str     0x000346b8       0x5f ./Sources/log.o
+ .debug_str     0x00034a70       0x3f ./Sources/log.o
                               0x33ec6 (size before relaxing)
- .debug_str     0x00034717      0x106 ./Sources/main.o
-                              0x335a4 (size before relaxing)
- .debug_str     0x0003481d       0x5e ./Sources/rtc.o
-                              0x3371e (size before relaxing)
- .debug_str     0x0003487b       0x7f ./Sources/tsi.o
-                              0x33921 (size before relaxing)
- .debug_str     0x000348fa       0x3f ./Sources/uart.o
+ .debug_str     0x00034aaf       0x17 ./Sources/main.o
+                              0x33751 (size before relaxing)
+ .debug_str     0x00034ac6       0xab ./Sources/rtc.o
+                              0x33b4b (size before relaxing)
+ .debug_str     0x00034b71       0x72 ./Sources/tsi.o
+                              0x33948 (size before relaxing)
+ .debug_str     0x00034be3       0x3f ./Sources/uart.o
                               0x3221a (size before relaxing)
- .debug_str     0x00034939       0x8c ./Project_Settings/Startup_Code/system_MKL25Z4.o
+ .debug_str     0x00034c22       0x77 ./Project_Settings/Startup_Code/system_MKL25Z4.o
                               0x31f13 (size before relaxing)
 
 .comment        0x00000000       0x70
- .comment       0x00000000       0x70 ./Sources/circbuf.o
+ .comment       0x00000000       0x70 ./Sources/I2C.o
                                  0x71 (size before relaxing)
+ .comment       0x00000000       0x71 ./Sources/circbuf.o
+ .comment       0x00000000       0x71 ./Sources/dac.o
  .comment       0x00000000       0x71 ./Sources/data.o
  .comment       0x00000000       0x71 ./Sources/dma.o
+ .comment       0x00000000       0x71 ./Sources/eeprom.o
  .comment       0x00000000       0x71 ./Sources/led.o
  .comment       0x00000000       0x71 ./Sources/log.o
  .comment       0x00000000       0x71 ./Sources/main.o
@@ -2019,71 +2214,71 @@ OUTPUT(Final_project_ESE5013.elf elf32-littlearm)
  .comment       0x00000000       0x71 ./Sources/uart.o
  .comment       0x00000000       0x71 ./Project_Settings/Startup_Code/system_MKL25Z4.o
 
-.debug_frame    0x00000000     0x109c
- .debug_frame   0x00000000       0xd0 ./Sources/circbuf.o
- .debug_frame   0x000000d0      0x118 ./Sources/data.o
- .debug_frame   0x000001e8       0x90 ./Sources/dma.o
- .debug_frame   0x00000278       0x6c ./Sources/led.o
- .debug_frame   0x000002e4       0x70 ./Sources/log.o
- .debug_frame   0x00000354       0x30 ./Sources/main.o
- .debug_frame   0x00000384       0x70 ./Sources/rtc.o
- .debug_frame   0x000003f4       0xc0 ./Sources/tsi.o
- .debug_frame   0x000004b4       0x70 ./Sources/uart.o
- .debug_frame   0x00000524       0x4c ./Project_Settings/Startup_Code/system_MKL25Z4.o
- .debug_frame   0x00000570       0x38 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_pow.o)
- .debug_frame   0x000005a8       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
- .debug_frame   0x000005e4       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_sqrt.o)
- .debug_frame   0x00000620       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_fabs.o)
- .debug_frame   0x00000640       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_finite.o)
- .debug_frame   0x00000660       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_fpclassify.o)
- .debug_frame   0x0000068c       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_matherr.o)
- .debug_frame   0x000006ac       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_nan.o)
- .debug_frame   0x000006cc       0x38 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_rint.o)
- .debug_frame   0x00000704       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_scalbn.o)
- .debug_frame   0x00000734       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_copysign.o)
- .debug_frame   0x00000760       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivsi3.o)
- .debug_frame   0x00000780       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_divsi3.o)
- .debug_frame   0x000007a0       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_fixunsdfsi.o)
- .debug_frame   0x000007cc       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqsf2.o)
- .debug_frame   0x000007f8       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(gesf2.o)
- .debug_frame   0x00000828       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(lesf2.o)
- .debug_frame   0x00000858       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subsf3.o)
- .debug_frame   0x00000888       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixsfsi.o)
- .debug_frame   0x000008a8       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsisf.o)
- .debug_frame   0x000008d4       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsisf.o)
- .debug_frame   0x000008fc       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(adddf3.o)
- .debug_frame   0x00000938       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(divdf3.o)
- .debug_frame   0x00000974       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqdf2.o)
- .debug_frame   0x000009b0       0x38 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(gedf2.o)
- .debug_frame   0x000009e8       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(ledf2.o)
- .debug_frame   0x00000a24       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(muldf3.o)
- .debug_frame   0x00000a60       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subdf3.o)
- .debug_frame   0x00000a9c       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixdfsi.o)
- .debug_frame   0x00000ac8       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsidf.o)
- .debug_frame   0x00000af8       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsidf.o)
- .debug_frame   0x00000b20       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(extendsfdf2.o)
- .debug_frame   0x00000b4c       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(truncdfsf2.o)
- .debug_frame   0x00000b7c       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-errno.o)
- .debug_frame   0x00000b9c       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o)
- .debug_frame   0x00000bc4       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-init.o)
- .debug_frame   0x00000bf0       0x40 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-malloc.o)
- .debug_frame   0x00000c30       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memset.o)
- .debug_frame   0x00000c50       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-freer.o)
- .debug_frame   0x00000c7c       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-mallocr.o)
- .debug_frame   0x00000ca8       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-sbrkr.o)
- .debug_frame   0x00000cd4       0x4c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-sprintf.o)
- .debug_frame   0x00000d20       0x74 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-svfprintf.o)
- .debug_frame   0x00000d94       0x54 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-vfprintf_i.o)
- .debug_frame   0x00000de8      0x148 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-findfp.o)
- .debug_frame   0x00000f30       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memchr-stub.o)
- .debug_frame   0x00000f50       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memcpy-stub.o)
- .debug_frame   0x00000f78       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memmove.o)
- .debug_frame   0x00000fa4       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-reallocr.o)
- .debug_frame   0x00000fd4       0x48 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-reent.o)
- .debug_frame   0x0000101c       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-strlen.o)
- .debug_frame   0x0000103c       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-msizer.o)
- .debug_frame   0x0000105c       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(sbrk.o)
- .debug_frame   0x0000107c       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(_exit.o)
+.debug_frame    0x00000000     0x1160
+ .debug_frame   0x00000000       0x8c ./Sources/I2C.o
+ .debug_frame   0x0000008c       0xd0 ./Sources/circbuf.o
+ .debug_frame   0x0000015c       0x2c ./Sources/dac.o
+ .debug_frame   0x00000188      0x118 ./Sources/data.o
+ .debug_frame   0x000002a0       0x90 ./Sources/dma.o
+ .debug_frame   0x00000330       0x50 ./Sources/eeprom.o
+ .debug_frame   0x00000380       0x6c ./Sources/led.o
+ .debug_frame   0x000003ec       0x70 ./Sources/log.o
+ .debug_frame   0x0000045c       0x30 ./Sources/main.o
+ .debug_frame   0x0000048c       0xac ./Sources/rtc.o
+ .debug_frame   0x00000538       0xc0 ./Sources/tsi.o
+ .debug_frame   0x000005f8       0x70 ./Sources/uart.o
+ .debug_frame   0x00000668       0x4c ./Project_Settings/Startup_Code/system_MKL25Z4.o
+ .debug_frame   0x000006b4       0x38 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_pow.o)
+ .debug_frame   0x000006ec       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_pow.o)
+ .debug_frame   0x00000728       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_sqrt.o)
+ .debug_frame   0x00000764       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_fabs.o)
+ .debug_frame   0x00000784       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_finite.o)
+ .debug_frame   0x000007a4       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_fpclassify.o)
+ .debug_frame   0x000007d0       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_matherr.o)
+ .debug_frame   0x000007f0       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_nan.o)
+ .debug_frame   0x00000810       0x38 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_rint.o)
+ .debug_frame   0x00000848       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_scalbn.o)
+ .debug_frame   0x00000878       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_copysign.o)
+ .debug_frame   0x000008a4       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x000008c4       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_divsi3.o)
+ .debug_frame   0x000008e4       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqsf2.o)
+ .debug_frame   0x00000910       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(gesf2.o)
+ .debug_frame   0x00000940       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(lesf2.o)
+ .debug_frame   0x00000970       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subsf3.o)
+ .debug_frame   0x000009a0       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(fixsfsi.o)
+ .debug_frame   0x000009c0       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsisf.o)
+ .debug_frame   0x000009ec       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatunsisf.o)
+ .debug_frame   0x00000a14       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(adddf3.o)
+ .debug_frame   0x00000a50       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(divdf3.o)
+ .debug_frame   0x00000a8c       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(eqdf2.o)
+ .debug_frame   0x00000ac8       0x38 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(gedf2.o)
+ .debug_frame   0x00000b00       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(ledf2.o)
+ .debug_frame   0x00000b3c       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(muldf3.o)
+ .debug_frame   0x00000b78       0x3c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(subdf3.o)
+ .debug_frame   0x00000bb4       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(floatsidf.o)
+ .debug_frame   0x00000be4       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(extendsfdf2.o)
+ .debug_frame   0x00000c10       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(truncdfsf2.o)
+ .debug_frame   0x00000c40       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-errno.o)
+ .debug_frame   0x00000c60       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o)
+ .debug_frame   0x00000c88       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-init.o)
+ .debug_frame   0x00000cb4       0x40 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-malloc.o)
+ .debug_frame   0x00000cf4       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memset.o)
+ .debug_frame   0x00000d14       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-freer.o)
+ .debug_frame   0x00000d40       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x00000d6c       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-sbrkr.o)
+ .debug_frame   0x00000d98       0x4c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-sprintf.o)
+ .debug_frame   0x00000de4       0x74 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-svfprintf.o)
+ .debug_frame   0x00000e58       0x54 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-vfprintf_i.o)
+ .debug_frame   0x00000eac      0x148 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-findfp.o)
+ .debug_frame   0x00000ff4       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memchr-stub.o)
+ .debug_frame   0x00001014       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x0000103c       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memmove.o)
+ .debug_frame   0x00001068       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-reallocr.o)
+ .debug_frame   0x00001098       0x48 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-reent.o)
+ .debug_frame   0x000010e0       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-strlen.o)
+ .debug_frame   0x00001100       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-nano-msizer.o)
+ .debug_frame   0x00001120       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(sbrk.o)
+ .debug_frame   0x00001140       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(_exit.o)
 
 .stabstr        0x00000000      0x14d
  .stabstr       0x00000000      0x14d c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(close.o)

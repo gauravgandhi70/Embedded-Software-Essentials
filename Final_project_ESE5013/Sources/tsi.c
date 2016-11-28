@@ -67,7 +67,7 @@ void tsi_led()
 				{
 
 
-					LEDFunction(RED,200);
+					LEDFunction(OFF,200);
 				}
 			else if(d>23000 && d<27000)
 				{
@@ -102,19 +102,27 @@ void tsi_led()
 			else if(d>47000 && d<51000)
 				{
 
-					LEDFunction(OFF,200);
+					LEDFunction(RED,200);
 				}
 
 			TSI0_GENCS |= (TSI_GENCS_TSIIEN_MASK);
 				TSI0_DATA |= TSI_DATA_SWTS_MASK;     // START SCAN
 }
 
+
+
+//tsi_dac(uint16_t data)
+
 void TSI0_IRQHandler(void)
 {
 	TSI0_GENCS |= TSI_GENCS_EOSF_MASK;
 	TSI0_GENCS &= ~(TSI_GENCS_TSIIEN_MASK);
 	f=1;
-	d = (TSI0_DATA<<16);
-	d=d/65536;
+	d = (TSI0_DATA);
+	DAC0_DAT0L =d;
+	DAC0_DAT0H = d>>12;
+	//d=d/65536;
+	//TSI0_GENCS |= (TSI_GENCS_TSIIEN_MASK);
+	//TSI0_DATA |= TSI_DATA_SWTS_MASK;     // START SCAN
 
 }
