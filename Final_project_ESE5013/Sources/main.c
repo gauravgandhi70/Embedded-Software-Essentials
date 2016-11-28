@@ -52,15 +52,18 @@
 
 int main(void)
 {
-
+	uint32_t i=100000;
 	uart_init(57600);								// Initialize UART
-	rtc_init();
+	//rtc_init();
 	//time_setup();
 	LED_Init();
-	tsi_init();
-	dac_init();
-	tsi_start_scan();
+	i2c_init();
+	//tsi_init();
+	//dac_init();
+	//tsi_start_scan();
+	EEPROMwrite(0x0, 0x89);
 
+	uint8_t ed = EEPROMread(0);
 
 
 

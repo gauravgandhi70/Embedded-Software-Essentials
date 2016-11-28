@@ -8,6 +8,7 @@
 #ifndef INCLUDES_EEPROM_H_
 #define INCLUDES_EEPROM_H_
 
+#define EEPROM_ID 0xA0
 void EEPROMwrite(uint16_t address, uint8_t data);
 uint8_t EEPROMread(uint16_t address);
 void eereset(void);
