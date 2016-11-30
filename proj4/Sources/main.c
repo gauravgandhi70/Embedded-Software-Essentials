@@ -55,15 +55,16 @@ int main(void)
 	uint32_t i=100000;
 	uart_init(57600);								// Initialize UART
 	rtc_init();
-	//time_setup();
+	time_setup();
 	LED_Init();
+	pwm_init();
 	//i2c_init();
 	tsi_init();
 	dac_init();
 	tsi_start_scan();
 	//EEPROMwrite(0x0, 0x89);
 
-	uint8_t ed = EEPROMread(0);
+	//uint8_t ed = EEPROMread(0);
 
 
 
@@ -73,7 +74,8 @@ int main(void)
 		if(f==1)
 			{
 				f==0;
-				//tsi_led();
+				tsi_led();
+
 			}
 		}
 
