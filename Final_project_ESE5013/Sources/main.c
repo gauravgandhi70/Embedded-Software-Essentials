@@ -43,6 +43,8 @@
 #include"dac.h"
 #include"I2C.h"
 #include"eeprom.h"
+#include"sdcard.h"
+#include"SPI.h"
 //#include"rtc.h"
 
 
@@ -54,6 +56,7 @@ int main(void)
 {
 	uint32_t i=100000;
 	uart_init(57600);								// Initialize UART
+	sdcard_init();
 	rtc_init();
 	//time_setup();
 	LED_Init();
@@ -63,7 +66,6 @@ int main(void)
 	tsi_start_scan();
 	//EEPROMwrite(0x0, 0x89);
 
-	uint8_t ed = EEPROMread(0);
 
 
 

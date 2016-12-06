@@ -21,7 +21,7 @@ void SPI_init(void) {
 	// Config registers, turn on SPI0 as master
 	// Enable chip select
 	SPI0->C1 = 0x50;// Enable SPI and set as Master
-	SPI0_BR = (SPI_BR_SPPR(0x03) | SPI_BR_SPR(0x08));     //Set baud rate prescale divisor to 3 & set baud rate divisor to 512 for baud rate of 15625 hz
+	SPI0_BR = (SPI_BR_SPPR(0x03) | SPI_BR_SPR(0x04));     //Set baud rate prescale divisor to 3 & set baud rate divisor to 512 for baud rate of 15625 hz
 }
 
 uint8_t SPI_status(void) { //Shows the status of SPI

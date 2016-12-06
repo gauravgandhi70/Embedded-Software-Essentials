@@ -1,12 +1,10 @@
-Sources/main.o: ../Sources/main.c ../Includes/MKL25Z4.h \
+Sources/message.o: ../Sources/message.c ../Includes/MKL25Z4.h \
  ../Includes/core_cm0plus.h ../Includes/core_cmInstr.h \
  ../Includes/core_cmFunc.h ../Includes/system_MKL25Z4.h \
  ../Includes/uart.h ../Includes/circbuf.h ../Includes/circbuf.h \
- ../Includes/data.h ../Includes/log.h ../Includes/memory.h \
- ../Includes/main.h ../Includes/log.h ../Includes/dma.h ../Includes/led.h \
- ../Includes/message.h ../Includes/tsi.h ../Includes/dac.h \
- ../Includes/I2C.h ../Includes/eeprom.h ../Includes/sdcard.h \
- ../Includes/SPI.h
+ ../Includes/data.h ../Includes/log.h ../Includes/led.h \
+ ../Includes/memory.h ../Includes/main.h ../Includes/log.h \
+ ../Includes/dma.h ../Includes/message.h
 
 ../Includes/MKL25Z4.h:
 
@@ -28,6 +26,8 @@ Sources/main.o: ../Sources/main.c ../Includes/MKL25Z4.h \
 
 ../Includes/log.h:
 
+../Includes/led.h:
+
 ../Includes/memory.h:
 
 ../Includes/main.h:
@@ -36,18 +36,4 @@ Sources/main.o: ../Sources/main.c ../Includes/MKL25Z4.h \
 
 ../Includes/dma.h:
 
-../Includes/led.h:
-
 ../Includes/message.h:
-
-../Includes/tsi.h:
-
-../Includes/dac.h:
-
-../Includes/I2C.h:
-
-../Includes/eeprom.h:
-
-../Includes/sdcard.h:
-
-../Includes/SPI.h:

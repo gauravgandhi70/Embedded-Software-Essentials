@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Sources/I2C.c \
+../Sources/SPI.c \
 ../Sources/circbuf.c \
 ../Sources/dac.c \
 ../Sources/data.c \
@@ -16,11 +17,13 @@ C_SRCS += \
 ../Sources/memory.c \
 ../Sources/message.c \
 ../Sources/rtc.c \
+../Sources/sdcard.c \
 ../Sources/tsi.c \
 ../Sources/uart.c 
 
 OBJS += \
 ./Sources/I2C.o \
+./Sources/SPI.o \
 ./Sources/circbuf.o \
 ./Sources/dac.o \
 ./Sources/data.o \
@@ -32,11 +35,13 @@ OBJS += \
 ./Sources/memory.o \
 ./Sources/message.o \
 ./Sources/rtc.o \
+./Sources/sdcard.o \
 ./Sources/tsi.o \
 ./Sources/uart.o 
 
 C_DEPS += \
 ./Sources/I2C.d \
+./Sources/SPI.d \
 ./Sources/circbuf.d \
 ./Sources/dac.d \
 ./Sources/data.d \
@@ -48,6 +53,7 @@ C_DEPS += \
 ./Sources/memory.d \
 ./Sources/message.d \
 ./Sources/rtc.d \
+./Sources/sdcard.d \
 ./Sources/tsi.d \
 ./Sources/uart.d 
 
