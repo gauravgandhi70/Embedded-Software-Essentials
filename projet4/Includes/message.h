@@ -10,7 +10,7 @@
 #define INCLUDES_MESSAGE_H_
 #define MAX_DATA_SIZE 10
 
-typedef enum{Get_temparature=0x01, Get_light=0x02, Acc_ON=0x03, Acc_OFF=0x04, TSI_ON=0x05, TSI_OFF=0x06, Motor_speed=0x07,START_LOG=0x08,STOP_L0G=0x09}cmd;
+typedef enum{Get_temparature=0x01, Get_light=0x02, Acc_ON=0x03, Acc_OFF=0x04, TSI_ON=0x05, TSI_OFF=0x06, Motor_speed=0x07,START_LOG=0x08,STOP_L0G=0x09,GET_PWM=0x0A}cmd;
 typedef struct{
 	cmd command;
 	uint8_t length;

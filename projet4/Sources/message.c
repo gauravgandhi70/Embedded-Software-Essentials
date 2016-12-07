@@ -86,14 +86,22 @@ uint8_t decode_msg(msg_t *msg)
 
 	else if(msg->command == START_LOG)
 		{
+			LOG0("START UART LOGGING");
 			UART_flag=1;
+			sensor=1;
 
 		}
 
-	else if(msg->command == START_LOG)
+	else if(msg->command == STOP_L0G)
 		{
-			UART_flag=0;
+		LOG0("\n\rSTOP UART LOGGING");
+						UART_flag=0;
 
+		}
+	else if(msg->command == GET_PWM)
+		{
+				LOG1("\n\rPWM  :",sensor_data[PWM],'i');
+				LOG0(" %");
 		}
 	return 1;
 }

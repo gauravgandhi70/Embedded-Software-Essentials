@@ -50,6 +50,7 @@ uint8_t motor_control(uint8_t speed)
 {
 	if (speed>100){speed=90;}
 	sensor_data[PWM]=speed;
-	TPM1_BASE_PTR->CONTROLS[0].CnV = 1000 - ((speed * 10)/16);
-	return ((speed * 10)/16);
+	TPM1_BASE_PTR->CONTROLS[0].CnV = 1000 - ((speed * 10));
+	//speed = ((speed * 10)/16);
+	return speed;
 }

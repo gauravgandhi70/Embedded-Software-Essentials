@@ -104,7 +104,7 @@ int main(void)
 					if(ec==buf_not_empty && (msg_f1==1))				// If buffer is not empty and lenth is not read then
 					{												// read command ID first and then read message length
 						uint8_t con=read_data(&rx_buf);
-						if(msg_f==1 && con>0 && con<8)
+						if(msg_f==1 && con>0 && con<15)
 						{
 							m.command = con;
 							msg_f=0;
@@ -136,7 +136,7 @@ int main(void)
 
 
 
-			if(log_flag ==1  && UART_flag==1)
+			if(log_flag ==1 && UART_flag==1 )
 			{
 				if(sensor==LIGHT)
 				       {
