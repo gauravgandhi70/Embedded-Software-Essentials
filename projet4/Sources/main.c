@@ -47,8 +47,6 @@
 #include"SPI.h"
 #include"adc.h"
 #include"calibrate.h"
-
-//#include"motor.c"
 #include"rtc.h"
 
 
@@ -87,7 +85,7 @@ int main(void)
 	while(1)			// Infinite loop for continuous operation
 		{
 
-				sensor_data[TEMP] = 0x16;//TEMP_calibrate();
+				sensor_data[TEMP] = TEMP_calibrate();
 
 				sensor_data[LIGHT] = LIGHT_calibrate();
 
@@ -151,7 +149,7 @@ int main(void)
 				       }
 				else  if(sensor==TEMP)
 				       {
-					 	 	 LOG1("\t Light : ",sensor_data[sensor],'i');
+					 	 	 LOG1("\t TEMP : ",sensor_data[sensor],'i');
 					 	 	 LOG0("Celcius");
 				             log_flag=0;
 				       }

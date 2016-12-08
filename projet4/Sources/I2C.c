@@ -48,11 +48,11 @@ uint8_t I2C_ReadRegister(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress)
 	I2C_Start();	          
 	I2C0_D = u8SlaveAddress << 1;									/* Send I2C device address with W/R bit = 0 */
 	while((I2C0_S & I2C_S_TCF_MASK)==0);
-	//I2C_Wait();
+	I2C_Wait();
 
 	I2C0_D = u8RegisterAddress;										/* Send register address */
 	while((I2C0_S & I2C_S_TCF_MASK)==0);
-	//I2C_Wait();
+	I2C_Wait();
 
 	I2C_RepeatedStart();
 	
