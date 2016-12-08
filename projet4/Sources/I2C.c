@@ -111,9 +111,9 @@ void I2C_ReadMultiRegisters(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress, u
 
 void Pause(int number)
 {
-	int cnt;
+	int32_t cnt;
 	for(cnt=0; cnt<number; cnt++)
 	{
-		//asm("nop");
+		
 	};
 }

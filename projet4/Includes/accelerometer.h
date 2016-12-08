@@ -78,15 +78,20 @@
 
 #define PI					  3.14159
 
+#define PositiveHighRange     4200
+#define PositiveLowRange      3000
+#define NegativeHighRange     -3000
+#define NegativeLowRange     -4200
+
+
 /******************************************************************************
 * Global variables
 ******************************************************************************/
 
-unsigned char AccData[6],acc_flag;
+uint8_t AccData[6],acc_flag;
 short Xout_14_bit, Yout_14_bit, Zout_14_bit;
-float Xout_g, Yout_g, Zout_g, Pitch, Roll;
-char DataReady;
-char Xoffset, Yoffset, Zoffset;
+float Xout_g, Yout_g, Zout_g;
+uint8_t Xoffset, Yoffset, Zoffset;
 
 /******************************************************************************
 * Functions

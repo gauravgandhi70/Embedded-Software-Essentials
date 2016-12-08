@@ -28,17 +28,15 @@
 
 
 
+
 void ACCELEROMETER_control()
 {
-	DataReady = 0;
+
 		MCU_Init();
 	  	Accelerometer_Init();
 	  	Calibrate();
 
-  	//while(1)
-   // {
-		//if (DataReady)		// Is a new set of data ready?
-		//{
+  	
 
 			I2C_ReadMultiRegisters(MMA845x_I2C_ADDRESS, OUT_X_MSB_REG, 6, AccData);		// Read data output registers 0x01-0x06
 
@@ -49,42 +47,39 @@ void ACCELEROMETER_control()
 			Xout_g = ((float) Xout_14_bit) / SENSITIVITY_2G;		// Compute X-axis output value in g's
 			Yout_g = ((float) Yout_14_bit) / SENSITIVITY_2G;		// Compute Y-axis output value in g's
 			Zout_g = ((float) Zout_14_bit) / SENSITIVITY_2G;		// Compute Z-axis output value in g's
-			if(Xout_14_bit >= 3000 && Xout_14_bit<=4200)
+			
+			
+			/*LED Operation according to the axis*/
+			if(Xout_14_bit >= PositiveLowRange && Xout_14_bit<=PositiveHighRange)
 			{
-				LEDFunction(BLUE,500);
+				LEDFunction(WHITE,500);
 			}
 
-			else if (Xout_14_bit >=-4200 && Xout_14_bit<= -3000)
+			else if (Xout_14_bit >= NegativeLowRange && Xout_14_bit<= NegativeHighRange)
 			{
 				LEDFunction(GREEN,500);
 			}
 
-			else if(Yout_14_bit >= 3000 && Yout_14_bit<=4200)
+			else if(Yout_14_bit >= PositiveLowRange && Yout_14_bit<=PositiveHighRange)
 			{
 				LEDFunction(RED,500);
 			}
 
-			else if(Yout_14_bit >=-4200 && Yout_14_bit<= -3000)
+			else if(Yout_14_bit >= NegativeLowRange && Yout_14_bit<= NegativeHighRange)
 			{
 				LEDFunction(CYAN,500);
 			}
 
-			else if(Zout_14_bit>= 3000 && Zout_14_bit<=4200)
+			else if(Zout_14_bit>= PositiveLowRange && Zout_14_bit<=PositiveHighRange)
 			{
 				LEDFunction(MAGENTA,500);
 			}
 
-			else if( Zout_14_bit >=-4200 && Zout_14_bit<= -3000)
+			else if( Zout_14_bit >=NegativeLowRange && Zout_14_bit<= NegativeHighRange)
 			{
-				LEDFunction(WHITE,500);
+				LEDFunction(BLUE,500);
 			}
-//			Pitch = atan2 (-Xout_g, sqrt (Yout_g*Yout_g + Zout_g*Zout_g)) * 180 / PI;		// Equation 37 in the AN3461
-//			if (Zout_g > 0)																	// Equation 38 in the AN3461
-//				Roll = atan2 (Yout_g, sqrt (0.01*Xout_g*Xout_g + Zout_g*Zout_g)) * 180 / PI;
-//			else
-//				Roll = atan2 (Yout_g, - sqrt (0.01*Xout_g*Xout_g + Zout_g*Zout_g)) * 180 / PI;
-		//}
-	//}
+			
 }
 
 
@@ -98,22 +93,6 @@ void MCU_Init(void)
 	PORTE_PCR25 = PORT_PCR_MUX(5);			// PTE25 pin is I2C0 SDA line
 	I2C0_F  = 0x14; 						// SDA hold time = 2.125us, SCL start hold time = 4.25us, SCL stop hold time = 5.125us *
 	I2C0_C1 = I2C_C1_IICEN_MASK;    		// Enable I2C0 module
-
-//	//Configure the PTA14 pin (connected to the INT1 of the MMA8451Q) for falling edge interrupts
-//	SIM_SCGC5 |= SIM_SCGC5_PORTA_MASK;		// Turn on clock to Port A module
-//	PORTA_PCR14 |= (0|PORT_PCR_ISF_MASK|	// Clear the interrupt flag
-//					  PORT_PCR_MUX(0x1)|	// PTA14 is configured as GPIO
-//					  PORT_PCR_IRQC(0xA));	// PTA14 is configured for falling edge interrupts
-
-//	//Enable PORTA interrupt on NVIC
-//	NVIC_ICPR |= 1 << ((INT_PORTA - 16)%32);
-//	NVIC_ISER |= 1 << ((INT_PORTA - 16)%32);
-//
-//	//Initialize the red LED (PTB18)
-//	SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;		/* Turn on clock to Port B module */
-//	PORTB_PCR18 = PORT_PCR_MUX(1);			/* PTB18 pin is GPIO */
-//	GPIOB_PCOR |= 1<<18;					/* Turn on the red LED */
-//	GPIOB_PDDR |= 1<<18;					/* PTB18 pin is output */
 
 }
 
