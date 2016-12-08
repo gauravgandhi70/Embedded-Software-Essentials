@@ -1,6 +1,7 @@
 /*
  * rtc.c
- *
+ * This is RTC library for MKL25Z4. It contains RTC initialization
+ Real time acquiring for the RTC and Interrupt handler
  *  Created on: 21-Nov-2016
  *      Author: Gaurav Gandhi
  */
@@ -22,6 +23,15 @@
 #include"sdcard.h"
 uint32_t sd_log_freq=0;
 uint8_t sd_addr[3];
+/*-----------------------------------------------------------------------------------------
+                                void rtc_init()
+ ------------------------------------------------------------------------------------------
+ * I/P Arguments: none
+ * Return value	: none
+
+ * description: Used for initial setup of the RTC
+-----------------------------------------------------------------------------------------*/
+
 void rtc_init()
 {
 		uint32_t i=100000;
@@ -58,17 +68,10 @@ void rtc_init()
 
 
 
-		sd_addr[0]=0;
-			sd_addr[1]=0;
+			sd_addr[0]=0;				// Initialize SD card locations at the start of the RTC initializations because 
+			sd_addr[1]=0;				// RTC interrupt is used for SD card data logging
 			sd_addr[2]=0;
-	 /*RTC_IER |= RTC_IER_TSIE_MASK;
-
-	 NVIC_EnableIRQ(RTC_Seconds_IRQn);
-	 __enable_irq();
-
-
-	 RTC_SR |= RTC_SR_TCE_MASK;     // Enable Counter*/
-
+	 
 
 
 }
@@ -85,24 +88,24 @@ void time_setup()
 
 			if(ec==buf_not_empty )
 			{
-				uint8_t con=read_data(&rx_buf),mode;
+				uint8_t con=read_data(&rx_buf),mode;		
 
 					d[i] = con;
 					i++;
 
 
-					if(con==0xd)
+					if(con==0xd)							// Accept data until '\n' is recieved
 					{
-							f++;
-							d[i]=con;
+							f++;			
+							d[i]=con;						// Data i stored in d array
 							i=0;
-							if(f==1){cur_time.date=my_atoi(d);LOG0("\n\r Enter month : ");}
+							if(f==1){cur_time.date=my_atoi(d);LOG0("\n\r Enter month : ");}		// First Date, then Month, Year, Time in hh.mm format is accepted from the user
 							else if(f==2){cur_time.month=my_atoi(d);LOG0("\n\r Enter Year in YY format : ");}
 							else if(f==3){cur_time.year=my_atoi(d);LOG0("\n\r Enter current time in 24 hour format\n\r Hours : ");}
 							else if(f==4){cur_time.hour=my_atoi(d);LOG0("\n\r  Minutes : ");}
 							else if(f==5)
 							{
-								cur_time.min=my_atoi(d);
+								cur_time.min=my_atoi(d);										// Once time is recieved All the data is stored in structure time
 								break;
 							}
 
@@ -118,12 +121,22 @@ void time_setup()
 		}
 
 
-		RTC_TSR = datetosec();
-		RTC_IER = RTC_IER_TSIE_MASK;
+		RTC_TSR = datetosec();																// Pass data acquired from the user to datetosec function for converting it to sec for the use of RTC registers
+		RTC_IER = RTC_IER_TSIE_MASK;														// Enable RTC Interrupt
 		NVIC_EnableIRQ(RTC_Seconds_IRQn);
 		__enable_irq();
-		RTC_SR |= RTC_SR_TCE_MASK;
+		RTC_SR |= RTC_SR_TCE_MASK;															// Enable RTC
 }
+
+
+/*-----------------------------------------------------------------------------------------
+                                datetosec()
+ ------------------------------------------------------------------------------------------
+ * I/P Arguments: none
+ * Return value	: 32 bit value in seconds for the use of RTC registers
+
+ * description: Used for converting current time to seconds by comparing it with 1 Jan 2016 for the use of RTC registers
+-----------------------------------------------------------------------------------------*/
 
 
 
@@ -132,7 +145,7 @@ uint32_t datetosec(void)
 	uint32_t sec,i;
 	uint8_t days[12]={31,28,31,30,31,30,31,31,30,31,30,31};
 
-	sec = cur_time.min * 60;
+	sec = cur_time.min * 60;																
 
 	sec += cur_time.hour * 3600;
 
@@ -152,24 +165,36 @@ uint32_t datetosec(void)
 
 }
 
+/*-----------------------------------------------------------------------------------------
+                                RTC_Seconds_IRQHandler
+ ------------------------------------------------------------------------------------------
+ * I/P Arguments: none
+ * Return value	: None
 
+ * description: This ISR is to handle interrupt given by RTC every second. This ISR is used as a scheduler 
+ for logging data to SD card and UART. As well as keeping track of current time.
+-----------------------------------------------------------------------------------------*/
 void RTC_Seconds_IRQHandler()
 {
-	LED_Control('a');
+	LED_Control('a');				// Led color is changed every seconds to show that cock is running
 
-	sensor++;
-	sd_log_freq++;
-	log_flag=1;
+	sensor++;						// Increament sensor to acquire new data after every second
+	sd_log_freq++;					// Increament sd_log_freq to log data to SD card after every 4 seconds
+	log_flag=1;						
 
 	if(sd_log_freq==4)
 	{
 		sd_log_freq = 0;
-		sdcard_write_block(sd_addr,sd_data);
-		sd_addr[0]+=2;
+		sdcard_write_block(sd_addr,sd_data);				// Write 512 bytes data on SD card
+		sd_addr[0]+=2;										// Increamanet address to set it to address of the new sector address of the SD card
 		if(sd_addr[0]==254){sd_addr[0]=0;sd_addr[1]++;}
 		if(sd_addr[1]==255){sd_addr[1]=0;sd_addr[2]++;}
 		if(sd_addr[2]==255){sd_addr[1]=0;sd_addr[0]==0;}
 	}
+	
+	/*if(sec==60){cur_time.min++;}
+	if(cur_time.min==60){cur_time.hour++;}
+	if(cur_time.hour==24){cur_time.day++;}*/
 
 
 }

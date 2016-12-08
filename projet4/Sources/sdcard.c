@@ -22,7 +22,15 @@
 #include"SPI.h"
 #include"sdcard.h"
 
+/*-----------------------------------------------------------------------------------------
+                                void sdcard_init()
+ ------------------------------------------------------------------------------------------
+ * I/P Arguments: none
+ * Return value	: none
 
+ * description: Used for initial setup of the SD card. SD card used is Transcend 2 GB micro SD card (Standard Capacity)
+ Commands Used: cmd0, cmd8, cmd58, cmd55, acmd41.
+-----------------------------------------------------------------------------------------*/
 
 
 uint8_t sdcard_init()
@@ -96,21 +104,28 @@ uint8_t sdcard_init()
 }
 
 
+/*-----------------------------------------------------------------------------------------
+                                void cmd_zero()
+ ------------------------------------------------------------------------------------------
+ * I/P Arguments: none
+ * Return value	: Response from the sd card to command zero
 
+ * description: Used for Reseting the SD card and to put it in SPI mode
+-----------------------------------------------------------------------------------------*/
 uint8_t cmd_zero()
 {
-    uint8_t cmd[7]={0x40,0,0,0,0,0x95,0xFF},resp=0;
+    uint8_t cmd[7]={0x40,0,0,0,0,0x95,0xFF},resp=0;			// Data bytes of the cmd0
     int i=0;
     PTC_BASE_PTR->PCOR = 1<<4; //Chip select low
 
 
-    for(i=0;i<7;i++)
+    for(i=0;i<7;i++)							// Write command
     {
         SPI_write(cmd[i]);
     }
 
     i=0;
-    while(((resp != 0x01) ) & i<2)
+    while(((resp != 0x01) ) & i<2)				// Wait for response for 16 clock cycles
     {
         resp = SPI_write(0XFF);
         i++;
@@ -119,20 +134,27 @@ uint8_t cmd_zero()
 
     PTC_BASE_PTR->PSOR =  1<<4; //Chip select high
 
-    return resp;
+    return resp;							// Return Response from the sd card
 }
 
+/*-----------------------------------------------------------------------------------------
+                                void cmd_eight()
+ ------------------------------------------------------------------------------------------
+ * I/P Arguments: none
+ * Return value	: Response from the sd card to command eight
 
+ * description: Used for Reading 40 bit status register of the SD card 
+-----------------------------------------------------------------------------------------*/
 uint8_t cmd_eight()
 {
-     uint8_t cmd[6]={0x48,0,0,1,0xAA,0x87},resp;
+     uint8_t cmd[6]={0x48,0,0,1,0xAA,0x87},resp;				// Data bytes of the command
     int i=0;
     PTC_BASE_PTR->PCOR = 1<<4; //Chip select low
 
 
     for(i=0;i<6;i++)
     {
-        SPI_write(cmd[i]);
+        SPI_write(cmd[i]);									// Write command to SD card
     }
 
     i=0;
@@ -140,7 +162,7 @@ uint8_t cmd_eight()
     //LOG0("\n\r cmd8 : ");
     while(i<6)
     {
-        resp = SPI_write(0XFF);
+        resp = SPI_write(0XFF);								// Get 40 bit response from the SD card
         i++;
         //   LOG0("\t %x",resp);
     }
@@ -151,7 +173,14 @@ uint8_t cmd_eight()
     return resp;
 }
 
+/*-----------------------------------------------------------------------------------------
+                                void cmd_feight()
+ ------------------------------------------------------------------------------------------
+ * I/P Arguments: none
+ * Return value	: Response from the sd card to command fifty eight
 
+ * description: Used for Reading 40 bit status register of the SD card 
+-----------------------------------------------------------------------------------------*/
  uint8_t cmd_feight()
  {
       uint8_t cmd[6]={0x7A,0,0,0,0,0x75},resp=0;
@@ -178,7 +207,15 @@ uint8_t cmd_eight()
 
     return resp;
  }
+/*-----------------------------------------------------------------------------------------
+                                void cmd_fiftyfive()
+ ------------------------------------------------------------------------------------------
+ * I/P Arguments: none
+ * Return value	: Response from the sd card to command 55
 
+ * description: Used before sending application specific commands(acmd). Its respose i used to check if SD card is 
+ in idle mode or working mode
+-----------------------------------------------------------------------------------------*/
 
 
 uint8_t cmd_fiftyfive()
@@ -206,6 +243,14 @@ uint8_t cmd_fiftyfive()
     return resp;
  }
 
+ /*-----------------------------------------------------------------------------------------
+                                void acmd()
+ ------------------------------------------------------------------------------------------
+ * I/P Arguments: none
+ * Return value	: Response from the SD card to acmd41.
+
+ * description: Used for putting SD card out of idle. 
+-----------------------------------------------------------------------------------------*/
 uint8_t acmd(void)
 {
     uint8_t cmd[6]={0x69,0,0,0,0,0x5f},resp=1;
@@ -263,28 +308,35 @@ uint8_t cmd_one()
     return resp;
 }
 
+/*-----------------------------------------------------------------------------------------
+                                void sdcard_write_block()
+ ------------------------------------------------------------------------------------------
+ * I/P Arguments: none
+ * Return value	: Response from the sd card to write block
 
+ * description: Used for writing single block of 512 bytes of data 
+-----------------------------------------------------------------------------------------*/
 uint8_t sdcard_write_block(uint8_t *address,uint8_t* da)
 {
-    uint8_t cmd[6]={0x58,0,0,0x00,0,0xFF},resp=1;
+    uint8_t cmd[6]={0x58,0,0,0x00,0,0xFF},resp=1;    
     int i=0;
      PTC_BASE_PTR->PCOR = 1<<4; //Chip select low
 
-     SPI_write(0x58);
+     SPI_write(0x58);								// Write block command 
 
 
-        SPI_write(*(address+2));
+        SPI_write(*(address+2));					// Address of the start address of the sector
         SPI_write(*(address+1));
         SPI_write(*address);
          SPI_write(0x00);
 
-           SPI_write(0xFF);
+           SPI_write(0xFF);							// CRC
 
     i=0;
 
     while(resp!=0 & i<5)
     {
-        resp = SPI_write(0XFF);
+        resp = SPI_write(0XFF);						// Wait for the response from the SD card
         i++;
            //LOG0("\t cmd24 :%x",resp);
     }
@@ -292,11 +344,11 @@ uint8_t sdcard_write_block(uint8_t *address,uint8_t* da)
 
 
 
-          SPI_write(0xFE);
+          SPI_write(0xFE);							// Write 0xFE before writing actual data
 
           for(i=0;i<512;i++)
           {
-              SPI_write(*(da+i));
+              SPI_write(*(da+i));					// Write 512 bytes of data
              // LOG0("\t %x", *(da+i));
 
 
@@ -369,29 +421,5 @@ uint8_t* sdcard_read_block(uint8_t *address)
 }
 
 
-uint8_t cmd_sixteen()
-{
-    uint8_t cmd[7]={0x50,0,0,2,0,0xFF},resp=0;
-    int i=0;
-    PTC_BASE_PTR->PCOR = 1<<4; //Chip select low
-
-
-    for(i=0;i<6;i++)
-    {
-        SPI_write(cmd[i]);
-    }
-
-    i=0;
-    while(((resp != 0x01) ) & i<2)
-    {
-        resp = SPI_write(0XFF);
-        i++;
-    }
-
-
-    PTC_BASE_PTR->PSOR =  1<<4; //Chip select high
-
-    return resp;
-}
 
 

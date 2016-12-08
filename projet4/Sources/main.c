@@ -85,35 +85,37 @@ int main(void)
 	while(1)			// Infinite loop for continuous operation
 		{
 
-				sensor_data[TEMP] = TEMP_calibrate();
+				sensor_data[TEMP] = TEMP_calibrate();					// Gather Data from digital temparature sensor via I2C
 
-				sensor_data[LIGHT] = LIGHT_calibrate();
-
-
+				sensor_data[LIGHT] = LIGHT_calibrate();                // Gather Data from analog light sensor via ADC
 
 
 
 
+
+				// Store acquired status of all the peripherals in an array with time and date stamp for Logging it in SD Card
+				// Data is stored in such a format that every peripheral starts on a new line and is separated by ',' and sentemce is erminated by '\n'
 				 sd_data[0]=cur_time.date ; sd_data[1]= cur_time.month ; sd_data[2]= cur_time.year ;sd_data[3]=',';
 				 sd_data[16]= cur_time.hour; sd_data[17]=cur_time.min ;sd_data[18]=',';
 				 sd_data[32]=sensor_data[LIGHT]; sd_data[33]= ',';
 				 sd_data[48]=  sensor_data[TEMP]; sd_data[49]= ',';
 				 sd_data[64]= sensor_data[PWM];sd_data[65]= '\n';
 
-
+				
+				// Message Structure Implementation (m= message structure)
 				state ec=buff_empty(&rx_buf);					// Checking  Rx buffer for empty
 
-					if(ec==buf_not_empty && (msg_f1==1))				// If buffer is not empty and lenth is not read then
+					if(ec==buf_not_empty && (msg_f1==1))				// If buffer is not empty and length is not read then
 					{												// read command ID first and then read message length
 						uint8_t con=read_data(&rx_buf);
 						if(msg_f==1 && con>0 && con<15)
 						{
-							m.command = con;
+							m.command = con;						// Store command in m.command
 							msg_f=0;
 						}
 						else if(msg_f1==1 && msg_f==0)
 						{
-							m.length = con;
+							m.length = con;							// Store data length in m.length
 							msg_f1=0;
 						}
 
@@ -127,21 +129,21 @@ int main(void)
 						i++;
 					}
 					else if(ec==buf_not_empty && i==m.length)
-					{
-						uint8_t con=read_data(&rx_buf);
+					{														
+						uint8_t con=read_data(&rx_buf);					// After all data is read then get the checksum and store it in m.checksum
 						m.checksum = con;
 						msg_f=msg_f1=1;
 						i=0;
-						decode_msg(&m);
+						decode_msg(&m);								// Pass structure m to decode message
 
 					}
 
 
-
-			if(log_flag ==1 && UART_flag==1 )
+				// UART Logger
+			if(log_flag ==1 && UART_flag==1 )					// If user hs enabled UART logging by setting UART_flag then data is logged every second using RTC interrupt
 			{
-				if(sensor==LIGHT)
-				       {
+				if(sensor==LIGHT)								// Log every sensor one after another 
+				       {									// Starting with LIGHT, TEMP, PWM
 
 				           LOG1("\n\r Light : ",sensor_data[sensor],'i');
 				           LOG0("%");
@@ -170,7 +172,7 @@ int main(void)
 
 
 
-
+			// If Touch sensitive input is enbled by user then LED is controlled by tsi status by tsi_led function
 			if(tsi_flag==1 && tsi_led_flag==1)
 			{
 				tsi_flag=0;
@@ -189,3 +191,11 @@ int main(void)
 ////////////////////////////////////////////////////////////////////////////////
 // EOF
 ////////////////////////////////////////////////////////////////////////////////
+/*-----------------------------------------------------------------------------------------
+                                void lcd_init()
+ ------------------------------------------------------------------------------------------
+ * I/P Arguments: none
+ * Return value	: none
+
+ * description: Used for initial setup of the lcd
+-----------------------------------------------------------------------------------------*/
