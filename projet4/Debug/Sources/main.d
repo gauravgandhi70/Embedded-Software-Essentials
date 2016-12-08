@@ -5,8 +5,9 @@ Sources/main.o: ../Sources/main.c ../Includes/MKL25Z4.h \
  ../Includes/data.h ../Includes/log.h ../Includes/memory.h \
  ../Includes/main.h ../Includes/log.h ../Includes/dma.h ../Includes/led.h \
  ../Includes/message.h ../Includes/tsi.h ../Includes/dac.h \
- ../Includes/I2C.h ../Includes/sdcard.h ../Includes/SPI.h \
- ../Includes/adc.h ../Includes/calibrate.h ../Includes/rtc.h
+ ../Includes/I2C.h ../Includes/profile.h ../Includes/sdcard.h \
+ ../Includes/SPI.h ../Includes/adc.h ../Includes/calibrate.h \
+ ../Includes/rtc.h
 
 ../Includes/MKL25Z4.h:
 
@@ -45,6 +46,8 @@ Sources/main.o: ../Sources/main.c ../Includes/MKL25Z4.h \
 ../Includes/dac.h:
 
 ../Includes/I2C.h:
+
+../Includes/profile.h:
 
 ../Includes/sdcard.h:
 

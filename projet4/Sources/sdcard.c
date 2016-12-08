@@ -18,7 +18,7 @@
 #include"tsi.h"
 #include"dac.h"
 #include"I2C.h"
-
+#include"profile.h"
 #include"SPI.h"
 #include"sdcard.h"
 
@@ -82,7 +82,11 @@ uint8_t sdcard_init()
 
 
      //cmd_sixteen();
-      //sdcard_write_block(r,sd_read_data);
+    // LOG0("\n\r Timing for 512 bytes transfer");
+    // pit_enable();
+     // sdcard_write_block(r,sd_data);
+     // pit_disable();
+     // get_time();
      // delay_ms(10);
      //sdcard_read_block(r);
 

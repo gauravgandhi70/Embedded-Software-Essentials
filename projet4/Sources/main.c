@@ -42,7 +42,7 @@
 #include"tsi.h"
 #include"dac.h"
 #include"I2C.h"
-
+#include"profile.h"
 #include"sdcard.h"
 #include"SPI.h"
 #include"adc.h"
@@ -62,21 +62,24 @@ int main(void)
 	uint32_t msg_f=1,msg_f1=1;
 	uart_init(57600);								// Initialize UART
 	SPI_init();
-	sdcard_init();
+
 	rtc_init();
 	time_setup();
-
+	pit_init();
+	sdcard_init();
 	LED_Init();
 	I2C_init();
 	tsi_init();
 	dac_init();
 	ADC_Init10b();
 	motor_init();
-	//motor_control(10);
-	//tsi_start_scan();
 
-	//LOG1("\n\rTEMP: ",c,'i');
 
+	/*LOG0("\n\rADC Timing Analysis: ");
+	pit_enable();
+	sensor_data[LIGHT] = LIGHT_calibrate();
+	pit_disable();
+	get_time();*/
 
 
 
@@ -84,7 +87,8 @@ int main(void)
 	while(1)			// Infinite loop for continuous operation
 		{
 
-				sensor_data[TEMP] = 0x55;//TEMP_calibrate();
+				sensor_data[TEMP] = 0x16;//TEMP_calibrate();
+
 				sensor_data[LIGHT] = LIGHT_calibrate();
 
 
