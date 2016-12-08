@@ -5,7 +5,8 @@ Sources/rtc.o: ../Sources/rtc.c ../Includes/MKL25Z4.h \
  ../Includes/data.h ../Includes/log.h ../Includes/memory.h \
  ../Includes/main.h ../Includes/log.h ../Includes/dma.h ../Includes/led.h \
  ../Includes/message.h ../Includes/tsi.h ../Includes/dac.h \
- ../Includes/I2C.h ../Includes/rtc.h ../Includes/sdcard.h
+ ../Includes/I2C.h ../Includes/rtc.h ../Includes/sdcard.h \
+ ../Includes/accelerometer.h
 
 ../Includes/MKL25Z4.h:
 
@@ -48,3 +49,5 @@ Sources/rtc.o: ../Sources/rtc.c ../Includes/MKL25Z4.h \
 ../Includes/rtc.h:
 
 ../Includes/sdcard.h:
+
+../Includes/accelerometer.h:

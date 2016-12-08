@@ -48,6 +48,7 @@
 #include"adc.h"
 #include"calibrate.h"
 #include"rtc.h"
+#include"accelerometer.h"
 
 
 
@@ -71,7 +72,7 @@ int main(void)
 	dac_init();
 	ADC_Init10b();
 	motor_init();
-
+	acc_flag=0;
 
 	/*LOG0("\n\rADC Timing Analysis: ");
 	pit_enable();
@@ -178,6 +179,13 @@ int main(void)
 				tsi_flag=0;
 				tsi_led();
 
+			}
+
+
+
+			if(acc_flag==1)
+			{
+				ACCELEROMETER_control();
 			}
 
 

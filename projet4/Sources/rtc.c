@@ -21,6 +21,7 @@
 #include"I2C.h"
 #include"rtc.h"
 #include"sdcard.h"
+#include"accelerometer.h"
 uint32_t sd_log_freq=0;
 uint8_t sd_addr[3];
 /*-----------------------------------------------------------------------------------------
@@ -176,7 +177,8 @@ uint32_t datetosec(void)
 -----------------------------------------------------------------------------------------*/
 void RTC_Seconds_IRQHandler()
 {
-	LED_Control('a');				// Led color is changed every seconds to show that cock is running
+	if(acc_flag==0 && tsi_led_flag==0)
+	{LED_Control('a');}				// Led color is changed every seconds to show that cock is running
 
 	sensor++;						// Increament sensor to acquire new data after every second
 	sd_log_freq++;					// Increament sd_log_freq to log data to SD card after every 4 seconds

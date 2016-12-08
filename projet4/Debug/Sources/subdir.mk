@@ -6,6 +6,7 @@
 C_SRCS += \
 ../Sources/I2C.c \
 ../Sources/SPI.c \
+../Sources/accelerometer.c \
 ../Sources/adc.c \
 ../Sources/calibrate.c \
 ../Sources/circbuf.c \
@@ -27,6 +28,7 @@ C_SRCS += \
 OBJS += \
 ./Sources/I2C.o \
 ./Sources/SPI.o \
+./Sources/accelerometer.o \
 ./Sources/adc.o \
 ./Sources/calibrate.o \
 ./Sources/circbuf.o \
@@ -48,6 +50,7 @@ OBJS += \
 C_DEPS += \
 ./Sources/I2C.d \
 ./Sources/SPI.d \
+./Sources/accelerometer.d \
 ./Sources/adc.d \
 ./Sources/calibrate.d \
 ./Sources/circbuf.d \

@@ -15,7 +15,7 @@
 #include"dma.h"
 #include"tsi.h"
 #include"message.h"
-
+#include"accelerometer.h"
 #include<malloc.h>
 
 
@@ -53,12 +53,17 @@ uint8_t decode_msg(msg_t *msg)
 	}
 	else if(msg->command == Acc_ON)
 	{
-		LOG0("\n\r ACCELEROMETER LED ON");
+
+		LOG0("\n\r ACCELEROMETER Controlled LED ON");
 		tsi_stop_scan();
+		//ACCELEROMETER_control();
+		acc_flag=1;
 	}
 	else if(msg->command == Acc_OFF)
-	{								// FOr led_off command turn off the LED
-
+	{
+		LOG0("\n\r ACCELEROMETER Controlled LED OFF ");// FOr led_off command turn off the LED
+			acc_flag=0;
+			I2C_init();
 
 	}
 
