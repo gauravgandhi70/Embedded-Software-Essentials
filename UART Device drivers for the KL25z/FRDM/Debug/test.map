@@ -258,7 +258,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x63 ./Sources/data.o
  .debug_macro   0x00000000     0x839f ./Sources/data.o
  .debug_line    0x00000000      0x312 ./Sources/data.o
- .debug_str     0x00000000    0x31e79 ./Sources/data.o
+ .debug_str     0x00000000    0x31ea1 ./Sources/data.o
  .comment       0x00000000       0x71 ./Sources/data.o
  .ARM.attributes
                 0x00000000       0x32 ./Sources/data.o
@@ -513,7 +513,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x180 ./Sources/prof_test.o
  .debug_macro   0x00000000       0x22 ./Sources/prof_test.o
  .debug_line    0x00000000      0x329 ./Sources/prof_test.o
- .debug_str     0x00000000    0x33561 ./Sources/prof_test.o
+ .debug_str     0x00000000    0x33589 ./Sources/prof_test.o
  .comment       0x00000000       0x71 ./Sources/prof_test.o
  .ARM.attributes
                 0x00000000       0x32 ./Sources/prof_test.o
@@ -662,7 +662,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./Sources/unittest.o
  .debug_macro   0x00000000       0x16 ./Sources/unittest.o
  .debug_line    0x00000000      0x33d ./Sources/unittest.o
- .debug_str     0x00000000     0x507a ./Sources/unittest.o
+ .debug_str     0x00000000     0x50a2 ./Sources/unittest.o
  .comment       0x00000000       0x71 ./Sources/unittest.o
  .ARM.attributes
                 0x00000000       0x32 ./Sources/unittest.o
@@ -1739,7 +1739,7 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/cr
                 0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region m_data overflowed with stack and heap)
 OUTPUT(test.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x1fa8
+.debug_info     0x00000000     0x1fd0
  .debug_info    0x00000000      0x25d ./Sources/circbuf.o
  .debug_info    0x0000025d      0x4d8 ./Sources/led.o
  .debug_info    0x00000735      0x2ce ./Sources/log.o
@@ -1747,8 +1747,8 @@ OUTPUT(test.elf elf32-littlearm)
  .debug_info    0x00000c0c      0x1ec ./Sources/memory.o
  .debug_info    0x00000df8      0x610 ./Sources/profile.o
  .debug_info    0x00001408      0x72f ./Sources/uart.o
- .debug_info    0x00001b37       0x84 ./Project_Settings/Startup_Code/startup_MKL25Z4.o
- .debug_info    0x00001bbb      0x3ed ./Project_Settings/Startup_Code/system_MKL25Z4.o
+ .debug_info    0x00001b37       0xac ./Project_Settings/Startup_Code/startup_MKL25Z4.o
+ .debug_info    0x00001be3      0x3ed ./Project_Settings/Startup_Code/system_MKL25Z4.o
 
 .debug_abbrev   0x00000000      0x9a0
  .debug_abbrev  0x00000000      0x11d ./Sources/circbuf.o
@@ -1843,23 +1843,23 @@ OUTPUT(test.elf elf32-littlearm)
  .debug_line    0x00001201       0x7b ./Project_Settings/Startup_Code/startup_MKL25Z4.o
  .debug_line    0x0000127c      0x240 ./Project_Settings/Startup_Code/system_MKL25Z4.o
 
-.debug_str      0x00000000    0x34829
- .debug_str     0x00000000     0x4d2e ./Sources/circbuf.o
-                               0x4f08 (size before relaxing)
- .debug_str     0x00004d2e    0x2f544 ./Sources/led.o
-                              0x33b62 (size before relaxing)
- .debug_str     0x00034272       0xff ./Sources/log.o
-                              0x33e98 (size before relaxing)
- .debug_str     0x00034371      0x10a ./Sources/main.o
-                              0x335cb (size before relaxing)
- .debug_str     0x0003447b       0x52 ./Sources/memory.o
-                              0x31e0d (size before relaxing)
- .debug_str     0x000344cd      0x291 ./Sources/profile.o
-                              0x321e9 (size before relaxing)
- .debug_str     0x0003475e       0x3f ./Sources/uart.o
-                              0x321f7 (size before relaxing)
- .debug_str     0x0003479d       0x8c ./Project_Settings/Startup_Code/system_MKL25Z4.o
-                              0x31f02 (size before relaxing)
+.debug_str      0x00000000    0x34851
+ .debug_str     0x00000000     0x4d56 ./Sources/circbuf.o
+                               0x4f30 (size before relaxing)
+ .debug_str     0x00004d56    0x2f544 ./Sources/led.o
+                              0x33b8a (size before relaxing)
+ .debug_str     0x0003429a       0xff ./Sources/log.o
+                              0x33ec0 (size before relaxing)
+ .debug_str     0x00034399      0x10a ./Sources/main.o
+                              0x335f3 (size before relaxing)
+ .debug_str     0x000344a3       0x52 ./Sources/memory.o
+                              0x31e35 (size before relaxing)
+ .debug_str     0x000344f5      0x291 ./Sources/profile.o
+                              0x32211 (size before relaxing)
+ .debug_str     0x00034786       0x3f ./Sources/uart.o
+                              0x3221f (size before relaxing)
+ .debug_str     0x000347c5       0x8c ./Project_Settings/Startup_Code/system_MKL25Z4.o
+                              0x31f2a (size before relaxing)
 
 .comment        0x00000000       0x70
  .comment       0x00000000       0x70 ./Sources/circbuf.o
